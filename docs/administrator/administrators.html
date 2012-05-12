@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Администраторы, сотрудники Си-Норда</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docs.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+    <script>
+      // Без него Tooltip не работает…
+      $(window).load(function(){
+        $(function(){
+          $('a[rel=tooltip]').tooltip();
+          });
+        });
+    </script>
+  </head>
+  
+  <body>   
+    <div class="container">
+      
+      <!-- Меню -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="partners.html">Партнёры</a></li>
+              <li><a href="ownerless_units.html">Бесхозные пульты</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="software_versions.html">ПО</a></li>
+              <li class="active"><a href="administrators.html">Администраторы</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="search.html">Поиск</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="account.html">Никита Демидов</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../../docs/index.html">Выйти</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- H1 -->
+      <div class="page-header">
+        <h1>Администраторы <small>Сотрудники Си-Норда</small></h1>
+      </div>
+      
+      <!-- Alert -->
+      <div id="showAlert" class="alert alert-success" style="display: none;">
+        На <strong>nikita.demidov@gmial.com</strong> отправлено приглашение для администратора Си-Норда.
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+      
+      <!-- Alert -->
+      <div class="alert alert-success" style="display: none;">
+        Администратор Си-Норда, <strong>Ерофеев Николай</strong>, удалён.
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+      
+      <!-- Таблица -->
+      <table class="table">
+      <thead>
+        <tr>
+          <th width="45">&nbsp;</th>
+          <th>Имя и фамилия</th>
+          <th>Контактные данные</th>
+          <th width="50%">Был…</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="profile.html"><img src="../../img/admin_01.jpeg"></a></td>
+          <td><a href="profile.html">Филипп Назаров</a></td>
+          <td>+7 911 9512119<br>nazarov@cnord.ru</td>
+          <td>16 апреля, 14:38</td>
+        </tr>
+        <tr>
+          <td><a href="profile.html"><img src="../../img/admin_02.jpeg"></a></td>
+          <td><a href="profile.html">Павел Жиганов</a></td>
+          <td>+7 911 9226528<br>jiganov@cnord.ru</td>
+          <td>15 апреля, 12:42</td>
+        </tr>
+        <tr>
+          <td><a href="profile_kengry.html"><img src="../../img/admin_kengry.png"></a></td>
+          <td><a href="profile_kengry.html">Никита Демидов</a><br>
+            <span class="label label-warning">Это вы</span></td>
+          <td>+7 921 9212116<br>ndemidov@cnord.ru</td>
+          <td>15 апреля, 12:42</td>
+        </tr>
+        <tr>
+          <td><a href="profile.html"><img src="../../img/admin_04.jpeg"></a></td>
+          <td><a href="profile.html">Анисим Туруханов</a></td>
+          <td>+7 921 9113398<br>turuh@cnord.ru</td>
+          <td>15 апреля, 12:42</td>
+        </tr>
+        <tr>
+          <td><a href="profile.html"><img src="../../img/admin_05.jpeg"></a></td>
+          <td><a href="profile.html">Степан Перцев</a></td>
+          <td>+7 921 9113418<br>jakovlev@cnord.ru</td>
+          <td>15 апреля, 23:49</td>
+        </tr>
+        <tr>
+          <td><a href="profile.html"><img src="../../img/empty.gif"></a></td>
+          <td><a href="profile.html">Константин Степанищев</a></td>
+          <td>+7 921 9515598<br>stepanishev@cnord.ru</td>
+          <td>15 апреля, 19:34</td>
+        </tr>
+      </tbody>
+      </table>
+      
+      <a data-toggle="modal" href="#myModal" class="btn">Добавить администратора</a>
+      
+      <!-- Модальное окно -->
+      <form class="form-inline">
+        <fieldset>
+          <div id="myModal" class="modal hide fade" style="display: none;">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h3>Добавить администратора</h3>
+            </div>
+            <div class="modal-body">
+              <label class="control-label" for="inviteEmail">Электронная почта:</label>
+              <div class="controls">
+                <input class="span3" id="inviteEmail" size="16" type="text"><br><br>
+                <p class="help-block"><i class="icon-info-sign"></i> У нас администраторов не добавляют, а приглашают. Это рыба!</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+              <a href="administrators.html" class="btn btn-primary">Отправить приглашение</a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <br>
+      
+      <div id="inviteDelet2">
+        <h2>Не принятые приглашения</h2>
+        <br>
+        <form class="form-inline" id="inviteDelet1">
+          <fieldset>
+            <div class="controls">
+              <input class="span3" id="invite1" size="16" type="text" value="nikita.demidov@cnord.com">&nbsp;&nbsp;Отправлено 16 апреля, 12:59, <a href="#">отправить ещё раз</a> или <a href="#" id="inviteDeletLink1" class="delete-link" rel="tooltip" title="Навсегда!"><em>удалить</em></a>.
+            </div>
+          </fieldset>
+        </form>
+        <form class="form-inline">
+          <fieldset>
+            <div class="controls">
+              <input class="span3" id="invite2" size="16" type="text" value="mihelbruner@cnord.ru">&nbsp;&nbsp;Отправлено 16 апреля, 12:59, <a href="#">отправить еще раз</a> или <a href="#" id="inviteDeletLink2" class="delete-link" rel="tooltip" title="Навсегда!"><em>удалить</em></a>.
+            </div>
+          </fieldset>
+        </form>
+        <p><i class="icon-info-sign"></i> Если удалить приглашение, то получивший письмо <em>не сможет</em> зарегистрироваться.</p>
+        <br>
+      </div>
+   
+    </div>
+    
+    <script>
+      // Deleting first invite
+      $("#inviteDeletLink1").click(function () {
+        $("#inviteDelet1").toggle("slow");
+      });
+    
+      // Deleting second invite
+      $("#inviteDeletLink2").click(function () {
+        $("#inviteDelet2").toggle("slow");
+      });
+      
+      // Show alert
+      $("#showAlertLink").click(function () {
+        $("#showAlert").show();
+      });
+    </script>
+    
+  </body>
+</html>

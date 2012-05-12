@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Администраторы</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docs.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+    <script>
+      // Установка фокуса в первое поле.
+      $(document).ready(function(){
+        $("#surname").focus();
+      });
+    </script>
+  </head>
+  
+  <body>   
+    <div class="container">
+      
+      <!-- Меню -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="#">Облако Си-Норда</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="login.html">Войти</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- H1 -->
+      <div class="page-header">
+        <h1>Регистрация <small>Администратора Си-Норда</small></h1>
+      </div>
+      
+      <!-- Описание -->
+      <p><i class="icon-exclamation-sign"></i> Все поля обязательны для заполнения!</p>
+      <hr>
+      
+      <!-- Форма -->
+      <form class="form-horizontal">
+        <fieldset>
+          
+          <!-- Фамилия и имя -->
+          <div class="control-group">
+            <label class="control-label" for="surname">Как вас зовут?</label>
+            <div class="controls">
+              <input type="text" class="input-medium" id="surname" placeholder="Фамилия">
+              <input type="text" class="input-medium" id="name" placeholder="Имя">
+              <p class="help-block"><b>Фамилия</b> и <b>имя</b> будут видны клиента. Пожалуйста, напишите ваши реальные фамилию и имя, русскими буквами.</p>
+            </div>
+          </div>
+
+          <!-- Мобильный телефон -->
+          <div class="control-group">
+            <label class="control-label" for="operatorCode">Мобильный телефон</label>
+            <div class="controls">
+              <div class="input-prepend">
+                <span class="add-on">+</span><input class="span1" id="countryCode" size="16" type="text" value="7">
+              </div>
+              <input type="text" class="span1" id="operatorCode">
+              <input type="text" class="input-small" id="phoneNumber">
+              <p class="help-block">Код страны, код города, номер. <em>Например, +7 921 1234567</em>.</p>
+              <p class="help-block"><i class="icon-info-sign"></i> Телефон может быть использован для СМС-информирования. Пожалуйста, ввведите настоящий номер телефона.</p>
+            </div>
+          </div>
+
+          <!-- Часовой пояс -->
+          <div class="control-group">
+            <label class="control-label" for="timeZone">Часовой пояс</label>
+            <div class="controls">
+              <select id="timeZone" class="span5">
+                <option>Москва—Россия, +3</option>
+                <option>Нью-Йорк—США, -8</option>
+                <option>Лондон—Великобритания, -3</option>
+              </select>
+              <p class="help-block">Угадали? Если нет, установите часовой пояс самостоятельно.</p>
+            </div>
+          </div>
+          
+          <!-- Пароль -->
+          <div class="control-group">
+            <label class="control-label" for="password">Пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="password" value="">
+              <span class="help-inline">
+                <a href="#" id="showPasswordLink">Сгенерировать пароль</a>
+                <!-- Здесь должен быть скрипт, который при нажатии на ссылку «Сгенерировать пароль», генерирует удовлетворяющий всем требованиям валидности пароль, подстваляет его в первый инпут, меняя при этом тип инпута с «password» на «text» и скрывает второй инпут. Пользователю нужно показать, что скрипт работеат, выводя на 0.3 секунды ajax-loader.gif -->
+              </span>
+              <span class="help-inline" style="display: none;"><img src="../../img/ajax-loader.gif"></span>
+              <p class="help-block">Минимум 8 символов, обязательное наличие букв разных регистров и цифр.<br>Сложно? Воспользуйтесь ссылкой «сгенерировать пароль», удовлетворяющий всем требованиям безопасности.</p>
+            </div>
+          </div>
+          
+          <!-- Еще раз пароль -->
+          <div class="control-group">
+            <label class="control-label" for="repeatPassword">Ещё раз пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="repeatPassword">
+              <br><br>
+            </div>
+          </div>
+          
+          <!-- Отправка формы -->
+          <div class="form-actions">
+            <a href="login.html" class="btn btn-primary">Зарегистрироваться</a>
+            <span class="help-inline">Форму можно заполнить позже, перейдя ещё раз по ссылке из письма.</span>
+          </div>
+          
+        </fieldset>
+      </form>
+   
+    </div> 
+  </body>
+</html>

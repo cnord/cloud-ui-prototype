@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Поиск</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docs.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+    <script>
+      // Установка фокуса в первое поле.
+      $(document).ready(function(){
+        $("#search").focus();
+      });
+    </script>
+  </head>
+  
+  <body>   
+    <div class="container">
+      
+      <!-- Menu -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="partners.html">Партнёры</a></li>
+              <li><a href="ownerless_units.html">Бесхозные пульты</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="software_versions.html">ПО</a></li>
+              <li><a href="administrators.html">Администраторы</a></li>
+              <li class="divider-vertical"></li>
+              <li class="active"><a href="search.html">Поиск</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="account.html">Никита Демидов</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../../docs/index.html">Выйти</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Title -->
+      <div class="page-header">
+        <h1>Поиск <small></small></h1>
+      </div>
+
+      <p><i class="icon-exclamation-sign"></i> Поиск ищет по партнёрам и пультам. Начинайте вводить цифры или буквы: после ввода третьего символа вы увидите результаты поиска.<br>Поиск производится по полям: <em>номер пульта</em>, <em>фамилия</em>, <em>имя</em>, <em>электронная почта</em>, <em>название организации</em>, <em>город</em>.</p>
+
+      <form>
+        <input type="text" id="search" class="span3" value="svetlak">
+      </form>
+
+      <h3>Найден 1 партнёр:</h3>
+      <br>
+
+      <div class="well">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>Партнёр</th>
+              <th>Статус</th>
+              <th>Организация</th>
+              <th>Пульты</th>
+              <th>Объекты</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td width="45"><a href="partner_profile.html"><img src="../../img/admin_01.jpeg" alt="Фотография"></a></td>
+              <td><a href="partner_profile.html">Антоний Светлаковский</a><br>+7 812 9512343<br>svetlakovskiy@ares-ohrana.ru</td>
+              <td>Проверен</td>
+              <td>Арес<br>Санкт-Петербург</td>
+              <td><a rel="tooltip" data-original-title="Пульты онлайн"><span class="badge badge-success">3</span></a> <a rel="tooltip" data-original-title="Пульты офлайн"><span class="badge badge-error">1</span></a></td>
+              <td><a rel="tooltip" data-original-title="Объекты пультов онлайн"><span class="badge badge-success">3454</span></a> <a rel="tooltip" data-original-title="Объекты пультов офлайн"><span class="badge badge-error">23</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Найдено 2 пульта:</h3>
+      <br>
+
+      <div class="well">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Статус</th>
+              <th>Партнёр</th>
+              <th>Контактное лицо</th>
+              <th>Организация</th>
+              <th>Объекты</th>
+              <th>ПО</th>
+              <th>Регистрация</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td width="45">7777</td>
+              <td>Действующий</td>
+              <td>—</td>
+              <td>Антоний Светлаковский<br>+7 812 9512343<br>svetlakovskiy@ares-ohrana.ru</td>
+              <td>Арес<br>Санкт-Петербург<br>ул. Красных партизан, д. 18, офис 12</td>
+              <td><a rel="tooltip" title="Онлайн"><span class="badge badge-success">345</span></a></td>
+              <td>2.6.45</td>
+              <td>19 марта 2012</td>
+            </tr>
+            <tr>
+              <td>2350</td>
+              <td>Действующий</td>
+              <td><a href="partner_profile.html">Антоний Светлаковский</a></td>
+              <td>svetlakovskiy@ares-ohrana.ru<br>+7 812 3271945</td>
+              <td>Арес<br>Санкт-Петербург<br>Красный пр., д. 184, офис 704</td>
+              <td><a rel="tooltip" title="Онлайн"><span class="badge badge-success">1454</span></a></td>
+              <td>2.5.32</td>
+              <td>12 сентября 2012</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+   
+    </div> 
+  </body>
+</html>

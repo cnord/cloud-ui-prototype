@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Александр Пипчак, администратор Си-Норда</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docs.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+    <script>
+      // Без него Tooltip не работает…
+      $(window).load(function(){
+        $(function(){
+          $('a[rel=tooltip]').tooltip();
+          });
+        });
+    </script>
+  </head>
+  
+  <body>   
+    <div class="container">
+      
+      <!-- Menu -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="partners.html">Партнёры</a></li>
+              <li><a href="ownerless_units.html">Бесхозные пульты</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="software_versions.html">ПО</a></li>
+              <li class="active"><a href="administrators.html">Администраторы</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="search.html">Поиск</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="account.html">Никита Демидов</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../../docs/index.html">Выйти</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <ul class="pager">
+        <li class="previous">
+          <a href="administrators.html">&larr; Администраторы</a>
+        </li>
+      </ul>
+      
+      <div class="page-header">
+        <h1>Александр Пипчак <small>Администратор Си-Норда</small></h1>
+      </div>
+      
+      <div class="row">
+        <div class="span3">
+          <img src="../../img/pipchack.jpg">
+        </div>
+        <div class="span9">
+          <table class="table">
+          <tbody>
+            <tr>
+              <td width="150">Контактные данные</td>
+              <td>+7 911 9512119<br>apipchak@persey-spb.ru</td>
+            </tr>
+            <tr>
+              <td>Часовой пояс</td>
+              <td>Москва—Россия, +3</td>
+            </tr>
+            <tr>
+              <td>История</td>
+              <td>
+                <p>Зарегистрирован 10 мая, 20:12, пригласил <a href="profile.html">Жиганов Павел</a><br>
+                Был 16 апреля, 14:38</p>
+                <p><a href="#" class="delete-link" rel="tooltip" title="У вас будет 15 минут для отмены удаления"><em>Удалить администратора</em></a></p>
+              </td>
+            </tr>
+          </tbody>
+          </table>        
+
+        </div>
+      </div>
+
+   
+    </div> 
+  </body>
+</html>
