@@ -41,24 +41,15 @@
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <ul class="nav">
-              <li><a href="#">Облако Си-Норда</a></li>
-            </ul>
-            <ul class="nav pull-right">
-              <li class="active"><a href="../../docs/login.html">Войти</a></li>
-            </ul>
+            <a href="../../docs/index.html" class="brand">Облако</a>
           </div>
         </div>
       </div>
 
       <!-- H1 -->
       <div class="page-header">
-        <h1>Регистрация прошла успешно <small></small></h1>
+        <h1>Страница входа</h1>
       </div>
-
-      <p>Для начала работы, пожалуйста, войдите в систему.</p>
-
-      <hr>
       
       <!-- Форма -->
       <form class="form-horizontal">
@@ -68,7 +59,8 @@
           <div class="control-group">
             <label class="control-label" for="email">Электронная почта</label>
             <div class="controls">
-              <input type="text" class="span3" id="email" value="">
+              <input type="text" class="span3" id="email">
+              <p class="help-block error hidden">Пожалуйста, укажите адрес электронной почты.</p>
             </div>
           </div>
           
@@ -76,15 +68,15 @@
           <div class="control-group">
             <label class="control-label" for="password">Пароль</label>
             <div class="controls">
-              <input type="password" class="span2" id="password" value="">
-              <p class="help-block"><a href="#">Забыли пароль?</a></p>
+              <input type="password" class="span2" id="password">
+              <p class="help-block error hidden">Пожалуйста, введите пароль.</p>
+              <!--<p class="help-block"><a href="#">Забыли пароль?</a></p>-->
             </div>
           </div>
           
           <!-- Отправка формы -->
           <div class="form-actions">
-            <a href="index.html" class="btn btn-primary">Войти</a>
-            <span class="help-inline"></span>
+            <a href="index2.html" class="btn btn-primary">Войти</a>
           </div>
           
         </fieldset>
