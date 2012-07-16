@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Администраторы</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docs.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+  </head>
+  
+  <body>   
+    <div class="container">
+      
+      <!-- Меню -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="partners.html">Партнёры</a></li>
+              <li><a href="ownerless_units.html">Бесхозные пульты</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="software_versions.html">ПО</a></li>
+              <li><a href="administrators.html">Администраторы</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="search.html">Поиск</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li class="active"><a href="account.html">Никита Демидов</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="../../docs/index.html">Выйти</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- H1 -->
+      <div class="page-header">
+        <h1>Мой аккаунт <small>Редактирование</small></h1>
+      </div>
+      
+      <!-- Алерт -->
+      <div id="showAlert" class="alert alert-success" style="display: none;">
+        Изменения успешно сохранены.
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+      
+      <!-- Форма -->
+      <form class="form-horizontal">
+        <fieldset>
+          
+          <!-- Фамилия и имя -->
+          <div class="control-group">
+            <label class="control-label" for="surname">Как вас зовут?</label>
+            <div class="controls">
+              <input type="text" class="input-medium" id="surname" placeholder="Фамилия" value="Демидов">
+              <input type="text" class="input-medium" id="name" placeholder="Имя" value="Никита">
+              <p class="help-block"><b>Фамилия</b> и <b>имя</b> будут видны клиентам. Пожалуйста, напишите ваши реальные фамилию и имя, русскими буквами.</p>
+            </div>
+          </div>
+
+          <!-- Мобильный телефон -->
+          <div class="control-group">
+            <label class="control-label" for="operatorCode">Мобильный телефон</label>
+            <div class="controls">
+              <div class="input-prepend">
+                <span class="add-on">+</span><input class="span1" id="countryCode" size="16" type="text" value="7">
+              </div>
+              <input type="text" class="span1" id="operatorCode" value="911">
+              <input type="text" class="input-small" id="phoneNumber" value="9512116">
+              <p class="help-block">Код страны, код города, номер. <em>Например, +7 921 1234567</em>.</p>
+              <p class="help-block">
+                <i class="icon-info-sign"></i> Телефон может быть использован для СМС-информирования. Пожалуйста, введите настоящий номер телефона.
+              </p>
+            </div>
+          </div>
+
+          <!-- Электронная почта -->
+          <div class="control-group">
+            <label class="control-label">Электронная почта</label>
+            <div class="controls">
+              <span class="span3 uneditable-input">ndemidov@cnord.ru</span>
+            </div>
+          </div>
+
+          <!-- Часовой пояс -->
+          <div class="control-group">
+            <label class="control-label" for="timeZone">Часовой пояс</label>
+            <div class="controls">
+              <select id="timeZone" class="span5">
+                <option>Москва—Россия, +3</option>
+                <option>Нью-Йорк—США, -8</option>
+                <option>Лондон—Великобритания, -3</option>
+              </select>
+              <p class="help-block">Угадали? Если нет, установите часовой пояс самостоятельно.</p>
+            </div>
+          </div>
+          
+          <!-- Фотография -->
+          <div class="control-group">
+            <label class="control-label" for="photo">Фотография</label>
+            <div class="controls">
+              <input class="input-file" id="photo" type="file">
+              <p class="help-block">
+                Максимальный размер файла — 2 Мб. Форматы: <em>jpeg</em>, <em>png</em>, <em>gif</em>.<br>
+                Фотография будет автоматически уменьшена до 250 пикселей по ширине.<br><br>
+              </p>
+              <p><img src="../../img/kengry.png"></p>
+              <p><a href="#">Удалить</a></p>
+            </div>
+          </div>
+          
+          <!-- Старый пароль -->
+          <div class="control-group">
+            <label class="control-label" for="repeatPassword">Старый пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="repeatPassword">
+              <p class="help-block">Для изменения пароля, необходимо ввести старый пароль.</p>
+            </div>
+          </div>
+
+          <!-- Новый пароль -->
+          <div class="control-group">
+            <label class="control-label" for="oldPassword">Новый пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="oldPassword">
+              <span class="help-inline">
+                <a href="#" id="showPasswordLink">Сгенерировать пароль</a>
+                <!-- Про ссылку «Сгенерировать пароль» написно в welcome.html -->
+              </span>
+              <p class="help-block">Минимум 8 символов, обязательное наличие букв разных регистров и цифр.<br>Сложно? Воспользуйтесь ссылкой «сгенерировать пароль», удовлетворяющий всем требованиям безопасности.</p>
+            </div>
+          </div>
+          
+          <!-- Ещё раз пароль -->
+          <div class="control-group">
+            <label class="control-label" for="repeatPassword">Ещё раз пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="repeatPassword">
+              <br><br>
+            </div>
+          </div>
+          
+          <!-- Отправка формы -->
+          <div class="form-actions">
+            <a href="#" id="showAlertLink" class="btn btn-primary">Сохранить</a>
+            <script>
+              // Show alert
+              $("#showAlertLink").click(function () {
+                $("#showAlert").show();
+              });
+            </script>
+            <span class="help-inline">или <a href="index.html">отменить</a></span>
+          </div>
+          
+        </fieldset>
+      </form>
+      
+      <br>
+   
+    </div> 
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html> 
+	<head>
+		<meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+		
+		<!-- Подключаем Jquery Mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css">
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+		<!-- Дополнительные стили -->
+		<link rel="stylesheet" href="css/kengry.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+
+		<!-- Fotoramajs -->
+		<link href="css/fotorama.css" rel="stylesheet">
+    <script src="js/fotorama.js"></script>
+		
+		<style>
+			/* Кастомные «Glyphish» иконки для табов */
+			/* Не получилось вынести стили в отдельный файл — не сработало :-( */
+
+			.nav-glyphish-example .ui-btn .ui-btn-inner {padding-top: 40px !important;}
+			.nav-glyphish-example .ui-btn .ui-icon {width: 30px !important; height: 30px !important; margin-left: -15px !important; box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; -webkit-border-radius: none !important; border-radius: none !important;}
+			#icon-object .ui-icon {background: url(img/icon-object.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-map .ui-icon {background: url(img/icon-map.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-photos .ui-icon {background: url(img/icon-photos.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-sections .ui-icon {background: url(img/icon-sections.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-persons .ui-icon {background: url(img/icon-persons.png) 50% 50% no-repeat; background-size: 36px 36px;}
+		</style>
+	</head> 
+
+	<body>
+		<div data-role="page" id="photos">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Фото и схемы</h1>
+			</div>
+
+			<!-- Слой «Content» убран, чтобы не было отступов -->
+			<div class="fotorama" data-width="100%" data-height="auto" data-nav="dots">
+			  <img src="img/01.png"><img src="img/02.png"><img src="img/03.png"><img src="img/04.png"><img src="img/05.png"><img src="img/06.png">
+			</div>
+			
+			<div data-role="footer" data-position="fixed" class="nav-glyphish-example">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="d">
+					<ul>
+						<li><a href="index.html#object" data-ajax="false" id="icon-object" data-icon="custom" data-prefetch="true">Объект</a></li>
+						<li><a href="map.html" data-ajax="false" id="icon-map" data-icon="custom" data-prefetch="true">Карта</a></li>
+						<li><a href="#" data-ajax="false" id="icon-photos" data-icon="custom" data-prefetch="true" class="ui-btn-active ui-state-persist">Фото</a></li>
+						<li><a href="index.html#sections" data-ajax="false" id="icon-sections" data-icon="custom" data-prefetch="true">Разделы</a></li>
+						<li><a href="index.html#persons" data-ajax="false" id="icon-persons" data-icon="custom" data-prefetch="true">Ответственные</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

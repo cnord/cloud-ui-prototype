@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Страница входа</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docs.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+    <script>
+      // Установка фокуса в первое поле.
+      $(document).ready(function(){
+        $("#email").focus();
+      });
+    </script>
+  </head>
+  
+  <body>   
+    <div class="container">
+      
+      <!-- Меню -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a href="../../docs/index.html" class="brand">Облако</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- H1 -->
+      <div class="page-header">
+        <h1>Страница входа</h1>
+      </div>
+      
+      <!-- Форма -->
+      <form class="form-horizontal">
+        <fieldset>
+
+          <!-- Электронная почта -->
+          <div class="control-group">
+            <label class="control-label" for="email">Электронная почта</label>
+            <div class="controls">
+              <input type="text" class="span3" id="email">
+              <p class="help-block error hidden">Пожалуйста, укажите адрес электронной почты.</p>
+            </div>
+          </div>
+          
+          <!-- Пароль -->
+          <div class="control-group">
+            <label class="control-label" for="password">Пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="password">
+              <p class="help-block error hidden">Пожалуйста, введите пароль.</p>
+              <!--<p class="help-block"><a href="#">Забыли пароль?</a></p>-->
+            </div>
+          </div>
+
+          <div class="control-group error hidden">
+            <div class="controls">
+              <p class="help-block error">Пожалуйста, введите пароль.</p>
+              <!--<p class="help-block"><a href="#">Забыли пароль?</a></p>-->
+            </div>
+          </div>
+          
+          <!-- Отправка формы -->
+          <div class="form-actions">
+            <a href="index.html" class="btn btn-primary">Войти</a>
+          </div>
+          
+        </fieldset>
+      </form>
+   
+    </div> 
+  </body>
+</html>

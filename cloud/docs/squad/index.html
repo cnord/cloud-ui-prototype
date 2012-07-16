@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<!--
+Задачи:
+	* На странице входа разместить логотип партнёра.
+	* Заредизайнить страницу входа, например, так http://dribbble.com/shots/610560-Themesociety
+	* На странице входа сделать контейнер для вывода ошибок, пример в статье: http://www.elijahmanor.com/2011/02/jquery-mobile-form-validation.html
+	* Посмотреть «совет» по оптимизации графики: http://artgorbunov.ru/bb/soviet/20120614/
+	* Вынести стили в отдельный файл.
+-->
+
+<html> 
+	<head>
+		<meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+		
+		<!-- Подключаем Jquery Mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css">
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+		<!-- Дополнительные стили -->
+		<link rel="stylesheet" href="css/kengry.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+
+		<style>
+			/* Кастомные «Glyphish» иконки для табов */
+			/* Не получилось вынести стили в отдельный файл — не сработало :-( */
+
+			.nav-glyphish-example .ui-btn .ui-btn-inner {padding-top: 40px !important;}
+			.nav-glyphish-example .ui-btn .ui-icon {width: 30px !important; height: 30px !important; margin-left: -15px !important; box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; -webkit-border-radius: none !important; border-radius: none !important;}
+			#icon-object .ui-icon {background: url(img/icon-object.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-map .ui-icon {background: url(img/icon-map.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-photos .ui-icon {background: url(img/icon-photos.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-sections .ui-icon {background: url(img/icon-sections.png) 50% 50% no-repeat; background-size: 36px 36px;}
+			#icon-persons .ui-icon {background: url(img/icon-persons.png) 50% 50% no-repeat; background-size: 36px 36px;}
+		</style>
+
+	</head> 
+
+	<body>
+
+		<!-- Логин -->
+		<div data-role="page" id="login">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Карта объекта в ГБР</h1>
+			</div>
+			<div data-role="content">
+				<h1>Вход в систему</h1>
+				<form action="" method="post">
+					<label for="basic">Пожалуйста, введите пароль:</label>
+					<input type="text" name="name" id="basic">
+					<a href="index.html#stendby" data-role="button">Войти</a>
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed"> 
+				<h1>© 2012, Си-Норд</h1>
+			</div>
+		</div>
+
+		<!-- Режим ожидания -->
+		<div data-role="page" id="stendby">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Режим ожидания</h1>
+				<a href="index.html#login" class="ui-btn-right">Выйти</a>
+			</div>
+			<div data-role="content">
+				<h2>Группа Володина</h2>
+				<p>— Статус соединения с облаком: <span style="color: green;"><strong>онлайн</strong></span>.<br>
+					— Сейчас <span style="color: red;"><strong>3 активных тревоги</strong></span>.</p>
+				<p>На данный момент оператор не назначил вашу группу на&nbsp;отработку тревоги.</p>
+				<p><a href="index.html#alarm_cancel" data-role="button" data-rel="dialog" style="width: 230px;">Иницировать тревогу</a></p>
+			</div>
+			<div data-role="footer" data-position="fixed"> 
+				<h3>© 2012, Си-Норд</h3>
+			</div>
+		</div>
+
+		<!-- Алерт «Тревога!» -->
+		<div data-role="page" id="alarm_confirm">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Тревога!</h1>
+			</div>
+			<div data-role="content">
+				<p>Oператор назначил вашу группу на отработку тревоги.<br>Вы готовы реагировать?</p>
+				<p><a href="index.html#object" data-role="button">Да, выдвигаюсь на объект!</a></p>
+				<p><i>После подтверждения, вы увидите полную информацию по тревожному объекту.</i></p>
+			</div>
+		</div>
+
+		<!-- Алерт «Отмена тревоги!» -->
+		<div data-role="page" id="alarm_cancel">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Отмена тревоги!</h1>
+			</div>
+			<div data-role="content">
+				<h3>Спасибо за службу!</h3>
+				<p>Оператор отменил вызов группы. Как поняли?</p>
+				<p><a href="index.html#object" data-role="button">Вас понял, тревога отменена</a></p>
+				<br>
+				<p><i>После подтверждения, вы вернетесь в режим ожидания следующих вызовов.</i></p>
+			</div>
+		</div>
+		
+		<!-- Тревожный объект -->
+		<div data-role="page" id="object">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Тревожный объект</h1>
+			</div>
+			<div data-role="content">
+				
+				<!-- Общая информация -->
+				<h1>Магазин «Дикси» <small>№ 2371</small></h1>
+				<hr>
+				<dl class="dl-horizontal">
+					<dt>Адрес</dt>
+					<dd>Владимирский пр., д. 15, лит. А</dd>
+					<dt>Телефоны</dt>
+					<dd>235-66-46, 235-66-34</dd>
+					<dt>Тип объекта</dt>
+					<dd>Магазин</dd>
+					<dt>Сигнализация</dt>
+					<dd>Охранная, тревожная кнопка, пожарная</dd>
+					<dt>Пути подъезда</dt>
+					<dd>Главный вход находится прямо на Владимирском проспекте, черный выход — во двор, через арку и сразу налево.</dd>
+					<dt>Комментарий</dt>
+					<dd>Режим работы магазина: 8:00—23:00.</dd>
+				</dl>
+
+				<h3>Состояние объекта: <i>под охраной</i></h3>
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<th width="15%">Время</th>
+							<th width="35%">Cобытие</th>
+							<th width="5%">Р</th>
+							<th width="5%">Ш</th>
+							<th width="40%">Описание</th>
+						</tr>
+						<tr>
+							<td>09:20, вт</td>
+							<td>Постановка на охрану</td>
+							<!-- #c5e2f0 — синий цвет, для постановок. -->
+							<td>1</td>
+							<td>3</td>
+							<td>В. А. Беспрозванный</td>
+						</tr>
+						<tr>
+							<td>20:43, вт</td>
+							<td><span style="background: #f1cac4;">Тревога</span></td>
+							<td>1</td>
+							<td>1</td>
+							<td>Запасной выход</td>
+						</tr>
+						<tr>
+							<td>20:42, вт</td>
+							<td><span style="background: #f1cac4;">Тревога</span></td>
+							<td>1</td>
+							<td>9</td>
+							<td>2-е и 3-е помещение, справа от запасного выхода</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="index.html#object" data-role="button" data-mini="true" style="width: 200px;">Показать больше событий</a>
+
+			</div>
+			<div data-role="footer" data-position="fixed" class="nav-glyphish-example">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="d">
+					<ul>
+						<li><a href="#object" id="icon-object" data-icon="custom" data-prefetch="true" class="ui-btn-active ui-state-persist">Объект</a></li>
+						<li><a href="map.html" data-ajax="false" id="icon-map" data-icon="custom" data-prefetch="true">Карта</a></li>
+						<li><a href="photos.html" data-ajax="false" id="icon-photos" data-icon="custom" data-prefetch="true">Фото</a></li>
+						<li><a href="#sections" id="icon-sections" data-icon="custom" data-prefetch="true">Разделы</a></li>
+						<li><a href="#persons" id="icon-persons" data-icon="custom" data-prefetch="true">Ответственные</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Ответственные -->
+		<div data-role="page" id="persons">
+			<div data-role="header" data-position="fixed">
+				<h1>Ответственные</h1>
+			</div>
+			<div data-role="content">	
+
+				<table class="table table-bordered">
+					<tr>
+						<td><span class="badge">1</span></td>
+						<td>
+							<b>Владимир Александрович Беспрозванный</b><br>Зам. руководителя режима
+							<div style="margin-top: 8px;"><i>Звонить в первую очередь!</i></div>
+							<div style="background: #fce5b8; margin-top: 8px;">9:20, вт, постановка на охрану.</div>
+
+						</td>
+						<td>904-92-72, 230-61-17</td>
+					</tr>
+					<tr>
+						<td><span class="badge">2</span></td>
+						<td><b>Наталья Александровна Щуплова</b><br>Управляющая</td>
+						<td>595-54-82, +7 911 777-81-34</td>
+					</tr>
+					<tr>
+						<td><span class="badge">3</span></td>
+						<td><b>Ольга Борисовна Иванова</b><br>Зам. генерального директора</td>
+						<td>+7 911 275-65-54</td>
+					</tr>
+					<tr>
+						<td><span class="badge">4</span></td>
+						<td><b>Наталья Генадьевна Харитонова</b><br>ИО зам. управляющего</td>
+						<td>+7 911 234-22-93</td>
+					</tr>
+				</table>
+			</div>
+			<div data-role="footer" data-position="fixed" class="nav-glyphish-example">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="d">
+					<ul>
+						<li><a href="#object" id="icon-object" data-icon="custom" data-prefetch="true">Объект</a></li>
+						<li><a href="map.html" data-ajax="false" id="icon-map" data-icon="custom" data-prefetch="true">Карта</a></li>
+						<li><a href="photos.html" data-ajax="false" id="icon-photos" data-icon="custom" data-prefetch="true">Фото</a></li>
+						<li><a href="#sections" id="icon-sections" data-icon="custom" data-prefetch="true">Разделы</a></li>
+						<li><a href="#persons" id="icon-persons" data-icon="custom" data-prefetch="true" class="ui-btn-active ui-state-persist">Ответственные</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Разделы -->
+		<div data-role="page" id="sections">
+			<div data-role="header" data-position="fixed"> 
+				<h1>Разделы и шлейфы</h1>
+			</div>
+			<div data-role="content">
+
+				<h3>Разделы</h3>
+				<table class="table table-bordered">
+					<tr>
+						<th style="width: 50px;">№</th>
+						<th>Описание</th>
+					</tr>
+					<tr>
+						<td><span class="badge">1</span></td>
+						<td>Охранный</td>
+					</tr>
+					<tr>
+						<td><span class="badge">2</span></td>
+						<td>Пожарный</td>
+					</tr>
+				</table>
+
+				<h3>Шлейфы</h3>
+				<table class="table table-bordered">
+					<tr>
+						<th style="width: 50px;">№</th>
+						<th>Описание</th>
+						<th>Оборудование</th>
+					</tr>
+					<tr>
+						<td><span class="badge">1</span></td>
+						<td><span style="background: #f1cac4;">Запасной выход</span></td>
+						<td>СМК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">2</span></td>
+						<td>Главный вход</td>
+						<td>ПИК + ПИК + ДРС</td>
+					</tr>
+					<tr>
+						<td><span class="badge">3</span></td>
+						<td>Помещение слева от главного входа</td>
+						<td>ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">4</span></td>
+						<td>1-е помещение справа от запасного выхода</td>
+						<td>ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">5</span></td>
+						<td>2-е помещение справа от запасного выхода</td>
+						<td>ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">6</span></td>
+						<td>Кладовая</td>
+						<td>СМК + ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">7</span></td>
+						<td>1-е помещение справа от запасного выхода</td>
+						<td>ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">8</span></td>
+						<td><span style="background: #f1cac4;">2-е и 3-е помещение справа от запасного выхода</span></td>
+						<td>ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">9</span></td>
+						<td>Подсобное помещение</td>
+						<td>ПИК</td>
+					</tr>
+					<tr>
+						<td><span class="badge">10</span></td>
+						<td>КТС стационарная в зале 1 и 2 (2 шт.)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span class="badge">10</span></td>
+						<td>Пожарная</td>
+						<td></td>
+					</tr>
+				</table>
+
+			</div>
+			<div data-role="footer" data-position="fixed" class="nav-glyphish-example">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="d">
+					<ul>
+						<li><a href="#object" id="icon-object" data-icon="custom" data-prefetch="true">Объект</a></li>
+						<li><a href="map.html" data-ajax="false" id="icon-map" data-icon="custom" data-prefetch="true">Карта</a></li>
+						<li><a href="photos.html" data-ajax="false" id="icon-photos" data-icon="custom" data-prefetch="true">Фото</a></li>
+						<li><a href="#sections" id="icon-sections" data-icon="custom" data-prefetch="true" class="ui-btn-active ui-state-persist">Разделы</a></li>
+						<li><a href="#persons" id="icon-persons" data-icon="custom" data-prefetch="true">Ответственные</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

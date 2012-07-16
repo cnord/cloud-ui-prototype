@@ -1,0 +1,15 @@
+.promo-slider {
+	overflow: hidden;
+	position: relative;
+}
+.promo-slider > div {
+	position: absolute;
+	top: 0;
+}
+.promo-slider a {
+	display: block;
+}
+.promo-slider img {
+	width: 100%;
+	display: block;
+}

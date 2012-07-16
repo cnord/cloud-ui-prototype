@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Страница входа</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../../css/docds.css">
+    <link rel="stylesheet" href="../../css/kengry.css">
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="../../js/bootstrap-transition.js"></script>
+    <script src="../../js/bootstrap-alert.js"></script>
+    <script src="../../js/bootstrap-modal.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-scrollspy.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+    <script src="../../js/bootstrap-tooltip.js"></script>
+    <script src="../../js/bootstrap-popover.js"></script>
+    <script src="../../js/bootstrap-button.js"></script>
+    <script src="../../js/bootstrap-collapse.js"></script>
+    <script src="../../js/bootstrap-carousel.js"></script>
+    <script src="../../js/bootstrap-typeahead.js"></script>
+    <script src="../../js/application.js"></script>
+    <script>
+      // Установка фокуса в первое поле.
+      $(document).ready(function(){
+        $("#email").focus();
+      });
+    </script>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+  </head>
+  
+  <body> 
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="brand" href="/">
+                            Облако
+                        </a>
+                        <ul class="nav">
+                            <!-- navigation-->                </ul>
+                        <ul class="nav pull-right">
+                                <li>
+                                    <a href="/login">
+                                        Войти
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var Translations = {
+                        Credentials: {
+                                email:{
+                                    isEmptyMsg: "Пожалуйста, укажите адрес электронной почты",
+                                    isInvalideMsg: "Пожалуйста, укажите корректный адрес электронной почты"
+                                },
+                                password:{
+                                    isInvalideMsg: "Пожалуйста, укажите пароль"
+                                },
+                        }
+                }
+            </script>
+            <script type="text/template", id="login-form-template">
+                <fieldset>
+                    <legend>
+                        Страница входа
+                    </legend>
+
+                        <div class="control-group" id="email-group">
+                            <label class="control-label" for="email-input">
+                                Электронная почта
+                            </label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge focused"
+                                        id="email-input" name="email"
+                                        placeholder="Укажите адрес электронной почты.">
+                                <span class="help-inline"></span>
+                            </div>
+                        </div>
+
+                        <div class="control-group" id="password-group">
+                            <label class="control-label" for="password-input">
+                                 Пароль
+                            </label>
+                            <div class="controls">
+                                <input type="password" class="input-xlarge focused"
+                                        id="password-input" name="password"
+                                        placeholder="Укажите пароль.">
+                                <span class="help-inline"></span>
+                            </div>
+                        </div>
+
+                    <div class="control-group" id="both-group">
+                        <div class="controls">
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-primary" id="login-btn">
+                        Войти
+                    </a>
+                </fieldset>
+            </script>
+
+            <div class="container-fluid">
+                <div class="span5">
+                    <form class="form-horizontal" id="login-form"></form>
+                </div>
+            </div>    <!--footer--></div>    </body>
+</html>

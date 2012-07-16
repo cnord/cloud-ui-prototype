@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Управление роутером</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
+    <script src="../js/bootstrap-alert.js"></script>
+  </head>
+  
+  <body>  
+    <div class="container">
+      
+      <!-- Чёрная плашка сверху -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand">Управление роутером</a>            
+          </div>
+        </div>
+      </div>
+
+      <!-- Алерт о перезагрузке роутера -->
+      <div id="showAlert" class="alert alert-success hide">
+        Роутер будет перезагружен в течении 5 минут.
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+
+      <!-- Упоавление табами -->
+      <ul id="tab" class="nav nav-tabs">
+        <li class="active"><a href="#connection" data-toggle="tab">Подключение</a></li>
+        <li><a href="#logs" data-toggle="tab">Логи</a></li>
+        <li><a href="#update" data-toggle="tab">Обновление</a></li>
+        <li><a href="#reboot" data-toggle="tab">Перезагрузка</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        
+        <!-- Таб «Подключение» -->
+        <div id="connection" class="tab-pane fade in active">
+          <h2>Подключение роутера</h2>
+          <br>
+
+          <script>
+            // Если не заполнено поле «UID», ставим в него фокус.
+            $(document).ready(function(){
+              if (uid.value === '') {
+                $("#uid").focus();
+              }
+            });
+            // При выборепункта «Static» расскрываем слой с остальными полями.
+            var getSelect = function() {
+              if ($('select').val() === 'dhcp') {
+                $('#static').hide();
+              } else {
+                $('#static').show();
+                
+                // Если поле «IP» не заполнено, ставим в него фокус.
+                if (ip.value === '') {
+                  $('#ip').focus();
+                }
+              }
+            };
+          </script>
+
+          <form class="form-horizontal">
+            <fieldset>
+              <div class="control-group"><!-- error -->
+                <label class="control-label" for="uid">UID Центра охраны</label>
+                <div class="controls">
+                  <input type="text" class="span4" id="uid" value="4F3G-7I53-ALP6-L2JK-MQ34-W6RU-F22C">
+                  <p class="help-block error hide">Центр охраны с указанным UID-ом не зарегистрирована в облаке.</p><!-- hide -->
+                  <p class="help-block">Как узнать UID Центра охраны?</p>
+                  <ol>
+                    <li>Правый клик по <b>Менеджеру событий</b>;</li>
+                    <li>из выпадающего списка выберите <b>Связь с облаком</b>;</li>
+                    <li>перейдите во вкладку <b>UID Центра охраны</b>.</li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="network">Настройки сети</label>
+                <div class="controls">
+                  <select id="network" class="span2" onchange="getSelect();">
+                    <option value="dhcp">DHCP</option>
+                    <option>Static</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="static" class="hide">
+                <div class="control-group">
+                  <label class="control-label" for="ip">IP</label>
+                  <div class="controls">
+                    <input type="text" id="ip" class="input-medium">
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="mask">Mask</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="mask">
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="gateway">Gateway</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="gateway">
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="dns1">DNS1</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="dns1">
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="dns2">DNS2</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" id="dns2">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <a href="#reboot-modal" data-toggle="modal" class="btn btn-primary">Сохранить</a>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="logs" class="tab-pane fade">
+          <h2>Последняя связь с колл-центром</h2>
+          <br>
+          <pre>
+            2012-07-12-1650: Connected to call-center
+          </pre>
+          <br>
+          <h3>Системные логи</h3>
+          <br>
+          <pre>
+            2012-07-12-1650: unpack script started...
+            Extracting done.
+            2012-07-12-1702: unpack script started...
+            Unfinished asterisk updates found! Please complete previous update first.
+            2012-07-12-1703: update script started...
+            New asterisk files found!
+            Asterisk config updated.
+            2012-07-12-1711: update script started...
+            No new asterisk files.
+            No new www files.
+            2012-07-12-1725: Going to reboot server now!!!
+            2012-07-12-1725: System has been rebooted
+            2012-07-12-1725: update script started...
+            No new asterisk files.
+            No new www files.
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+          </pre>
+        </div>
+
+        <div id="update" class="tab-pane fade">
+          <h2>Обновление ПО роутера</h2>
+          <br>
+          <p>Инструкция по обновлению:</p>
+          <ol>
+            <li>Скачайте файл с расширением <b>7z</b>: <a href="">http://www.cnord.ru/download/box/</a></li>
+            <li>Загрузите файл, используя форму ниже.</li>
+            <li>Перезагрузите роутер.</li>
+          </ol>
+          <br>
+
+          <form>
+            <fieldset>
+              <div class="control-group"><!-- error -->
+                <div class="controls">
+                  <input class="input-file" id="photo" type="file">
+                  <p class="help-block error hide">Текст ошибки</p><!-- hide -->
+                </div>
+              </div>
+              <div>
+                <a href="#reboot-modal" data-toggle="modal" class="btn btn-primary">Загрузить обновление</a>
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+
+        <div id="reboot" class="tab-pane fade">
+          <h2>Перезагрузка роутера</h2>
+          <br>
+          <p>Внимание:</p>
+          <ol>
+            <li>По нажатию на «Перезагрузить роутер», фактическая перезагрузка произойдет не сразу, а в течении 5 минут.</li>
+            <li>Перезагрузка роутера занимает несколько минут — в это время колл-центр работать не будет.</li>
+            <li>Пока роутер перезагружается, звонки на номер колл-центра будут переводиться на оператора.</li>
+          </ol>
+          <br>
+          <div class="control-group">
+            <div class="controls">
+              <a href="#" onclick="$('#showAlert').show();" class="btn btn-primary">Перезагрузить роутер</a>
+            </div>
+
+          </div>
+          
+          <br>
+        </div>
+
+      </div>
+
+      <!-- Модальное окно -->
+      <div id="reboot-modal" class="modal hide fade">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">×</a>
+          <h3>Изменения сохранены</h3>
+        </div>
+        <div class="modal-body">
+          <p>
+            Для того, чтобы изменения вступили в силу, необходимо перезагрузить роутер.<br>
+            Вы можете сделать это позже, из вкладки «Перезагрузка».
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn" data-dismiss="modal">Перезагрузить позже</a>
+          <a href="#" onclick="$('#showAlert').show();" class="btn btn-primary" data-dismiss="modal">Перезагрузить роутер сейчас</a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p class="pull-right">
+          <script>
+            var today = new Date();
+            document.write('© 1992—' + today.getFullYear());
+          </script>
+          <a href="http://www.cnord.ru/">Си-Норд</a>
+        </p>
+        <p>
+          Техническая поддержка:<br>
+          (812) 322-65-89, <i class="icon-fire"></i> 8 800 200–60–80<br>
+          <a href="mailto:support@cnord.ru">support@cnord.ru</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
