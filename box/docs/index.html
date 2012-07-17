@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
-    <title>Роутер для подключения к колл-центру в облаке</title>
+    <title>Роутер для подключения к call-центру в облаке</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
@@ -21,7 +21,7 @@
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <a class="brand">Роутер для подключения к колл-центру в облаке</a>     
+            <a class="brand">Роутер для подключения к call-центру в облаке</a>     
           </div>
         </div>
       </div>
@@ -82,6 +82,7 @@
                     <li>из выпадающего списка выберите <b>Связь с облаком</b>;</li>
                     <li>перейдите во вкладку <b>UID Центра охраны</b>.</li>
                   </ol>
+                  Или <a href="#find-uid" data-toggle="modal">посмотрите на картинку</a>.
                 </div>
               </div>
 
@@ -140,14 +141,22 @@
         </div>
 
         <div id="logs" class="tab-pane fade">
-          <h2>Последняя связь с колл-центром</h2>
+          <h2>Состояние связи с call-центром</h2>
           <br>
-          <pre>
-            2012-07-12-1650: Connected to call-center
-          </pre>
+          <div class="hide"><!-- hide -->
+            <p><span class="label label-important">Ошибка</span></p>
+            <p>2012-07-12-1650: Ошибка подключения к call-центру.</p>
+          </div>
+
+          <div><!-- hide -->
+            <p><span class="label label-success">Все ОК</span></p>
+            <p>2012-07-12-1650: сеанс связи успешно завершен.</p>
+          </div>
+
           <br>
           <h3>Системные логи</h3>
           <br>
+          <p>Выводятся 100 последних строк:</p>
           <pre>
             2012-07-12-1650: unpack script started...
             Extracting done.
@@ -169,6 +178,86 @@
             2012-07-12-1913: Operator call - CHANUNAVAIL
             2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
             2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+                        Extracting done.
+            2012-07-12-1702: unpack script started...
+            Unfinished asterisk updates found! Please complete previous update first.
+            2012-07-12-1703: update script started...
+            New asterisk files found!
+            Asterisk config updated.
+            2012-07-12-1711: update script started...
+            No new asterisk files.
+            No new www files.
+            2012-07-12-1725: Going to reboot server now!!!
+            2012-07-12-1725: System has been rebooted
+            2012-07-12-1725: update script started...
+            No new asterisk files.
+            No new www files.
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+                        Extracting done.
+            2012-07-12-1702: unpack script started...
+            Unfinished asterisk updates found! Please complete previous update first.
+            2012-07-12-1703: update script started...
+            New asterisk files found!
+            Asterisk config updated.
+            2012-07-12-1711: update script started...
+            No new asterisk files.
+            No new www files.
+            2012-07-12-1725: Going to reboot server now!!!
+            2012-07-12-1725: System has been rebooted
+            2012-07-12-1725: update script started...
+            No new asterisk files.
+            No new www files.
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
+            2012-07-12-1923: Can't connect to call-center - CHANUNAVAIL
+            2012-07-12-1924: Connected to call-center
+            2012-07-12-1816: unpack script started...
+            Extracting done. Will update after reboot.
+            2012-07-12-1913: Operator call - CHANUNAVAIL
           </pre>
         </div>
 
@@ -177,8 +266,8 @@
           <br>
           <p>Инструкция по обновлению:</p>
           <ol>
-            <li>Скачайте файл с расширением <b>7z</b>: <a href="">http://www.cnord.ru/download/box/</a></li>
-            <li>Загрузите файл, используя форму ниже.</li>
+            <li>Скачайте файл с обновлением ПО роутера по ссылке: <a href="">http://www.cnord.ru/download/box/</a></li>
+            <li>Установите обновление, используя форму ниже.</li>
             <li>Перезагрузите роутер.</li>
           </ol>
           <br>
@@ -192,7 +281,7 @@
                 </div>
               </div>
               <div>
-                <a href="#reboot-modal" data-toggle="modal" class="btn btn-primary">Загрузить обновление</a>
+                <a href="#reboot-modal" data-toggle="modal" class="btn btn-primary">Установить обновление</a>&nbsp;&nbsp;<img src="../img/ajax-loader.gif" class="hide"><!-- hide -->
               </div>
             </fieldset>
           </form>
@@ -205,8 +294,8 @@
           <p>Внимание:</p>
           <ol>
             <li>По нажатию на «Перезагрузить роутер», фактическая перезагрузка произойдет не сразу, а в течении 5 минут.</li>
-            <li>Перезагрузка роутера занимает несколько минут — в это время колл-центр работать не будет.</li>
-            <li>Пока роутер перезагружается, звонки на номер колл-центра будут переводиться на оператора.</li>
+            <li>Перезагрузка роутера занимает несколько минут — в это время call-центр работать не будет.</li>
+            <li>Пока роутер перезагружается, звонки на номер call-центра будут переводиться на оператора.</li>
           </ol>
           <br>
           <div class="control-group">
@@ -236,6 +325,20 @@
         <div class="modal-footer">
           <a href="#" class="btn" data-dismiss="modal">Не перезагружать</a>
           <a href="#" onclick="$('#showAlert').show();" class="btn btn-primary" data-dismiss="modal">Перезагрузить роутер сейчас</a>
+        </div>
+      </div>
+
+      <!-- Модальное окно с картинкой -->
+      <div id="find-uid" class="modal hide fade">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">×</a>
+          <h3>Как узнать UID Центра охраны?</h3>
+        </div>
+        <div class="modal-body">
+          <p><img src="../img/uid.png"></p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary" data-dismiss="modal">Закрыть окно</a>
         </div>
       </div>
 
