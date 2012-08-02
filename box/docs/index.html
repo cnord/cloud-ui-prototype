@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
     <title>Роутер для подключения к call-центру в облаке</title>
+    
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
@@ -12,6 +13,15 @@
     <script src="../js/bootstrap-tab.js"></script>
     <script src="../js/bootstrap-modal.js"></script>
     <script src="../js/bootstrap-alert.js"></script>
+    <script>
+      // Доступ к табам по хэшу (#).
+      $(document).ready(function(){
+        if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
+        return $('a[data-toggle="tab"]').on('shown', function(e) {
+          return location.hash = $(e.target).attr('href').substr(1);
+        });
+      });
+    </script>
   </head>
   
   <body>  
@@ -71,11 +81,11 @@
 
           <form class="form-horizontal">
             <fieldset>
-              <div class="control-group"><!-- error -->
+              <div class="control-group error"><!-- error -->
                 <label class="control-label" for="uid">UID Центра охраны</label>
                 <div class="controls">
                   <input type="text" class="span4" id="uid" value="4F3G-7I53-ALP6-L2JK-MQ34-W6RU-F22C">
-                  <p class="help-block error hide">Центр охраны с указанным UID-ом не зарегистрирована в облаке.</p><!-- hide -->
+                  <p class="help-block error ">Центр охраны с указанным UID-ом не зарегистрирована в облаке.</p><!-- hide -->
                   <p class="help-block">Как узнать UID Центра охраны?</p>
                   <ol>
                     <li>Правый клик по <b>Менеджеру событий</b>;</li>
@@ -143,12 +153,12 @@
         <div id="logs" class="tab-pane fade">
           <h2>Состояние связи с call-центром</h2>
           <br>
-          <div class="hide"><!-- hide -->
+          <div><!-- hide -->
             <p><span class="label label-important">Ошибка</span></p>
             <p>2012-07-12-1650: Ошибка подключения к call-центру.</p>
           </div>
 
-          <div><!-- hide -->
+          <div class="hide"><!-- hide -->
             <p><span class="label label-success">Все ОК</span></p>
             <p>2012-07-12-1650: сеанс связи успешно завершен.</p>
           </div>
@@ -342,21 +352,32 @@
         </div>
       </div>
 
-      <footer class="footer">
-        <p class="pull-right">
-          <script>
-            // Определение текущего года.
-            var today = new Date();
-            document.write('© 1992—' + today.getFullYear());
-          </script>
-          <a href="http://www.cnord.ru/">Си-Норд</a>
-        </p>
-        <p>
-          Техническая поддержка:<br>
-          (812) 322-65-89, <i class="icon-fire"></i> 8 800 200–60–80<br>
-          <a href="mailto:support@cnord.ru">support@cnord.ru</a>
-        </p>
+      <footer>
+        <hr>
+        <div class="row">
+          <div class="span4">
+            Техническая поддержка:<br>
+            (812) 322-65-89, <i class="icon-fire"></i> 8 800 200–60–80<br>
+            <a href="mailto:support@cnord.ru">support@cnord.ru</a>
+          </div>
+          <div class="span6 muted">
+            UI роутера v. 123<br>
+            Скрипты роутера v. 123<br>
+            Настройки Астериска v. 123<br>
+            Call-центр v. 123<br>
+          </div>
+          <div class="span2">
+            <script>
+              // Определение текущего года.
+              var today = new Date();
+              document.write('© 1992—' + today.getFullYear());
+            </script>
+            <a href="http://www.cnord.ru/">Си-Норд</a>
+          </div>
+        </div>
+        <br>
       </footer>
+
     </div>
   </body>
 </html>

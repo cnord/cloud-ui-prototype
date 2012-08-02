@@ -62,9 +62,15 @@
     .sound-manager { padding: 10px 0 5px 0; }
     .p-sound-manager { margin: -24px 0 0 167px; }
 
+/*  Хак №7
+    Убираем мигание лэйблов в логах */
+    .label-important:hover { background-color: #b94a48; }
+    .label-success:hover { background-color: #468847; }
 
+/*  Хак №8
+    Убираем красный цвет у текста и лэйблов при возникновении ошибок. */
+    .control-group.error input,
+    .control-group.error select,
+    .control-group.error textarea { color: #555; }
 
-
-
-
-
+    .control-group.error > label { color: #333; }
