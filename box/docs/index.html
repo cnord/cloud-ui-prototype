@@ -81,11 +81,12 @@
 
           <form class="form-horizontal">
             <fieldset>
-              <div class="control-group error"><!-- error -->
+              <div class="control-group"><!-- error warning -->
                 <label class="control-label" for="uid">UID Центра охраны</label>
                 <div class="controls">
-                  <input type="text" class="span4" id="uid" value="4F3G-7I53-ALP6-L2JK-MQ34-W6RU-F22C">
-                  <p class="help-block error ">Центр охраны с указанным UID-ом не зарегистрирована в облаке.</p><!-- hide -->
+                  <input type="text" class="span4" id="uid" value="4F3G-7I53-ALP6-L2JK-MQ34-W6RU-F22C"><!-- disabled -->
+                  <p class="help-block error hide">Центр охраны с указанным UID-ом не зарегистрирована в облаке.</p><!-- hide -->
+                  <p class="help-block warning hide">Отсутствует связь с «Облаком». Пожалуйста, проверьте подключение к интернету.</p><!-- hide -->
                   <p class="help-block">Как узнать UID Центра охраны?</p>
                   <ol>
                     <li>Правый клик по <b>Менеджеру событий</b>;</li>
@@ -276,7 +277,7 @@
           <br>
           <p>Инструкция по обновлению:</p>
           <ol>
-            <li>Скачайте файл с обновлением ПО роутера по ссылке: <a href="">http://www.cnord.ru/download/box/</a></li>
+            <li>Скачайте файл с обновлением ПО роутера из раздела «<a href="http://www.cnord.ru/support/download/">Поддержка</a>» сайта Си-Норда.</li>
             <li>Установите обновление, используя форму ниже.</li>
             <li>Перезагрузите роутер.</li>
           </ol>
@@ -301,12 +302,11 @@
         <div id="reboot" class="tab-pane fade">
           <h2>Перезагрузка роутера</h2>
           <br>
-          <p>Внимание:</p>
-          <ol>
-            <li>По нажатию на «Перезагрузить роутер», фактическая перезагрузка произойдет не сразу, а в течении 5 минут.</li>
-            <li>Перезагрузка роутера занимает несколько минут — в это время call-центр работать не будет.</li>
-            <li>Пока роутер перезагружается, звонки на номер call-центра будут переводиться на оператора.</li>
-          </ol>
+          <p>
+            <b>Внимание!</b><br>
+            Перезагрузка роутера занимает несколько минут, в течении которых входящие звонки обрабатываться не будут.<br>
+            Текущие разговоры будут прерваны.<br>
+          </p>
           <br>
           <div class="control-group">
             <div class="controls">

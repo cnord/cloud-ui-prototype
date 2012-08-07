@@ -25,6 +25,15 @@
       color: #b94a48;
     }
 
+    /* То же самое делаем для warning. */
+    .control-group.warning .help-block,
+    .control-group.warning .help-inline {
+      color: #444444;
+    }
+    .control-group.warning .warning {
+      color: #c09853;
+    }
+
 /*  Хак №3
     Красим подвал
 
@@ -74,3 +83,10 @@
     .control-group.error textarea { color: #555; }
 
     .control-group.error > label { color: #333; }
+
+    /* Убираем желтый цвет у текста и лэйблов при возникновении ошибок. */
+    .control-group.warning input,
+    .control-group.warning select,
+    .control-group.warning textarea { color: #555; }
+
+    .control-group.warning > label { color: #333; }
