@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>Входная страница для партнёров</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Меню -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand">Си-Норд</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- H1 -->
+      <div class="page-header">
+        <h1>Услуги для охранных предприятий</h1>
+      </div>
+
+      <p>Возможности аккаунта партнёра:</p>
+
+      <div class="row">
+        <div class="span7">
+
+          <h3><a href="http://www.cnord.ru/call-center/">Автоматизированный call-центр для ЧОПов</a></h3>
+          <p>
+            При использовании сall-центра (IVR), клиенты самостоятельно, без привлечения «живого оператора», смогут получить информацию о снятии / постановке на охрану и проверить кнопку тревожной сигнализации (КТС). Снижение нагрузки на операторов позволит повысить качество оказываемых услуг и даст возможность сэкономить от 300 тысяч рублей в год за счёт сокращения одного рабочего места.
+          </p>
+
+          <br>
+
+          <div class="muted">
+            <i>Скоро:</i><br>
+            — Карточка объекта на планшете в ГБР.<br>
+            — Личный кабинет пользователя.<br>
+            — Ситуационная карта.<br>
+          </div>
+    
+        </div>
+        <div class="span1">&nbsp;</div>
+        <div class="span4">
+
+          <!-- Управление табами -->
+          <ul id="tab" class="nav nav-tabs">
+            <li class="active"><a href="#sign-in" data-toggle="tab" onclick="getSelect();">Войти</a></li>
+            <li><a href="#sign-up" data-toggle="tab">Регистрация партнёра</a></li>
+          </ul>
+
+          <div class="tab-content">
+            
+            <!-- Таб «Войти» -->
+            <div class="tab-pane fade in active" id="sign-in">
+              
+              <form class="well">
+                <fieldset>
+
+                  <!-- Электронная почта -->
+                  <div class="control-group">
+                    <label class="control-label" for="email">Электронная почта</label>
+                    <div class="controls">
+
+                      <input type="text" class="span3" id="email" value="">
+                    </div>
+                  </div>
+
+                  <!-- Пароль -->
+                  <div class="control-group">
+                    <label class="control-label" for="password">Пароль</label>
+                    <div class="controls">
+                      <input type="password" class="span2" id="password">
+                    </div>
+                  </div>
+
+                  <!-- Оставаться в системе -->
+                  <div class="control-group">
+                    <div class="controls">
+                      <label class="checkbox">
+                        <input type="checkbox" checked>
+                        Оставаться в системе
+                      </label>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <!-- Отправка формы -->
+                  <p><a href="units.html" class="btn btn-primary">Войти</a></p>
+                  <p><a href="">Забыли пароль?</a></p>
+
+                </fieldset>
+              </form>
+
+            </div>
+
+            <!-- Таб «Регистрация» -->
+            <div class="tab-pane fade" id="sign-up">
+
+              <form class="well">
+                <fieldset>
+
+                  <!-- Электронная почта -->
+                  <div class="control-group">
+                    <label class="control-label" for="email">Электронная почта</label>
+                    <div class="controls">
+                      <input type="text" class="span3" id="email" value="">
+                    </div>
+                  </div>
+
+                  <!-- UID Центра охраны -->
+                  <div class="control-group">
+                    <label class="control-label" for="uid">UID Центра охраны / <a href="#find-uid" data-toggle="modal">Как узнать UID?</a></label>
+                    <div class="controls">
+                      <input type="text" class="span3" id="uid" value="4F3G-7I53-ALP6-L2JK-MQ34-W6RU-F22C">
+                    </div>
+                  </div>
+
+                  <!-- Модальное окно с картинкой -->
+                  <div id="find-uid" class="modal hide fade">
+                    <div class="modal-header">
+                      <a class="close" data-dismiss="modal">×</a>
+                      <h3>Как узнать UID Центра охраны?</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p><img src="../img/uid.png"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <a class="btn btn-primary" data-dismiss="modal">Закрыть окно</a>
+                    </div>
+                  </div>
+
+                  <!-- Отправка формы -->
+                  <p><a href="thanks.html" id="" class="btn btn-primary">Зарегистрироваться</a></p>
+
+                </fieldset>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p class="pull-right">
+          <script>
+            // Определение текущего года.
+            var today = new Date();
+            document.write("© 1992—" + today.getFullYear() + ",");
+          </script>
+          <a href="http://www.cnord.ru/">Си-Норд</a>
+        </p>
+        <p>
+          Техническая поддержка:<br>
+          (812) 327-16-36, доб. 2<br>
+          <a href="mailto:support@cnord.ru">support@cnord.ru</a>
+        </p>
+      </footer>
+    </div>
+  
+    <!-- JS -->
+    
+    <script>
+      $(document).ready(function(){
+        // Доступ к табам по хэшу (#).
+        if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
+        return $('a[data-toggle="tab"]').on('shown', function(e) {
+          return location.hash = $(e.target).attr('href').substr(1);
+        });
+      });
+    </script>
+    <!--
+    <script src="../js/bootstrap-transition.js"></script>
+    <script src="../js/bootstrap-alert.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap-scrollspy.js"></script>
+    <script src="../js/bootstrap-tooltip.js"></script>
+    <script src="../js/bootstrap-popover.js"></script>
+    <script src="../js/bootstrap-button.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+    <script src="../js/bootstrap-carousel.js"></script>
+    <script src="../js/bootstrap-typeahead.js"></script>
+    -->
+  </body>
+</html>
