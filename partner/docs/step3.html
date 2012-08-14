@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
-    <title>Вам отправлено письмо</title>
+    <title>Продолжение регистрации</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
@@ -18,33 +18,49 @@
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <a href="index.html" class="brand">Си-Норд</a>
+            <a class="brand">Си-Норд</a>
           </div>
         </div>
       </div>
-
+      
       <!-- H1 -->
       <div class="page-header">
-        <h1>Вам отправлено письмо!</h1>
+        <h1>Введите пароль</h1>
       </div>
 
-      <div class="row">
-        <div class="span8">
-          <p>Виталий Нефёдов, на <i>nefedov@novosib-security.ru</i> отправлено письмо со ссылкой для подтверждения адреса электронной почты.</p>
-          <br>
+      <!-- Форма -->
+      <form class="form-horizontal">
+        <fieldset>
 
-          <h3>Если вы не получили письмо</h3>
-          <br>
-          <ul>
-            <li>Проверьте, правильно ли был указан адрес электронной почты;</li>
-            <li>возможно, письмо попало в «спам»; попробуйте в почтовом клиенте отыскать письмо по имени отправителя <i>noreply@cnord.net</i>;</li>
-            <li>в крайнем случае, напишите в техническую поддержку: <a href="mailto:support@cnord.ru">support@cnord.ru</a>.</li>
-          </ul>
-        </div>
-        <div class="span4"></div>
-      </div>
+          <p>В качестве логина используется электронная почта — <b>nefedov@novosib-security.ru</b>.</p>
+          <hr>
 
-      <br><p><a href="letter.html">Посмотреть письмо</a></p>
+          <!-- Пароль -->
+          <div class="control-group">
+            <label class="control-label" for="password">Пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="password">
+              <p class="help-block">Минимум 6 символов.</p>
+            </div>
+          </div>
+
+          <!-- Ещё раз пароль -->
+          <div class="control-group">
+            <label class="control-label" for="repeatPassword">Ещё раз пароль</label>
+            <div class="controls">
+              <input type="password" class="span2" id="repeatPassword">
+              <br><br>
+            </div>
+          </div>
+
+          <!-- Отправка формы -->
+          <div class="form-actions">
+            <a href="units.html" class="btn btn-primary">Завершить регистрацию</a>
+            <span class="help-inline"></span>
+          </div>
+
+        </fieldset>
+      </form>
 
       <footer class="footer">
         <p class="pull-right">
@@ -64,16 +80,7 @@
     </div>
   
     <!-- JS -->
-    
-    <script>
-      $(document).ready(function(){
-        // Доступ к табам по хэшу (#).
-        if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
-        return $('a[data-toggle="tab"]').on('shown', function(e) {
-          return location.hash = $(e.target).attr('href').substr(1);
-        });
-      });
-    </script>
+    <script src="../js/bootstrap-typeahead.js"></script>
     <!--
     <script src="../js/bootstrap-tab.js"></script>
     <script src="../js/bootstrap-modal.js"></script>
@@ -86,7 +93,6 @@
     <script src="../js/bootstrap-button.js"></script>
     <script src="../js/bootstrap-collapse.js"></script>
     <script src="../js/bootstrap-carousel.js"></script>
-    <script src="../js/bootstrap-typeahead.js"></script>
     -->
   </body>
 </html>

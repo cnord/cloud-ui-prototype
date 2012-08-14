@@ -4,13 +4,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
-    <title>Входная страница для партнёров</title>
+    <title>Услуги для охранных предприятий</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
     <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap-tab.js"></script>
-    <script src="../js/bootstrap-modal.js"></script>
+    <script>
+      $(document).ready(function(){
+        // Ставим фокус.
+        $("#email").focus();
+        // Доступ к табам по хэшу (#).
+        if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
+        return $('a[data-toggle="tab"]').on('shown', function(e) {
+          return location.hash = $(e.target).attr('href').substr(1);
+        });
+      });
+    </script>
   </head>
   
   <body>
@@ -30,24 +39,24 @@
         <h1>Услуги для охранных предприятий</h1>
       </div>
 
-      <p>Возможности аккаунта партнёра:</p>
-
       <div class="row">
         <div class="span7">
 
-          <h3><a href="http://www.cnord.ru/call-center/">Автоматизированный call-центр для ЧОПов</a></h3>
           <p>
+            <span class="lead">
+              <a href="http://www.cnord.ru/call-center/">Автоматизированный call-центр</a><br>
+            </span>
             При использовании сall-центра (IVR), клиенты самостоятельно, без привлечения «живого оператора», смогут получить информацию о снятии / постановке на охрану и проверить кнопку тревожной сигнализации (КТС). Снижение нагрузки на операторов позволит повысить качество оказываемых услуг и даст возможность сэкономить от 300 тысяч рублей в год за счёт сокращения одного рабочего места.
           </p>
-
           <br>
-
-          <div class="muted">
-            <i>Скоро:</i><br>
-            — Карточка объекта на планшете в ГБР.<br>
-            — Личный кабинет пользователя.<br>
-            — Ситуационная карта.<br>
-          </div>
+          <span class="muted">
+            Услуги в разработ:
+            <ol>
+              <li>Карточка объекта на планшете в ГБР.</li>
+              <li>Личный кабинет пользователя.</li>
+              <li>Ситуационная карта.</li>
+            </ol>
+          </span>
     
         </div>
         <div class="span1">&nbsp;</div>
@@ -55,7 +64,7 @@
 
           <!-- Управление табами -->
           <ul id="tab" class="nav nav-tabs">
-            <li class="active"><a href="#sign-in" data-toggle="tab" onclick="getSelect();">Войти</a></li>
+            <li class="active"><a href="#sign-in" data-toggle="tab">Войти</a></li>
             <li><a href="#sign-up" data-toggle="tab">Регистрация партнёра</a></li>
           </ul>
 
@@ -68,19 +77,22 @@
                 <fieldset>
 
                   <!-- Электронная почта -->
-                  <div class="control-group">
+                  <div class="control-group error"><!-- error -->
                     <label class="control-label" for="email">Электронная почта</label>
                     <div class="controls">
-
-                      <input type="text" class="span3" id="email" value="">
+                      <input type="text" class="span3" id="email">
+                      <p class="help-block error hide">Неправильный формат адреса электронной почты.</p><!-- hide -->
+                      <p class="help-block error ">Пожалуйста, заполните поле.</p><!-- hide -->
                     </div>
                   </div>
 
                   <!-- Пароль -->
-                  <div class="control-group">
+                  <div class="control-group error"><!-- error -->
                     <label class="control-label" for="password">Пароль</label>
                     <div class="controls">
                       <input type="password" class="span2" id="password">
+                      <p class="help-block error ">Вы указали неправильный адрес электронной почты или пароль.</p><!-- hide -->
+                      <p class="help-block error hide">Пожалуйста, заполните поле.</p><!-- hide -->
                     </div>
                   </div>
 
@@ -97,33 +109,92 @@
                   <hr>
 
                   <!-- Отправка формы -->
-                  <p><a href="units.html" class="btn btn-primary">Войти</a></p>
-                  <p><a href="">Забыли пароль?</a></p>
-
+                  <div class="control-group">
+                    <div class="controls">
+                      <a href="units.html" class="btn btn-primary">&nbsp;Войти&nbsp;</a>
+                      <span class="help-inline">&nbsp;<a href="#resetPassword" data-toggle="modal">Забыли пароль?</a></span>
+                    </div>
+                  </div>             
+                  
                 </fieldset>
               </form>
+
+              <!-- Модальное окно с формой восстановления пароля -->
+              <div id="resetPassword" class="modal hide fade">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">×</a>
+                  <h3>Восстановление пароля</h3>
+                </div>
+                <div class="modal-body">
+
+                  <div class="alert alert-success hide" id="alertPassword">
+                    На <b>kengry@gmail.com</b> отправлено письмо со ссылкой для восстановления пароля.
+                  </div>
+                  
+                  <form id="repairForm">
+                    <fieldset>
+
+                      <!-- Электронная почта -->
+                      <div class="control-group"><!-- error -->
+                        <label class="control-label" for="repairEmail">Пожалуйста, укажите адрес электронной почты от вашего аккаунта:</label>
+                        <div class="controls">
+                          <input type="text" class="span3" id="repairEmail">
+                          <p class="help-block error hide">Не правильный формат адреса электронной почты.</p><!-- hide -->
+                          <p class="help-block error hide">Аккаунт с указанным адресом электронной почты не найден.</p><!-- hide -->
+                          <p class="help-block error hide">Пожалуйста, заполните поле.</p><!-- hide -->
+                        </div>
+                      </div>
+
+                      <!-- Отправка формы -->
+                      <p><a href="#" id="" class="btn btn-primary" onClick="$('#alertPassword').show(); $('#repairForm').hide();">Восстановить пароль</a></p>
+
+                    </fieldset>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <a class="btn" data-dismiss="modal">Закрыть окно</a>
+                </div>
+              </div>
 
             </div>
 
             <!-- Таб «Регистрация» -->
             <div class="tab-pane fade" id="sign-up">
 
-              <form class="well">
+              <div class="alert alert-success hide" id="alertConfirm">
+                <a class="close" data-dismiss="alert" href="#" onClick="$('#registrationForm').show();" class="btn btn-primary">&times;</a>
+                На <b>kengry@gmail.com</b> отправлено письмо со ссылкой для подтверждения адреса электронной почты.
+              </div>
+
+              <form id="registrationForm" class="well">
                 <fieldset>
 
                   <!-- Электронная почта -->
-                  <div class="control-group">
-                    <label class="control-label" for="email">Электронная почта</label>
+                  <div class="control-group"><!-- error -->
+                    <label class="control-label" for="registrationEmail">Электронная почта</label>
                     <div class="controls">
-                      <input type="text" class="span3" id="email" value="">
+                      <input type="text" class="span3" id="registrationEmail">
+                      <p class="help-block error hide">Не правильный формат адреса электронной почты.</p><!-- hide -->
+                      <p class="help-block error hide">Партнёр с таким адресом электронной почты уже зарегистрирован.</p><!-- hide -->
+                      <p class="help-block error hide">Пожалуйста, заполните поле.</p><!-- hide -->
                     </div>
                   </div>
 
                   <!-- UID Центра охраны -->
-                  <div class="control-group">
-                    <label class="control-label" for="uid">UID Центра охраны / <a href="#find-uid" data-toggle="modal">Как узнать UID?</a></label>
+                  <div class="control-group"><!-- error -->
+                    <label class="control-label" for="uid">
+                      UID Центра охраны. <a href="#find-uid" data-toggle="modal">Как узнать UID?</a>
+                    </label>
                     <div class="controls">
                       <input type="text" class="span3" id="uid" value="4F3G-7I53-ALP6-L2JK-MQ34-W6RU-F22C">
+                      <p class="help-block error hide">Не правильный формат UID.</p><!-- hide -->
+                      <p class="help-block error hide">
+                        Пульт с указанным UID «привязан» к другому партнёру.
+                        <a href="#losbinden" data-toggle="modal">Что делать?</a>
+                      </p><!-- hide -->
+                      <p class="help-block error hide">Пульт с указанным UID не найден.</p><!-- hide -->
+                      <p class="help-block error hide">Пожалуйста, заполните поле.</p><!-- hide -->
                     </div>
                   </div>
 
@@ -141,8 +212,23 @@
                     </div>
                   </div>
 
+                  <!-- Модальное окно про «отвязывание пульта» -->
+                  <div id="losbinden" class="modal hide fade">
+                    <div class="modal-header">
+                      <a class="close" data-dismiss="modal">×</a>
+                      <h3>Если пульт «привязан» к другому партнёру</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>Пульт может быть привязан только к одному партнёру. Для того, чтобы привязать указанный пульт к вашему аккаунту, необходимо связаться с этим партнёром и попросить его «отвязать» пульт от своего аккаунта.</p>
+                      <p>Для этого нужно в Центре охраны сгенерировать новый UID: Менеджер событий / Связь с облаком / UID Центра охраны / Сгенерировать новый UID.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <a class="btn btn-primary" data-dismiss="modal">Закрыть окно</a>
+                    </div>
+                  </div>
+
                   <!-- Отправка формы -->
-                  <p><a href="thanks.html" id="" class="btn btn-primary">Зарегистрироваться</a></p>
+                  <p><a href="#" onClick="$('#alertConfirm').show(); $('#registrationForm').hide();" class="btn btn-primary">Зарегистрироваться</a></p>
 
                 </fieldset>
               </form>
@@ -167,30 +253,12 @@
           <a href="mailto:support@cnord.ru">support@cnord.ru</a>
         </p>
       </footer>
+
     </div>
   
     <!-- JS -->
-    
-    <script>
-      $(document).ready(function(){
-        // Доступ к табам по хэшу (#).
-        if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
-        return $('a[data-toggle="tab"]').on('shown', function(e) {
-          return location.hash = $(e.target).attr('href').substr(1);
-        });
-      });
-    </script>
-    <!--
-    <script src="../js/bootstrap-transition.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
     <script src="../js/bootstrap-alert.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
-    <script src="../js/bootstrap-scrollspy.js"></script>
-    <script src="../js/bootstrap-tooltip.js"></script>
-    <script src="../js/bootstrap-popover.js"></script>
-    <script src="../js/bootstrap-button.js"></script>
-    <script src="../js/bootstrap-collapse.js"></script>
-    <script src="../js/bootstrap-carousel.js"></script>
-    <script src="../js/bootstrap-typeahead.js"></script>
-    -->
   </body>
 </html>
