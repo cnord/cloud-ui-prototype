@@ -4,10 +4,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
-    <title>Пульты</title>
+    <title>Пульты и подключённые услуги</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
+    <!-- Sound Manager 2 -->
+    <link rel="stylesheet" type="text/css" href="../css/inlineplayer.css" />
+    <link rel="stylesheet" type="text/css" href="../css/flashblock.css" />
+    <script type="text/javascript" src="../js/soundmanager2.js"></script>
+    <script type="text/javascript" src="../js/inlineplayer.js"></script>
   </head>
   <body>   
     <div class="container">
@@ -24,10 +29,6 @@
             <a class="brand" href="units.html">Новосиб-охрана</a>
 
             <div class="nav-collapse">
-              <ul class="nav">
-                <li class="active"><a href="units.html">Пульты</a></li>
-                <li><a href="services.html">Услуги</a></li>
-              </ul>
               <ul class="nav pull-right">
                 <li><a href="account.html">Виталий Нефёдов</a></li>
                 <li class="divider-vertical"></li>
@@ -37,122 +38,197 @@
           </div>
         </div>
       </div>
-      
-      <!-- Title -->
-      <div class="page-header">
-        <h1>Пульты</h1>
+
+      <div class="alert alert-success hide" id="alertPassword">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        Ваш пароль был успешно изменён.
       </div>
 
-      <!-- Управление табами -->
-      <ul id="tab" class="nav nav-tabs">
-        <li class="active"><a href="#units" data-toggle="tab">Пульты <sup>3</sup></a></li>
-        <li><a href="#archive" data-toggle="tab">Архив <sup>1</sup></a></li>
-      </ul>
-      
-      <div class="tab-content">
-        
-        <!-- Таб «Пульты» -->
-        <div class="tab-pane fade in active" id="units">
+      <!-- Title -->
+      <div class="page-header">
+        <h1>Пульты и подключённые услуги</h1>
+      </div>
 
-          <!-- Таблица -->
-          <table class="table">
-          <thead>
-            <tr>
-              <th>№</th>
-              <th>Контактные данные</th>
-              <th>Организация</th>
-              <th>Объекты</th>
-              <th>ПО</th>
-              <th>Регистрация</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2350</td>
-              <td>mail@novosib-security.ru<br>(383) 3271945</td>
-              <td>Новосиб-охрана<br>Новосибирск<br>Троллейная ул., д. 29</td>
-              <td><a rel="tooltip" title="Онлайн"><span class="badge badge-success">1454</span></a></td>
-              <td>3.4</td>
-              <td>12 сентября 2012</td>
-            </tr>
-            <tr>
-              <td>9473</td>
-              <td>io@novosib-security.ru<br>+7 38362 3271945</td>
-              <td>Искитим-охрана<br>Искитим<br>Скворецкий бульвар, д. 34, офис 23А</td>
-              <td><a rel="tooltip" title="Онлайн"><span class="badge badge-success">453</span></a></td>
-              <td>3.3</td>
-              <td>23 апреля 2012</td>
-            </tr>
-            <tr>
-              <td>2343</td>
-              <td>svetlakovskiy@novosib-security.ru<br>+7 38362 271945</td>
-              <td>Куйбышев-охрана<br>Куйбышев<br>ул. Ротного коммисара, д. 3, кв. 47</td>
-              <td><a rel="tooltip" title="Офлайн со 2 мая, 12:45"><span class="badge badge-error">23</span></a></td>
-              <td><a href="software_versions.html" rel="tooltip" title="Не поддерживается" class="red-link">2.7</a></td>
-              <td>5 мая 2012</td>
-            </tr>
-          </tbody>
-          </table>
+      <div class="row">
+        <div class="span9">
+          <div class="well hide">
 
-          <a data-toggle="modal" href="#myModal" class="btn">Добавить пульт</a>
+
+
+            <h3>ССМ Андромеда <small>№2350</small></h3>
+            <hr>
+            <p>
+              <a rel="tooltip" title="Пульт на связи с облаком">
+              <span class="badge badge-success">1454 объекта</span></a>
+              &nbsp;Центр охраны 4.1
+            </p>
+            <p>
+              «ССМ Андромеда», г. Новосибирск, Красный пр., д. 184, офис 704<br>
+              mail@novosib-security.ru, (383) 3271945<br>
+            </p>
+            <hr>
+            <div class="alert alert-success" id="alertPassword">
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              Настройки call-центра были успешно изменены.
+            </div>
+            <p>
+              <a rel="tooltip" title="Работает"><span class="badge badge-success">Call-центр</span></a>&nbsp;
+              <a data-toggle="modal" href="#editCallCenter">Настроить</a>
+            </p>
+
+            <!-- Модальное окно c настройкой услуг call-центра -->
+            <div id="editCallCenter" class="modal hide fade">
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Настройка call-центра</h3>
+              </div>
+              <div class="modal-body">
+                
+                <form class="form-horizontal">
+                  <fieldset>
+
+                    <!-- Настройка услуг для колл-центра -->
+                    <div class="control-group">
+                      <label class="control-label">Услуги</label>
+                      <div class="controls">
+                        <label class="checkbox">
+                          <input type="checkbox" checked> Проверка КТС (всегда с пин-кодом)
+                        </label>
+                        <label class="checkbox">
+                          <input type="checkbox" checked> Подтверждение снятий / постановок на охрану
+                        </label>
+                        <label class="checkbox call-center-pin">
+                          <input type="checkbox" checked> Только по запросу ПИН-кода
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Голосовое приветствие
+                    <div class="control-group">
+                      <label class="control-label" for="hello">Приветствие</label>
+                      <div class="controls">
+                        <input class="input-file" id="hello" type="file">
+                        <p class="help-block">
+                          Максимальный размер файла — 2 Мб.<br>
+                          Форматы: <em>wav</em> и <em>mp3</em>.
+                        </p>
+                        <p class="help-block error hide">Ошибка про неправильный формат файла.</p>
+                        <p class="help-block error hide">Ошибка про большой размер файла.</p>
+                        <p class="help-block error hide">Ошибка про то, что не получилось загрузить бла-бла-бла…</p>
+                        <div class="sound-manager">
+                          <ul class="graphic">
+                            <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Sexy and I Know It</a></li>
+                            <p class="p-sound-manager"><a href="#" class="delete-link"><i>Удалить</i></a></p>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    -->
+
+                  </fieldset>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
+              </div>
+            </div>
+
+            <p>
+              — Подтверждение снятий / постановок, по пин-коду.<br>
+              — Проверка КТС.<br>
+              <!--<ul class="graphic">
+                <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Sexy and I Know It</a></li>
+              </ul>-->
+            </p>
+
+          </div>
+          <div class="well hide">
+            <h3>ССМ Андромеда <small>№2351</small></h3>
+            <hr>
+            <p>
+              <a rel="tooltip" title="Пульт на связи с облаком">
+              <span class="badge badge-success">28 объектов</span></a>
+              &nbsp;Центр охраны 4.0
+            </p>
+            <p>
+              «ССМ Андромеда-1», г. Новосибирск, Красный пр., д. 184, офис 704<br>
+              mail@novosib-security.ru, (383) 3271945<br>
+            </p>
+            <hr>
+            <p>
+              <a rel="tooltip" title="Не подклюен роутер"><span class="badge badge-error">Call-центр</span></a>&nbsp;
+            </p>
+            <p>
+              Для работы call-центра необходимо подключить телефонный роутер:
+            </p>
+            <ul>
+              <li><a href="http://www.cnord.ru/call-center/manual/">Инструкция по подключению роутера</a></li>
+              <li><a href="http://www.cnord.ru/call-center/connect/">Заявка на приобретение телефонного роутера</a></li>
+            </ul>
+
+          </div>
+
+          <div class="well">
+            <h3>ССМ Андромеда <small>№2351</small></h3>
+            <hr>
+            <p>
+              <a rel="tooltip" title="Пульт на связи с облаком">
+              <span class="badge badge-success">28 объектов</span></a>
+              &nbsp;Центр охраны 4.0
+            </p>
+            <p>
+              «ССМ Андромеда-1», г. Новосибирск, Красный пр., д. 184, офис 704<br>
+              mail@novosib-security.ru, (383) 3271945<br>
+            </p>
+            <hr>
+            <p>
+              <a rel="tooltip" title="Не подклюен роутер"><span class="badge badge-warning">Call-центр</span></a>&nbsp;
+              <a data-toggle="modal" href="#editCallCenter">Настроить</a>
+            </p>
+            <p>
+              Все услуги call-центра отключены.
+            </p>
+          </div>
+        </div>
+        <div class="span3">
+
+          <a data-toggle="modal" href="#addUnit" class="btn">Добавить пульт</a><br>
 
           <!-- Модальное окно -->
           <form class="form-inline">
             <fieldset>
-              <div id="myModal" class="modal hide fade" style="display: none;">
+              <div id="addUnit" class="modal hide fade">
                 <div class="modal-header">
                   <a class="close" data-dismiss="modal">×</a>
                   <h3>Добавить пульт</h3>
                 </div>
                 <div class="modal-body">
-                  <label class="control-label" for="inviteEmail">UID пульта:</label>
-                  <div class="controls">
-                    <input class="span3" id="inviteEmail" size="16" type="text"><br><br>
-                    <p class="help-block">16 символов. Например, «jl4sDh6Gt2oJd9jw».</p>
-                    <p class="help-block"><i class="icon-info-sign"></i> UID пульта можно узнать в Центре охраны, в меню «Связь с блаком».</p>
+                  <div class="control-group error">
+                    <label class="control-label" for="inviteEmail">UID Центра охраны:</label>
+                    <div class="controls error">
+                      <input class="span5" id="inviteEmail" size="16" type="text"><br><br>
+                      <p class="help-block error">Вы не заполнили поле.</p>
+                      <p class="help-block error">Не правильный формат UID Центра охраны.</p>
+                      <p class="help-block error">Центр охраны с таким UID не зарегистрирован в облаке.</p>
+                      <p class="help-block error">
+                        Пульт с указанным UID «привязан» к другому партнёру.<br><br>
+                        <i class="icon-info-sign"></i> Пульт может быть привязан только к одному партнёру. Для того, чтобы привязать указанный пульт к вашему аккаунту, необходимо связаться с этим партнёром и попросить его «отвязать» пульт от своего аккаунта.<br><br>
+                        Для этого нужно в Центре охраны сгенерировать новый UID: Менеджер событий / Связь с облаком / UID Центра охраны / Сгенерировать новый UID.</p>
+                      <p class="help-block"><i class="icon-info-sign"></i> UID можно узнать в Центре охраны, в меню «Связь с блаком».</p>
+                    </div>
                   </div>
                 </div>
                 <div class="modal-footer">
                   <a href="#" class="btn" data-dismiss="modal">Отменить</a>
-                  <a href="units.html" class="btn btn-primary">Отправить приглашение</a>
+                  <a href="units.html" class="btn btn-primary">Добавить</a>
                 </div>
               </div>
             </fieldset>
           </form>
 
         </div>
-
-        <!-- Таб «Архив» -->
-        <div class="tab-pane fade" id="archive">
-
-          <p><i class="icon-info-sign"></i> В «архив» попадают пульты, не выходившие на связь больше месяца.</p>
-          <br>
-
-          <!-- Таблица -->
-          <table class="table">
-          <thead>
-            <tr>
-              <th>№</th>
-              <th>Контактные данные</th>
-              <th>Организация</th>
-              <th>Объекты</th>
-              <th>ПО</th>
-              <th>Регистрация</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2343</td>
-              <td>svetlakovskiy@novosib-security.ru<br>+7 (2676) 271945</td>
-              <td>Каргат-охрана<br>Каргат<br>ул. Ротного коммисара, д. 3, кв. 47</td>
-              <td><a rel="tooltip" title="Офлайн со 2 мая, 12:45"><span class="badge badge-error">23</span></a></td>
-              <td><a href="software_versions.html" rel="tooltip" title="Не поддерживается" class="red-link">2.8</a></td>
-              <td>5 мая 2012</td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-
       </div>
 
       <footer class="footer">
