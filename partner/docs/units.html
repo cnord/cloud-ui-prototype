@@ -44,6 +44,11 @@
         Ваш пароль был успешно изменён.
       </div>
 
+      <div class="alert alert-success hide">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        Регистрация партнёра успешно завершена.
+      </div>
+
       <!-- Title -->
       <div class="page-header">
         <h1>Пульты и подключённые услуги</h1>
@@ -51,10 +56,8 @@
 
       <div class="row">
         <div class="span9">
+          
           <div class="well hide">
-
-
-
             <h3>ССМ Андромеда <small>№2350</small></h3>
             <hr>
             <p>
@@ -103,7 +106,7 @@
                       </div>
                     </div>
 
-                    <!-- Голосовое приветствие
+                    <!-- Голосовое приветствие -->
                     <div class="control-group">
                       <label class="control-label" for="hello">Приветствие</label>
                       <div class="controls">
@@ -123,7 +126,6 @@
                         </div>
                       </div>
                     </div>
-                    -->
 
                   </fieldset>
                 </form>
@@ -138,19 +140,121 @@
             <p>
               — Подтверждение снятий / постановок, по пин-коду.<br>
               — Проверка КТС.<br>
-              <!--<ul class="graphic">
+              <ul class="graphic">
                 <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Sexy and I Know It</a></li>
-              </ul>-->
+              </ul>
+            </p>
+          </div>
+
+          <!-- Если всё работает и как оно по дефолту -->
+          <div class="well hide">
+            <h3>ССМ Андромеда <small>№2350</small></h3>
+            <hr>
+            <p>
+              <a rel="tooltip" title="Пульт на связи с облаком">
+              <span class="badge badge-success">Центр охраны: 1454 объекта</span></a>
+              &nbsp;версия 4.1
+            </p>
+            <p>
+              «ССМ Андромеда», г. Новосибирск, Красный пр., д. 184, офис 704<br>
+              mail@novosib-security.ru, (383) 3271945<br>
+            </p>
+            <hr>
+            <div class="alert alert-success ">
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              Настройки call-центра были успешно изменены.
+            </div>
+            <p>
+              <a rel="tooltip" title="Все услуги отключены"><span class="badge badge-success">Call-центр</span></a>&nbsp;
+              <a data-toggle="modal" href="#editCallCenterDefault">Настроить</a>
             </p>
 
+            <!-- Модальное окно c настройкой услуг call-центра -->
+            <div id="editCallCenterDefault" class="modal hide fade">
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Настройка call-центра</h3>
+              </div>
+              <div class="modal-body">
+                
+                <form class="form-horizontal">
+                  <fieldset>
+
+                    <!-- Настройка услуг для колл-центра -->
+                    <div class="control-group">
+                      <label class="control-label">Услуги</label>
+                      <div class="controls">
+                        <label class="checkbox">
+                          <input type="checkbox" checked> Подтверждение снятий / постановок на охрану
+                        </label>
+                        <label class="checkbox call-center-pin">
+                          <input type="checkbox" checked> Только по запросу ПИН-кода
+                        </label>
+                        <label class="checkbox">
+                          <input type="checkbox" checked> Проверка КТС (всегда с пин-кодом)
+                        </label>
+                        
+                      </div>
+                    </div>
+
+                    <!-- Голосовое приветствие -->
+                    <div class="control-group">
+                      <label class="control-label" for="hello">Приветствие</label>
+                      <div class="controls">
+                        <input class="input-file" id="hello" type="file">
+                        <p class="help-block">
+                          Максимальный размер файла — 2 Мб.<br>
+                          Форматы: <em>wav</em> и <em>mp3</em>.
+                        </p>
+                        <p class="help-block error hide">Неправильный формат файла.</p>
+                        <p class="help-block error hide">Большой размер файла.</p>
+                        <p class="help-block error hide">Ошибка при загрузке файла.</p>
+                        <div class="sound-manager">
+                          <ul class="graphic">
+                            <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Noah - Sexy and I Know It by LMFAO&nbsp;</a></li>
+                          </ul>
+                          <a href="" class="delete-link"><i>Удалить</i></a>
+                          <!--
+                          <div class="progress progress-striped active" style="width: 200px;">
+                            <div class="bar" style="width: 100%;"></div>
+                          </div>
+                          -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
+              </div>
+            </div>
+
+            <p>
+              — Подтверждение снятий / постановок, по пин-коду.<br>
+              <!--
+              <span class="muted">
+                — Подтверждение снятий / постановок (услуга отключена).
+              </span><br>
+              -->
+              — Проверка КТС.
+              
+              <ul class="graphic">
+                <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Noah - Sexy and I Know It by LMFAO&nbsp;</a></li>
+              </ul>
+            </p>
           </div>
-          <div class="well hide">
+
+          <div class="well ">
             <h3>ССМ Андромеда <small>№2351</small></h3>
             <hr>
             <p>
               <a rel="tooltip" title="Пульт на связи с облаком">
-              <span class="badge badge-success">28 объектов</span></a>
-              &nbsp;Центр охраны 4.0
+              <span class="badge badge-success">Центр охраны: 28 объектов</span></a>
+              &nbsp;версия 4.0
             </p>
             <p>
               «ССМ Андромеда-1», г. Новосибирск, Красный пр., д. 184, офис 704<br>
@@ -158,7 +262,7 @@
             </p>
             <hr>
             <p>
-              <a rel="tooltip" title="Не подклюен роутер"><span class="badge badge-error">Call-центр</span></a>&nbsp;
+              <a rel="tooltip" title="Не подключён роутер"><span class="badge badge-error">Call-центр</span></a>&nbsp;
             </p>
             <p>
               Для работы call-центра необходимо подключить телефонный роутер:
@@ -167,10 +271,9 @@
               <li><a href="http://www.cnord.ru/call-center/manual/">Инструкция по подключению роутера</a></li>
               <li><a href="http://www.cnord.ru/call-center/connect/">Заявка на приобретение телефонного роутера</a></li>
             </ul>
-
           </div>
 
-          <div class="well">
+          <div class="well hide">
             <h3>ССМ Андромеда <small>№2351</small></h3>
             <hr>
             <p>
@@ -191,7 +294,9 @@
               Все услуги call-центра отключены.
             </p>
           </div>
+        
         </div>
+
         <div class="span3">
 
           <a data-toggle="modal" href="#addUnit" class="btn">Добавить пульт</a><br>
@@ -233,11 +338,16 @@
 
       <footer class="footer">
         <p class="pull-right">
-          &copy; 1992—2012 <a href="http://www.cnord.ru/">Си-Норд</a>
+          <script>
+            // Определение текущего года.
+            var today = new Date();
+            document.write("© 1992—" + today.getFullYear() + ",");
+          </script>
+          <a href="http://www.cnord.ru/">Си-Норд</a>
         </p>
         <p>
           Техническая поддержка:<br>
-          (812) 322-65-89, <i class="icon-fire"></i> 8 800 200–60–80<br>
+          (812) 327-16-36, доб. 2<br>
           <a href="mailto:support@cnord.ru">support@cnord.ru</a>
         </p>
       </footer>

@@ -61,14 +61,21 @@
     <div class="container_12">
       <div class="grid_6">
         
-        <div id="">
+        <div id="video1">
           <iframe width="480" height="270" src="http://www.youtube.com/embed/x-p8scPIO5c" frameborder="0" allowfullscreen></iframe>
+          Подтверждение постановки на охрану&nbsp;&nbsp;|&nbsp;
+          <a href="#" id="one" onClick="$('#video2').show(); $('#video1').hide(); return false;" style="border-bottom: 1px dashed;">
+            Проверка КТС
+          </a>
         </div>
-        <!--
-        <div id="">
+        
+        <div id="video2" style="display: none;">
           <iframe width="480" height="270" src="http://www.youtube.com/embed/iLCJ7CVFrX0" frameborder="0" allowfullscreen></iframe>
+          <a href="#" onClick="$('#video2').hide(); $('#video1').show(); return false;" style="border-bottom: 1px dashed;">
+            Подтверждение постановки на охрану
+          </a>&nbsp;|&nbsp;&nbsp;Проверка КТС</a>
         </div>
-        -->
+        
       </div>
       <div class="grid_1">&nbsp;</div>
       <div class="grid_5">
@@ -251,7 +258,5 @@
 
     <!-- JS -->
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/fotorama.js"></script>
   </body>
 </html>
