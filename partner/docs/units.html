@@ -39,6 +39,7 @@
         </div>
       </div>
 
+      <!-- Алерты -->
       <div class="alert alert-success hide" id="alertPassword">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
         Ваш пароль был успешно изменён.
@@ -57,97 +58,8 @@
       <div class="row">
         <div class="span9">
           
-          <div class="well hide">
-            <h3>ССМ Андромеда <small>№2350</small></h3>
-            <hr>
-            <p>
-              <a rel="tooltip" title="Пульт на связи с облаком">
-              <span class="badge badge-success">1454 объекта</span></a>
-              &nbsp;Центр охраны 4.1
-            </p>
-            <p>
-              «ССМ Андромеда», г. Новосибирск, Красный пр., д. 184, офис 704<br>
-              mail@novosib-security.ru, (383) 3271945<br>
-            </p>
-            <hr>
-            <div class="alert alert-success" id="alertPassword">
-              <a class="close" data-dismiss="alert" href="#">&times;</a>
-              Настройки call-центра были успешно изменены.
-            </div>
-            <p>
-              <a rel="tooltip" title="Работает"><span class="badge badge-success">Call-центр</span></a>&nbsp;
-              <a data-toggle="modal" href="#editCallCenter">Настроить</a>
-            </p>
-
-            <!-- Модальное окно c настройкой услуг call-центра -->
-            <div id="editCallCenter" class="modal hide fade">
-              <div class="modal-header">
-                <a class="close" data-dismiss="modal">×</a>
-                <h3>Настройка call-центра</h3>
-              </div>
-              <div class="modal-body">
-                
-                <form class="form-horizontal">
-                  <fieldset>
-
-                    <!-- Настройка услуг для колл-центра -->
-                    <div class="control-group">
-                      <label class="control-label">Услуги</label>
-                      <div class="controls">
-                        <label class="checkbox">
-                          <input type="checkbox" checked> Проверка КТС (всегда с пин-кодом)
-                        </label>
-                        <label class="checkbox">
-                          <input type="checkbox" checked> Подтверждение снятий / постановок на охрану
-                        </label>
-                        <label class="checkbox call-center-pin">
-                          <input type="checkbox" checked> Только по запросу ПИН-кода
-                        </label>
-                      </div>
-                    </div>
-
-                    <!-- Голосовое приветствие -->
-                    <div class="control-group">
-                      <label class="control-label" for="hello">Приветствие</label>
-                      <div class="controls">
-                        <input class="input-file" id="hello" type="file">
-                        <p class="help-block">
-                          Максимальный размер файла — 2 Мб.<br>
-                          Форматы: <em>wav</em> и <em>mp3</em>.
-                        </p>
-                        <p class="help-block error hide">Ошибка про неправильный формат файла.</p>
-                        <p class="help-block error hide">Ошибка про большой размер файла.</p>
-                        <p class="help-block error hide">Ошибка про то, что не получилось загрузить бла-бла-бла…</p>
-                        <div class="sound-manager">
-                          <ul class="graphic">
-                            <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Sexy and I Know It</a></li>
-                            <p class="p-sound-manager"><a href="#" class="delete-link"><i>Удалить</i></a></p>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                  </fieldset>
-                </form>
-
-              </div>
-              <div class="modal-footer">
-                <a href="#" class="btn" data-dismiss="modal">Отменить</a>
-                <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
-              </div>
-            </div>
-
-            <p>
-              — Подтверждение снятий / постановок, по пин-коду.<br>
-              — Проверка КТС.<br>
-              <ul class="graphic">
-                <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Sexy and I Know It</a></li>
-              </ul>
-            </p>
-          </div>
-
           <!-- Если всё работает и как оно по дефолту -->
-          <div class="well ">
+          <div class="well">
             <h3>ССМ Андромеда <small>№2350</small></h3>
             <hr>
             <p>
@@ -160,12 +72,16 @@
               mail@novosib-security.ru, (383) 3271945<br>
             </p>
             <hr>
-            <div class="alert alert-success ">
+            <div class="alert alert-success hide">
               <a class="close" data-dismiss="alert" href="#">&times;</a>
               Настройки call-центра были успешно изменены.
             </div>
             <p>
-              <a rel="tooltip" title="Все услуги отключены"><span class="badge badge-success">Call-центр</span></a>&nbsp;
+              <a href="#editCallCenterDefault" data-toggle="modal" rel="tooltip" title="Call-центр работает">
+                <span class="badge badge-success">
+                  Call-центр
+                </span>
+              </a>&nbsp;
               <a data-toggle="modal" href="#editCallCenterDefault">Настроить</a>
             </p>
 
@@ -185,15 +101,17 @@
                       <label class="control-label">Услуги</label>
                       <div class="controls">
                         <label class="checkbox">
-                          <input type="checkbox" checked> Подтверждение снятий / постановок на охрану
+                          <input type="checkbox" checked>
+                          Подтверждение снятий / постановок на охрану
                         </label>
                         <label class="checkbox call-center-pin">
-                          <input type="checkbox" checked> Только по запросу ПИН-кода
+                          <input type="checkbox" checked><!-- disabled -->
+                          Только по запросу ПИН-кода
                         </label>
                         <label class="checkbox">
-                          <input type="checkbox" checked> Проверка КТС (всегда с пин-кодом)
+                          <input type="checkbox" checked>
+                          Проверка КТС (всегда с пин-кодом)
                         </label>
-                        
                       </div>
                     </div>
 
@@ -211,14 +129,16 @@
                         <p class="help-block error hide">Ошибка при загрузке файла.</p>
                         <div class="sound-manager">
                           <ul class="graphic">
-                            <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Noah - Sexy and I Know It by LMFAO&nbsp;</a></li>
+                            <li><a href="../audio/welcome.mp3">Стандартное приветствие&nbsp;</a></li>
                           </ul>
-                          <a href="" class="delete-link"><i>Удалить</i></a>
-                          <!--
-                          <div class="progress progress-striped active" style="width: 200px;">
-                            <div class="bar" style="width: 100%;"></div>
+                          <!-- Ссылка «Удалить», если загружено кастомное приветствие. -->
+                          <p class="hide"><a href="#" class="delete-link"><i>Удалить</i></a></p>
+                          
+                          <!-- Прогрессбар для загрузки файла -->
+                          <div class="progress progress-striped active hide" style="width: 200px;">
+                            <div class="bar" style="width: 80%;"></div>
                           </div>
-                          -->
+                          
                         </div>
                       </div>
                     </div>
@@ -235,20 +155,20 @@
 
             <p>
               — Подтверждение снятий / постановок, по пин-коду.<br>
-              <!--
-              <span class="muted">
-                — Подтверждение снятий / постановок (услуга отключена).
-              </span><br>
-              -->
               — Проверка КТС.
-              
               <ul class="graphic">
-                <li><a href="../audio/Noah - Sexy and I Know It by LMFAO.mp3">Noah - Sexy and I Know It by LMFAO&nbsp;</a></li>
+                <li><a href="../audio/welcome.mp3">Стандартное приветствие&nbsp;</a></li>
               </ul>
+            </p>
+            <!-- Если настройка отключена, то выводить с классом muted -->
+            <p class="hide">
+              <span class="muted">— Подтверждение снятий / постановок (услуга отключена).</span><br>
+              <span class="muted">— Проверка КТС (услуга отключена).</span><br>
             </p>
           </div>
 
-          <div class="well hide">
+          <!-- Если не подключен call-центр. -->
+          <div class="well">
             <h3>ССМ Андромеда <small>№2351</small></h3>
             <hr>
             <p>
@@ -273,13 +193,14 @@
             </ul>
           </div>
 
-          <div class="well hide">
+          <!-- Если отключены все услуги call-центра. -->
+          <div class="well">
             <h3>ССМ Андромеда <small>№2351</small></h3>
             <hr>
             <p>
               <a rel="tooltip" title="Пульт на связи с облаком">
-              <span class="badge badge-success">28 объектов</span></a>
-              &nbsp;Центр охраны 4.0
+              <span class="badge badge-success">Центр охраны: 28 объектов</span></a>
+              &nbsp;версия 4.0
             </p>
             <p>
               «ССМ Андромеда-1», г. Новосибирск, Красный пр., д. 184, офис 704<br>
@@ -287,8 +208,8 @@
             </p>
             <hr>
             <p>
-              <a rel="tooltip" title="Не подклюен роутер"><span class="badge badge-warning">Call-центр</span></a>&nbsp;
-              <a data-toggle="modal" href="#editCallCenter">Настроить</a>
+              <a data-toggle="modal" href="#editCallCenterDefault" rel="tooltip" title="Call-центр работает, но услуги отключены"><span class="badge badge-warning">Call-центр</span></a>&nbsp;
+              <a data-toggle="modal" href="#editCallCenterDefault">Настроить</a>
             </p>
             <p>
               Все услуги call-центра отключены.
@@ -310,14 +231,14 @@
                   <h3>Добавить пульт</h3>
                 </div>
                 <div class="modal-body">
-                  <div class="control-group error">
+                  <div class="control-group"><!-- error -->
                     <label class="control-label" for="inviteEmail">UID Центра охраны:</label>
                     <div class="controls error">
                       <input class="span5" id="inviteEmail" size="16" type="text"><br><br>
-                      <p class="help-block error">Вы не заполнили поле.</p>
-                      <p class="help-block error">Не правильный формат UID Центра охраны.</p>
-                      <p class="help-block error">Центр охраны с таким UID не зарегистрирован в облаке.</p>
-                      <p class="help-block error">
+                      <p class="help-block error hide">Вы не заполнили поле.</p>
+                      <p class="help-block error hide">Не правильный формат UID Центра охраны.</p>
+                      <p class="help-block error hide">Центр охраны с таким UID не зарегистрирован в облаке.</p>
+                      <p class="help-block error hide">
                         Пульт с указанным UID «привязан» к другому партнёру.<br><br>
                         <i class="icon-info-sign"></i> Пульт может быть привязан только к одному партнёру. Для того, чтобы привязать указанный пульт к вашему аккаунту, необходимо связаться с этим партнёром и попросить его «отвязать» пульт от своего аккаунта.<br><br>
                         Для этого нужно в Центре охраны сгенерировать новый UID: Менеджер событий / Связь с облаком / UID Центра охраны / Сгенерировать новый UID.</p>
