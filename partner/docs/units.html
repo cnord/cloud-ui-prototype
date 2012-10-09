@@ -155,20 +155,104 @@
 
             <p>
               — Подтверждение снятий / постановок, по пин-коду.<br>
-              — Проверка КТС.
-              <ul class="graphic">
-                <li><a href="../audio/welcome.mp3">Стандартное приветствие&nbsp;</a></li>
-              </ul>
+              — Проверка КТС.<br>
+              — Стандартное приветствие<br>
             </p>
             <!-- Если настройка отключена, то выводить с классом muted -->
             <p class="hide">
               <span class="muted">— Подтверждение снятий / постановок (услуга отключена).</span><br>
               <span class="muted">— Проверка КТС (услуга отключена).</span><br>
             </p>
+            <hr>
+            <p>
+              <a href="#editSquad" data-toggle="modal" rel="tooltip" title="Услуга работает">
+                <span class="badge badge-success">
+                  Тревога в ГБР
+                </span>
+              </a>&nbsp;
+              <a data-toggle="modal" href="#editSquad">Пароли доступа к мобильному приложению</a>
+            </p>
+
+            <!-- Модальное окно c настройкой ГБР -->
+            <div id="editSquad" class="modal hide fade">
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Пароли доступа к мобильному приложению</h3>
+              </div>
+              <div class="modal-body">
+                <table class="table">
+            <thead>
+              <tr>
+                <th>Название ГБР</th>
+                <th>Пароль</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Север</td>
+                <td>
+                  <code>8259</code>
+                  <code>7832</code>
+                  &nbsp;
+                  <a href="#"><i class="icon-refresh"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Волкодав</td>
+                <td>
+                  <code>8309</code>
+                  <code>5146</code>
+                  &nbsp;
+                  <a href="#"><i class="icon-refresh"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Кронштадт</td>
+                <td>
+                  <code>6287</code>
+                  <code>4367</code>
+                  &nbsp;
+                  <a href="#"><i class="icon-refresh"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Черный рыцарь</td>
+                <td>
+                  <code>2667</code>
+                  <code>9063</code>
+                  &nbsp;
+                  <a href="#"><i class="icon-refresh"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Балаклава</td>
+                <td>
+                  <code>0653</code>
+                  <code>5300</code>
+                  &nbsp;
+                  <a href="#"><i class="icon-refresh"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>Витязь</td>
+                <td>
+                  <code>4583</code>
+                  <code>1285</code>
+                  &nbsp;
+                  <a href="#"><i class="icon-refresh"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Закрыть</a>
+              </div>
+            </div>
           </div>
 
           <!-- Если не подключен call-центр. -->
-          <div class="well">
+          <div class="well hide">
             <h3>ССМ Андромеда <small>№2351</small></h3>
             <hr>
             <p>
@@ -194,7 +278,7 @@
           </div>
 
           <!-- Если отключены все услуги call-центра. -->
-          <div class="well">
+          <div class="well hide">
             <h3>ССМ Андромеда <small>№2351</small></h3>
             <hr>
             <p>
