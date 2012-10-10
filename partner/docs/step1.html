@@ -42,28 +42,38 @@
       <form id="partnerInfo" class="form-horizontal">
         <fieldset>
 
-          <!-- Фамилия и имя -->
-          <div class="control-group">
-            <label class="control-label" for="surname">Как вас зовут?</label>
-            <div class="controls">
+          <div class="control-group error">
+            <label class="control-label">Как вас зовут?</label>
+            <div class="controls" >
               <input type="text" class="input-medium" id="surname" placeholder="Фамилия" value="Нефёдов">
-              <input type="text" class="input-medium" id="name" placeholder="Имя" value="Виталий">
+              <input type="text" class="input-medium" id="name" placeholder="Имя" value="Иван">
               <p class="help-block"><b>Фамилия</b> и <b>имя</b>. Пожалуйста, напишите ваши реальные фамилию и имя, русскими буквами.</p>
+              <p class="help-block error">Пожалуйста, напишите вашу фамилию.</p>
+              <p class="help-block error">Пожалуйста, напишите ваше имя.</p>
+              <p class="help-block error">Фамилия должна содержать минимум два символа. Максимум — 25.</p>
+              <p class="help-block error">Имя должно содержать минимум два символа. Максимум — 25.</p>
+              <p class="help-block error">В фамилии должны использоваться только русские и латинские буквы, дефис.</p>
+              <p class="help-block error">В имени должны использоваться только русские и латинские буквы, дефис.</p>
             </div>
           </div>
 
           <!-- Мобильный телефон -->
-          <div class="control-group">
+          <div class="control-group error">
             <label class="control-label" for="number">Мобильный телефон</label>
             <div class="controls">
               <div class="input-prepend">
                 <span class="add-on">+</span><input class="span1" id="countryCode" size="16" type="text" value="7">
               </div>
               <input type="text" class="span2" id="number" value="9237704598">
-              <p class="help-block"><b>Код страны</b>, <b>код города</b> и <b>номер</b>. <em>Например, +7 9211234567</em>.</p>
+              <p class="help-block"><b>Код страны</b> и <b>номер</b>. <em>Например, +7 9211234567</em>.</p>
               <p class="help-block">
                 <i class="icon-info-sign"></i> Телефон будет использован для связи с нашим сотрудником. Пожалуйста, введите настоящий номер телефона.
               </p>
+              <p class="help-block error">Пожалуйста, введите номер мобильного телефона.</p>
+              <p class="help-block error">Пожалуйста, введите код страны</p>
+              <p class="help-block error">Код страны — число от 1 до 99999.</p>
+              <p class="help-block error">Номер должен содержать минимум 10 цифр.</p>
+              <p class="help-block error">Номер телефона не должен содержать более 25 цифр.</p>
             </div>
           </div>
 
