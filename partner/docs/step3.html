@@ -36,27 +36,31 @@
           <hr>
 
           <!-- Пароль -->
-          <div class="control-group">
+          <div class="control-group error">
             <label class="control-label" for="password">Пароль</label>
             <div class="controls">
               <input type="password" class="span2" id="password">
               <p class="help-block">Минимум 6 символов.</p>
+              <p class="help-block error">Пожалуйста, заполните поле.</p>
+              <p class="help-block error">Минимум 6 символов.</p>
             </div>
           </div>
 
           <!-- Ещё раз пароль -->
-          <div class="control-group">
+          <div class="control-group error">
             <label class="control-label" for="repeatPassword">Ещё раз пароль</label>
             <div class="controls">
               <input type="password" class="span2" id="repeatPassword">
-              <br><br>
+              <p class="help-block error">Пожалуйста, заполните поле.</p>
+              <p class="help-block error">Пароль не совпадает с введенным ранее.</p>
+              <p class="help-block error">Минимум 6 символов.</p>
+              <p class="help-block error">Произошла внутренняя ошибка сервера. Попробуйте заполнить форму ещё раз.</p>
             </div>
           </div>
 
           <!-- Отправка формы -->
           <div class="form-actions">
             <a href="units.html" class="btn btn-primary">Завершить регистрацию</a>
-            <span class="help-inline"></span>
           </div>
 
         </fieldset>
