@@ -58,6 +58,11 @@
       <div class="row">
         <div class="span9">
           
+          <!-- Если нет подключенных пультов и услуг -->
+          <div class="well">
+            <h3><small>Нет подключенных Центров охраны и услуг.</small></h3>
+          </div>
+
           <!-- Если всё работает и как оно по дефолту -->
           <div class="well">
             <h3>ССМ Андромеда <small>№2350</small></h3>
@@ -180,71 +185,75 @@
                 <h3>Пароли доступа к мобильному приложению</h3>
               </div>
               <div class="modal-body">
-                <table class="table">
-            <thead>
-              <tr>
-                <th>Название ГБР</th>
-                <th>Пароль</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Север</td>
-                <td>
-                  <code>8259</code>
-                  <code>7832</code>
-                  &nbsp;
-                  <a href="#"><i class="icon-refresh" disabled></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td>Волкодав</td>
-                <td>
-                  <code>&nbsp;&nbsp;&nbsp;&nbsp;</code>
-                  <code>&nbsp;&nbsp;&nbsp;&nbsp;</code>
-                  &nbsp;
-                  <img src="../img/ajax-loader.gif">
-                  <!--<a href="#"><i class="icon-refresh"></i></a>-->
-                </td>
-              </tr>
-              <tr>
-                <td>Кронштадт</td>
-                <td>
-                  <code>6287</code>
-                  <code>4367</code>
-                  &nbsp;
-                  <a href="#"><i class="icon-refresh"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td>Черный рыцарь</td>
-                <td>
-                  <code>2667</code>
-                  <code>9063</code>
-                  &nbsp;
-                  <a href="#"><i class="icon-refresh"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td>Балаклава</td>
-                <td>
-                  <code>0653</code>
-                  <code>5300</code>
-                  &nbsp;
-                  <a href="#"><i class="icon-refresh"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td>Витязь</td>
-                <td>
-                  <code>4583</code>
-                  <code>1285</code>
-                  &nbsp;
-                  <a href="#"><i class="icon-refresh"></i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                <table class="table hide">
+                  <thead>
+                    <tr>
+                      <th>Название ГБР</th>
+                      <th>Пароль</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Север</td>
+                      <td>
+                        <code>8259</code>
+                        <code>7832</code>
+                        &nbsp;
+                        <a href="#"><i class="icon-refresh" disabled></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Волкодав</td>
+                      <td>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                        &nbsp;
+                        <img src="../img/ajax-loader.gif">
+                        <!--<a href="#"><i class="icon-refresh"></i></a>-->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Кронштадт</td>
+                      <td>
+                        <code>6287</code>
+                        <code>4367</code>
+                        &nbsp;
+                        <a href="#"><i class="icon-refresh"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Черный рыцарь</td>
+                      <td>
+                        <code>2667</code>
+                        <code>9063</code>
+                        &nbsp;
+                        <a href="#"><i class="icon-refresh"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Балаклава</td>
+                      <td>
+                        <code>0653</code>
+                        <code>5300</code>
+                        &nbsp;
+                        <a href="#"><i class="icon-refresh"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Витязь</td>
+                      <td>
+                        <code>4583</code>
+                        <code>1285</code>
+                        &nbsp;
+                        <a href="#"><i class="icon-refresh"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Если в Центре охраны отсутствуют ГБР -->
+                <p>В Центре охраны отсутствуют группы быстрого реагирования.</p>
+
               </div>
               <div class="modal-footer">
                 <a href="#" class="btn btn-primary" data-dismiss="modal">Закрыть</a>
