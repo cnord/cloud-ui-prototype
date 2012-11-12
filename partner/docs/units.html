@@ -59,7 +59,7 @@
         <div class="span9">
           
           <!-- Если нет подключенных пультов и услуг -->
-          <div class="well">
+          <div class="well hide">
             <h3><small>Нет подключенных Центров охраны и услуг.</small></h3>
           </div>
 
@@ -88,6 +88,8 @@
                 </span>
               </a>&nbsp;
               <a data-toggle="modal" href="#editCallCenterDefault">Настроить</a>
+              <span class="muted">|</span>
+              <a data-toggle="modal" href="#statCallCenter">Статистика</a>
             </p>
 
             <!-- Модальное окно c настройкой услуг call-центра -->
@@ -155,6 +157,55 @@
               <div class="modal-footer">
                 <a href="#" class="btn" data-dismiss="modal">Отменить</a>
                 <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
+              </div>
+            </div>
+
+            <!-- Модальное окно cо статистикой call-центра -->
+            <div id="statCallCenter" class="modal hide fade">
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Статистика использования call-центра</h3>
+              </div>
+              <div class="modal-body">
+
+                <div class="alert alert-success hide" id="alertStat">
+                  На <b>nefedov@novosib-security.ru</b> отправлена статистика работы call-центра.
+                </div>
+                
+                <form class="form" id="statForm">
+                  <fieldset>
+
+                    <!-- Настройка услуг для колл-центра -->
+                    <div class="control-group">
+                      <div class="controls">
+                        <select class="span4">
+                          <option>Сегодня</option>
+                          <option>Вчера</option>
+                          <option>Текущая неделя</option>
+                          <option selected>Текущий месяц</option>
+                          <option>Прошедшая неделя</option>
+                          <option>Предыдущий месяц</option>
+                          <option>C начала прощлого месяца по сегодня</option>
+                        </select>
+                        <p class="help-block">1 ноября — 12 ноября, сегодня</p>
+                      </div>
+                    </div>
+
+                    <p>
+                      <i class="icon-info-sign"></i>
+                      Статистика использования call-центра будет отправлена на&nbsp;<nobr>nefedov@novosib-security.ru</nobr>, в формате Microsoft Excell.
+                    </p>
+
+                    <a href="#" class="btn btn-primary" onClick="$('#alertStat').show(); $('#statForm').hide();">Отправить на эл. почту</a>
+
+                  </fieldset>
+                </form>
+
+                
+
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Закрыть окно</a>
               </div>
             </div>
 
