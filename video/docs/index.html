@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
-    <title>Облако Си-Норда</title>
+    <title>Настройка устройства</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
@@ -36,14 +36,15 @@
 
             <div id="cameraEdit" class="collapse in"><!-- in -->
               <br>
-              <form class="form-inline">
+              <form>
                 <fieldset>
+
+                  <p>Параметры камеры:</p>
                   
                   <div class="control-group">
                     <div class="controls">
                       <input type="text" placeholder="URL на камеру" class="span4">
                       <!-- Example URL: rtsp://10.7.5.70:554/play1.sdp -->
-                      <p class="help-block hide">Текст подсказки</p>
                     </div>
                   </div>
 
@@ -56,24 +57,37 @@
                         <option>DivX</option>
                         <option>XviD</option>
                       </select>
-                      <p class="help-block hide">Текст подсказки</p>
                     </div>
                   </div>
-
-                  <p>Параметры камеры:</p>
 
                   <div class="control-group">
                     <div class="controls">
                       <input type="text" placeholder="Логин" class="span3">
-                      <p class="help-block hide">Текст подсказки</p>
                     </div>
                   </div>
 
                   <div class="control-group">
                     <div class="controls">
                       <input type="text" placeholder="Пароль" class="span3">
-                      <p class="help-block hide">Текст подсказки</p>
                     </div>
+                  </div>
+
+                  <p class="muted">
+                    <i>
+                      Для инженеров —
+                      <a href="#" data-toggle="collapse" data-target="#cameraEditAdvanced">
+                        ввод готовых настроек</a>.
+                    </i>
+                  </p>
+
+                  <div id="cameraEditAdvanced" class="collapse in">
+                    <div class="control-group">
+                    <div class="controls">
+                       <span class="help-block"><i class="icon-warning-sign"></i> <b>Внимание!</b> Использование этого поля может вывести камеру из строя!</span>
+                      <textarea rows="3" class="span4" placeholder="Введите готовые настройки камеры в виде конфигурационной строки."></textarea>
+                    </div>
+                  </div>
+
                   </div>
 
                   <p>Для связи с контрольной панелью и Центорм охраны:</p>
@@ -81,14 +95,12 @@
                   <div class="control-group">
                     <div class="controls">
                       <input type="text" placeholder="№ шлейфа" class="span2">
-                      <p class="help-block hide">Текст подсказки</p>
                     </div>
                   </div>
 
                   <div class="control-group">
                     <div class="controls">
                       <textarea rows="3" class="span4" placeholder="Где размещена камера?"></textarea>
-                      <p class="help-block hide">Текст подсказки</p>
                     </div>
                   </div>
 
