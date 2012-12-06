@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
     <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <script src="../js/bootstrap-collapse.js"></script>
 
   </head>
@@ -34,7 +35,7 @@
               Настроить
             </button>
 
-            <div id="cameraEdit" class="collapse in"><!-- in -->
+            <div id="cameraEdit" class="collapse"><!-- in -->
               <br>
               <form>
                 <fieldset>
@@ -60,19 +61,29 @@
                     </div>
                   </div>
 
-                  <div class="control-group">
-                    <div class="controls">
-                      <input type="text" placeholder="Логин" class="span3">
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <div class="controls">
-                      <input type="text" placeholder="Пароль" class="span3">
-                    </div>
-                  </div>
-
                   <p class="muted">
+                    <i>
+                      Если камера требует авторизацию — <a href="#" data-toggle="collapse" data-target="#cameraEditAuthorization">введите логин и пароль</a>.
+                    </i>
+                  </p>
+
+                  <div id="cameraEditAuthorization" class="collapse">
+
+                    <div class="control-group">
+                      <div class="controls">
+                        <input type="text" placeholder="Логин" class="span3">
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <div class="controls">
+                        <input type="text" placeholder="Пароль" class="span3">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <p class="muted hide">
                     <i>
                       Для инженеров —
                       <a href="#" data-toggle="collapse" data-target="#cameraEditAdvanced">
@@ -80,7 +91,7 @@
                     </i>
                   </p>
 
-                  <div id="cameraEditAdvanced" class="collapse in">
+                  <div id="cameraEditAdvanced" class="collapse">
                     <div class="control-group">
                     <div class="controls">
                        <span class="help-block"><i class="icon-warning-sign"></i> <b>Внимание!</b> Использование этого поля может вывести камеру из строя!</span>
