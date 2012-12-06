@@ -35,25 +35,24 @@
               Настроить
             </button>
 
-            <div id="cameraEdit" class="collapse"><!-- in -->
+            <div id="cameraEdit" class="collapse in"><!-- in -->
               <br>
-              <form>
+              <form class="form-horizontal">
                 <fieldset>
-
-                  <p>Параметры камеры:</p>
                   
                   <div class="control-group">
+                    <label class="control-label" for="url">URL на камеру</label>
                     <div class="controls">
-                      <input type="text" placeholder="URL на камеру" class="span4">
-                      <!-- Example URL: rtsp://10.7.5.70:554/play1.sdp -->
+                      <input id="url" type="text" value="rtsp://10.7.5.70:554/play1.sdp" class="span4">
                     </div>
                   </div>
 
                   <div class="control-group">
+                    <label class="control-label" for="standart">Стандарт сжатия</label>
                     <div class="controls">
-                      <select class="span3">
+                      <select id="standart" class="span3">
                         <option>—</option>
-                        <option>H.264</option>
+                        <option selected>H.264</option>
                         <option>MPEG2</option>
                         <option>DivX</option>
                         <option>XviD</option>
@@ -61,36 +60,33 @@
                     </div>
                   </div>
 
-                  <p class="muted">
-                    <i>
-                      Если камера требует авторизацию — <a href="#" data-toggle="collapse" data-target="#cameraEditAuthorization">введите логин и пароль</a>.
-                    </i>
-                  </p>
+                  <div class="control-group">
+                    <div class="controls">
+                      <i class="icon-info-sign"></i>
+                        Если камера требует авторизацию — <a href="#" data-toggle="collapse" data-target="#cameraEditAuthorization">введите&nbsp;логин и&nbsp;пароль</a>
+                    </div>
+                  </div>
 
                   <div id="cameraEditAuthorization" class="collapse">
 
                     <div class="control-group">
+                      <label class="control-label" for="login">Логин</label>
                       <div class="controls">
-                        <input type="text" placeholder="Логин" class="span3">
+                        <input id="login" type="text" class="span3">
                       </div>
                     </div>
 
                     <div class="control-group">
+                      <label class="control-label" for="password">Пароль</label>
                       <div class="controls">
-                        <input type="text" placeholder="Пароль" class="span3">
+                        <input id="password" type="text" class="span3">
+                        <p class="help-block"><a href="#" data-toggle="collapse" data-target="#cameraEditAuthorization">Скрыть логин и пароль</a></p>
                       </div>
                     </div>
 
                   </div>
 
-                  <p class="muted hide">
-                    <i>
-                      Для инженеров —
-                      <a href="#" data-toggle="collapse" data-target="#cameraEditAdvanced">
-                        ввод готовых настроек</a>.
-                    </i>
-                  </p>
-
+                  <!-- Temporary block -->
                   <div id="cameraEditAdvanced" class="collapse">
                     <div class="control-group">
                     <div class="controls">
@@ -101,22 +97,26 @@
 
                   </div>
 
-                  <p>Для связи с контрольной панелью и Центорм охраны:</p>
-                    
                   <div class="control-group">
+                    <label class="control-label" for="loop">№ шлейфа</label>
                     <div class="controls">
-                      <input type="text" placeholder="№ шлейфа" class="span2">
+                      <input id="loop" type="text" class="span1" value="2">
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="description">Где размещена камера?</label>
+                    <div class="controls">
+                      <textarea id="description" rows="3" class="span4">При входе, над дверью.</textarea>
                     </div>
                   </div>
 
                   <div class="control-group">
                     <div class="controls">
-                      <textarea rows="3" class="span4" placeholder="Где размещена камера?"></textarea>
+                      <button class="btn btn-primary">Сохранить</button>
+                      <span class="help-inline"><a href="#" data-toggle="collapse" data-target="#cameraEdit">Отменить</a></span>
                     </div>
                   </div>
-
-                  <button class="btn btn-primary">Сохранить</button>
-                  <span class="help-inline"><a href="#" data-toggle="collapse" data-target="#cameraEdit">Отменить</a></span>
 
                 </fieldset>
               </form>
@@ -126,7 +126,7 @@
 
         </div>
         <div class="span2">
-          <button class="btn btn-primary">Добавить камеру</button>
+          <button class="btn">Добавить камеру</button>
         </div>
       </div>
 
