@@ -80,3 +80,7 @@
     .control-group.warning textarea { color: #555; }
 
     .control-group.warning > label { color: #333; }
+
+/*  Хак №9
+    Делаем отступы для <h2> сверху и снизу. */
+    h1 { padding: 20px 0 15px 0; } 

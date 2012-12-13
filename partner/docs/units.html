@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
-    <title>Пульты и подключённые услуги</title>
+    <title>Центры охраны и услуги</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
@@ -18,7 +18,7 @@
     <div class="container">
       
       <!-- Menu -->
-      <div class="navbar">
+      <div class="navbar navbar-inverse">
         <div class="navbar-inner">
           <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -51,9 +51,7 @@
       </div>
 
       <!-- Title -->
-      <div class="page-header">
-        <h1>Пульты и подключённые услуги</h1>
-      </div>
+      <h1>Центры охраны и&nbsp;услуги</h1>
 
       <div class="row">
         <div class="span9">
@@ -65,12 +63,11 @@
 
           <!-- Если всё работает и как оно по дефолту -->
           <div class="well">
-            <h3>ССМ Андромеда <small>№2350</small></h3>
+            <h3>ССМ Андромеда</h3>
             <hr>
             <p>
               <a rel="tooltip" title="Пульт на связи с облаком">
               <span class="badge badge-success">Центр охраны: 1454 объекта</span></a>
-              &nbsp;версия 4.1
             </p>
             <p>
               «ССМ Андромеда», г. Новосибирск, Красный пр., д. 184, офис 704<br>
@@ -312,13 +309,72 @@
             </div>
 
             <hr>
-
             <p>
-              <a href="#editSquad" data-toggle="modal" rel="tooltip" title="Услуга работает">
-                <span class="badge badge-success">
-                  Личный кабинет
-                </span>
-              — Техническая поддержка: (3217) 23-12-23, <a href="#">support@ssm-andromeda.ru</a>.<br>
+              <a rel="tooltip" title="Услуга работает">
+              <span class="badge badge-success">Личный кабинет</span></a>
+              &nbsp;
+              <a data-toggle="modal" href="#editDashboard">Настроить</a>
+            </p>
+            <p>
+              — Техническая поддержка: (912) 233-12-23, <a href="#">support@ssm-andromeda.ru</a><br>
+              — Сайт охранного предприятия: <a href="http://ssm-andromeda.ru/">http://ssm-andromeda.ru/</a>
+            </p>
+            <p>Сейчас личный кабинет доступен по адресу <a href="#">guard.cnord.net</a>. В будущем, у каждого охранного предприятия будет свой адрес на собственном домене.</p>
+
+            <!-- Модальное окно для настройки личного кабинета -->
+            <div id="editDashboard" class="modal hide fade"><!-- hide fade -->
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Настройка личного кабинета</h3>
+              </div>
+              <div class="modal-body">
+
+                <div class="alert alert-info">
+                  Эти данные будут отображаться в личном кабинете ваших клиентов. 
+                </div>
+                
+
+                <form>
+                  <div class="control-group">
+                    <label for="call-center" class="control-label">Телефон call-центра</label>
+                    <div class="controls">
+                      <input type="text" class="span2" id="call-center" value="(812) 327-16-23">
+                      <p class="help-block error hide">Текст ошибки.</p>
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label for="phone" class="control-label">Телефон технической поддержки</label>
+                    <div class="controls">
+                      <input type="text" class="span2" id="phone" value="(912) 233-12-23">
+                      <p class="help-block error hide">Текст ошибки.</p>
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label for="e-mail" class="control-label">Электронная почта технической поддержки</label>
+                    <div class="controls">
+                      <input type="text" class="span3" id="e-mail" value="support@ssm-andromeda.ru">
+                      <p class="help-block error hide">Текст ошибки.</p>
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <label for="site" class="control-label">Сайт охранного преприятия</label>
+                    <div class="controls">
+                      <input type="text" class="span3" id="site" value="http://ssm-andromeda.ru/">
+                      <p class="help-block error hide">Текст ошибки.</p>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
+              </div>
+            </div>
+
           </div>
 
           <!-- Если не подключен call-центр. -->
