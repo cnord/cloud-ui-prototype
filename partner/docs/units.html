@@ -296,14 +296,13 @@
     </form>
 
     <!-- Модальное окно cо статистикой call-центра -->
-    <div id="statCallCenter" class="modal "><!-- hide fade -->
+    <div id="statCallCenter" class="modal hide fade">
       <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
         <h3>Статистика использования call-центра</h3>
       </div>
       <div class="modal-body">
 
-        <!-- Аллерт -->
         <div class="alert alert-success hide" id="alertStat">
           На <b>nefedov@novosib-security.ru</b> отправлена статистика работы <span class="nobr">call-центра</span>.
         </div>
@@ -312,7 +311,7 @@
           <fieldset>
 
             <!-- Настройка услуг для колл-центра -->
-            <div class="control-group"><!-- error -->
+            <div class="control-group">
               <div class="controls">
                 <select class="span4">
                   <option>Сегодня</option>
@@ -324,8 +323,6 @@
                   <option>C начала прощлого месяца по сегодня</option>
                 </select>
                 <p class="help-block">1 ноября — 12 ноября, сегодня</p>
-                <p class="help-block error hide">Отправить отчет не удалось. Попробуйте сделать это ещё раз.</p>
-                <p class="help-block error hide">В этом интервале времени не было ни одного звонка.</p>
               </div>
             </div>
 
@@ -338,6 +335,8 @@
 
           </fieldset>
         </form>
+
+        
 
       </div>
       <div class="modal-footer">
