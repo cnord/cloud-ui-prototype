@@ -97,7 +97,7 @@
               — Техническая поддержка: (912) 233-12-23, <a href="#">support@ssm-andromeda.ru</a><br>
               — Сайт охранного предприятия: <a href="http://ssm-andromeda.ru/">http://ssm-andromeda.ru/</a>
             </p>
-            <p>Сейчас личный кабинет доступен по адресу <a href="#">cab.cnord.net</a>. В будущем, у каждого охранного предприятия будет свой адрес на собственном домене.</p>
+            <p>Сейчас личный кабинет доступен по адресу <a href="https://my.cnord.net/">my.cnord.net</a>. В будущем, у каждого охранного предприятия будет свой адрес на собственном домене.</p>
           </div>
 
           <!-- Если не подключен call-центр. -->
@@ -442,6 +442,16 @@
 
         <form>
           <div class="control-group">
+            <label for="name" class="control-label">Название ЧОПа, ссылка на сайт</label>
+            <div class="controls">
+              <input type="text" class="span2" id="name" placeholder="Название ЧОПа" value="ССМ Андромеда">
+              &nbsp;
+              <input type="text" class="span3" id="name" placeholder="Ссылка на сайт ЧОПа" value="http://">
+              <p class="help-block error hide">Текст ошибки.</p>
+            </div>
+          </div>
+
+          <div class="control-group">
             <label for="call-center" class="control-label">Телефон автоматизированного call-центра</label>
             <div class="controls">
               <input type="text" class="span2" id="call-center" value="(812) 327-16-23">
@@ -452,7 +462,7 @@
           <div class="control-group">
             <label for="phone" class="control-label">Телефон технической поддержки</label>
             <div class="controls">
-              <input type="text" class="span2" id="phone" value="(912) 233-12-23">
+              <input type="text" class="span2" id="phone" value="+7 912 233-12-23">
               <p class="help-block error hide">Текст ошибки.</p>
             </div>
           </div>
@@ -461,14 +471,6 @@
             <label for="e-mail" class="control-label">Электронная почта технической поддержки</label>
             <div class="controls">
               <input type="text" class="span3" id="e-mail" value="support@ssm-andromeda.ru">
-              <p class="help-block error hide">Текст ошибки.</p>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label for="site" class="control-label">Сайт охранного преприятия</label>
-            <div class="controls">
-              <input type="text" class="span3" id="site" value="http://ssm-andromeda.ru/">
               <p class="help-block error hide">Текст ошибки.</p>
             </div>
           </div>
