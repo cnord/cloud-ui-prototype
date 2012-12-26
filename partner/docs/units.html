@@ -440,15 +440,15 @@
           Эти данные будут отображаться в личном кабинете ваших клиентов. 
         </div>
         
-
         <form>
           <div class="control-group">
             <label for="name" class="control-label">Название ЧОПа, ссылка на сайт</label>
             <div class="controls">
               <input type="text" class="span2" id="name" placeholder="Название ЧОПа" value="ССМ Андромеда">
               &nbsp;
-              <input type="text" class="span3" id="name" placeholder="Ссылка на сайт ЧОПа" value="http://">
-              <p class="help-block error hide">Текст ошибки.</p>
+              <input type="text" class="span3" id="name" placeholder="Ссылка на сайт ЧОПа" value="http://ssm-andromeda.ru/">
+              <p class="help-block error hide">Название ЧОПа не должно содержать более 254-х символов.</p>
+              <p class="help-block error hide">Адрес сайта не должен содержать более 254-х символов.</p>
             </div>
           </div>
 
@@ -456,7 +456,7 @@
             <label for="call-center" class="control-label">Телефон автоматизированного call-центра</label>
             <div class="controls">
               <input type="text" class="span2" id="call-center" value="(812) 327-16-23">
-              <p class="help-block error hide">Текст ошибки.</p>
+              <p class="help-block error hide">Телефон не должен содержать более 254-х символов.</p>
             </div>
           </div>
 
@@ -464,7 +464,7 @@
             <label for="phone" class="control-label">Телефон технической поддержки</label>
             <div class="controls">
               <input type="text" class="span2" id="phone" value="+7 912 233-12-23">
-              <p class="help-block error hide">Текст ошибки.</p>
+              <p class="help-block error hide">Телефон не должен содержать более 254-х символов.</p>
             </div>
           </div>
 
@@ -472,7 +472,8 @@
             <label for="e-mail" class="control-label">Электронная почта технической поддержки</label>
             <div class="controls">
               <input type="text" class="span3" id="e-mail" value="support@ssm-andromeda.ru">
-              <p class="help-block error hide">Текст ошибки.</p>
+              <p class="help-block error hide">Электронная почта не должна содержать более 254-х символов.</p>
+              <p class="help-block error hide">Не правильный формат электронной почты.</p>
             </div>
           </div>
         </form>
