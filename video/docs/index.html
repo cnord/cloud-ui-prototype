@@ -27,11 +27,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a class="brand">Видеороутер</a>
+            <a href="index.html" class="brand">Видеороутер</a>
             <div class="nav-collapse">
+              <ul class="nav">
+                <li class="active"><a>Камеры</a></li>
+                <li><a href="account.html">Настройки</a></li>
+              </ul>
               <ul class="nav pull-right">
-                <li><a href="account.html">Настроить</a></li>
-                <li class="divider-vertical"></li>
                 <li><a href="index.html">Выйти</a></li>
               </ul>
             </div>
@@ -39,11 +41,11 @@
         </div>
       </div>
 
+      <!-- Cameras -->
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Статус</th>
+            <th width="30">Статус</th>
             <th>Видео</th>
             <th>Параметры камеры</th>
             <th>Центр охраны</th>
@@ -53,149 +55,39 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td><span class="badge badge-success">Ok</span></td>
+            <td><span class="badge badge-success">1</span></td>
             <td><a href="#" class="btn"><i class="icon-facetime-video"></i></a></td>
             <td>rtsp://10.7.5.70:554/play1.sdp<br>H.264<br>Без авторизации</td>
             <td>Шлейф №2<br>При входе, над дверью.</td>
             <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
-            <td><a href="#" class="btn btn-link"><i class="icon-trash"></a></td>
+            <td><a href="#deleteCamera" data-toggle="modal" class="btn btn-link"><i class="icon-trash"></a></td>
           </tr>
           <tr>
-            <td>2</td>
-            <td><span class="badge badge-success">Ok</span></td>
+            <td><span class="badge badge-success">2</span></td>
             <td><a href="#" class="btn"><i class="icon-facetime-video"></i></a></td>
-            <td>rtsp://10.7.5.70:555/play1.sdp<br>H.264<br>admin / 123456</td>
+            <td>rtsp://10.7.5.70:555/play1.sdp<br>H.264<br><code>admin</code> <code>123456</code></td>
             <td>Шлейф №8<br>Черный выход.</td>
             <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
             <td><a href="#" class="btn btn-link"><i class="icon-trash"></a></td>
           </tr>
           <tr>
-            <td>3</td>
-            <td><span class="badge badge-important">Ошибка</span></td>
+            <td><span class="badge badge-important">3</span></td>
             <td><a href="#" class="btn"><i class="icon-facetime-video"></i></a></td>
             <td>rtsp://10.7.5.70:558/play1.sdp<br>H.264<br>Без авторизации</td>
             <td>Шлейф №10<br>Коридор, сразу после входа.</td>
             <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
             <td><a href="#" class="btn btn-link"><i class="icon-trash"></a></td>
           </tr>
+          <tr>
+            <td colspan="6">
+              <br><a href="#myModal" class="btn" data-toggle="modal">Добавить камеру</a>
+            </td>
+          </tr>
         </tbody>
       </table>
 
-      <hr>
-
-      <a href="#" class="btn">Добавить камеру</a>
-
-
-
-
-      <!-- It`s a camera space -->
-      <div class="well1 hide">
-        
-        
-        <!-- The button to edit the camera -->
-        <button data-target="#cameraEdit" data-toggle="collapse" class="btn">
-          Настроить
-        </button>
-
-        <!-- Place to edit the camera -->
-        <div id="cameraEdit" class="collapse">
-          <hr>
-          <form class="form-horizontal">
-            <fieldset>              
-
-              <div class="control-group">
-                <div class="controls">
-                </div>
-              </div>
-
-              <div id="standartSettings" class="collapse in">
-
-                <div class="control-group"><!-- error -->
-                  <label class="control-label" for="url">URL на камеру</label>
-                  <div class="controls">
-                    <input id="url" type="text" value="rtsp://10.7.5.70:554/play1.sdp" class="span4">
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
-                <div class="control-group"><!-- error -->
-                  <label class="control-label" for="standart">Стандарт сжатия</label>
-                  <div class="controls">
-                    <select id="standart" class="span2">
-                      <option>—</option>
-                      <option selected>H.264</option>
-                      <option>MPEG2</option>
-                      <option>DivX</option>
-                      <option>XviD</option>
-                    </select>
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
-                <div class="control-group"><!-- error -->
-                  <label class="control-label" for="login">Логин</label>
-                  <div class="controls">
-                    <input id="login" type="text" class="span2">
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
-                <div class="control-group"><!-- error -->
-                  <label class="control-label" for="password">Пароль</label>
-                  <div class="controls">
-                    <input id="password" type="text" class="span2">
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
-              </div>
-
-              <div id="advancedSettings" class="collapse">
-
-                <div class="control-group"><!-- error -->
-                  <label class="control-label" for="allSettings">Все настройки одной строкой</label>
-                  <div class="controls">
-                    <textarea id="allSettings" rows="3" class="span4"></textarea>
-                    <p class="help-block"><i class="icon-warning-sign"></i> <b>Внимание!</b> Использование этого поля может вывести камеру из&nbsp;строя!</p>
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="control-group"><!-- error -->
-                <label class="control-label" for="loop">№ шлейфа</label>
-                <div class="controls">
-                  <input id="loop" type="text" class="span1" value="2">
-                  <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                </div>
-              </div>
-
-              <div class="control-group"><!-- error -->
-                <label class="control-label" for="description">Где размещена камера?</label>
-                <div class="controls">
-                  <textarea id="description" rows="3" class="span4">При входе, над дверью.</textarea>
-                  <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                </div>
-              </div>
-
-              <div class="control-group"><!-- error -->
-                <div class="controls">
-                  <button class="btn btn-primary">Сохранить</button>
-                  <span class="help-inline"><a href="#" data-toggle="collapse" data-target="#cameraEdit">Отменить</a></span>
-                </div>
-              </div>
-
-            </fieldset>
-          </form>
-
-        </div>
-      </div>
-
-      <a href="#myModal" role="button" class="btn hide" data-toggle="modal">Launch demo modal</a>
-
-      <div id="myModal" class="modal hide fade"><!-- hide fade -->
+      <!-- Edit camera -->
+      <div id="myModal" class="modal hide fade">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h3>Настройка камеры №1</h3>
@@ -203,15 +95,37 @@
         <div class="modal-body">
 
           <form class="form-horizontal">
-            <fieldset>              
+            <fieldset>          
 
-              <div id="standartSettings" class="collapse in">
+              <div id="standartSettings" id="defaultSettings" class="collapse in">
 
                 <div class="control-group"><!-- error -->
                   <label class="control-label" for="url">URL на камеру:</label>
                   <div class="controls">
-                    <input id="url" type="text" value="rtsp://10.7.5.70:554/play1.sdp" class="span4">
+                    <input id="url" type="text" value="rtsp://10.7.5.70:554/play1.sdp" class="span3">
+                    <p class="help-block">
+                      <a href="#" data-toggle="collapse" data-target="#cameraAuthorization">
+                        Камера требует авторизации?</a>
+                    </p>
                     <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
+                  </div>
+                </div>
+
+                <!-- Login & Password -->
+                <div id="cameraAuthorization" class="collapse">
+                  <div class="control-group"><!-- error -->
+                    <label class="control-label" for="login">Логин:</label>
+                    <div class="controls">
+                      <input id="login" type="text" class="span2">
+                      <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
+                    </div>
+                  </div>
+                  <div class="control-group"><!-- error -->
+                    <label class="control-label" for="password">Пароль:</label>
+                    <div class="controls">
+                      <input id="password" type="text" class="span2">
+                      <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
+                    </div>
                   </div>
                 </div>
 
@@ -229,23 +143,6 @@
                   </div>
                 </div>
 
-                <div class="control-group hide"><!-- error -->
-                  <label class="control-label" for="login">Логин:</label>
-                  <div class="controls">
-                    <input id="login" type="text" class="span2" disabled>
-                    <span clas="help-inline"><a href="#">Нужна авторизация?</a></span>
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
-                <div class="control-group hide"><!-- error -->
-                  <label class="control-label" for="password">Пароль:</label>
-                  <div class="controls">
-                    <input id="password" type="text" class="span2" disabled>
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
               </div>
 
               <div id="advancedSettings" class="collapse">
@@ -253,7 +150,7 @@
                 <div class="control-group"><!-- error -->
                   <label class="control-label" for="allSettings">Все настройки одной строкой</label>
                   <div class="controls">
-                    <textarea id="allSettings" rows="3" class="span4"></textarea>
+                    <textarea id="allSettings" rows="3" class="span3"></textarea>
                     <p class="help-block"><i class="icon-warning-sign"></i> <b>Внимание!</b> Использование этого поля может вывести камеру из&nbsp;строя!</p>
                     <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
                   </div>
@@ -272,7 +169,7 @@
               <div class="control-group"><!-- error -->
                 <label class="control-label" for="description">Что снимает камера:</label>
                 <div class="controls">
-                  <textarea id="description" rows="3" class="span4">При входе, над дверью.</textarea>
+                  <textarea id="description" rows="3" class="span3">При входе, над дверью.</textarea>
                   <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
                 </div>
               </div>
@@ -281,10 +178,25 @@
           </form>
         </div>
         <div class="modal-footer">
-          <a href="#" class="btn pull-left"><i class="icon-wrench"></i></a>
-          <a href="#" class="btn">Отменить</a>
+          <a href="#" class="btn pull-left" data-toggle="collapse" data-target="#advancedSettings" data-parent="#defaultSettings">
+            <i class="icon-wrench"></i></a>
+          <a href="#" class="btn" data-dismiss="modal">Отменить</a>
           <a href="#" class="btn btn-primary">Сохранить</a>
         </div>
+      </div>
+
+      <!-- Confirmation to delete -->
+      <div id="deleteCamera" class="modal hide fade">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3>Удалить камеру?</h3>
+        </div>
+        <div class="modal-body">
+          <a href="#" class="btn btn-danger">Да, удалить камеру</a>
+          &nbsp;
+          <a href="#" class="btn">Отменить</a>
+        </div>
+
       </div>
 
     </div>
