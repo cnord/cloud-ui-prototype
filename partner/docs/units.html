@@ -44,7 +44,7 @@
       <div class="row">
         <div class="span9">
 
-          <div class="alert alert-error">
+          <div class="alert alert-error hide">
             <a class="close" data-dismiss="alert" href="#">&times;</a>
             Произошла ошибка. Центр охраны не удалён. 
           </div>
@@ -108,6 +108,15 @@
               — Техническая поддержка: +7 (912) 233-12-23, support@ssm-andromeda.ru
             </p>
             <p>Сейчас личный кабинет доступен по адресу <a href="https://my.cnord.net/">my.cnord.net</a>. В будущем, у каждого охранного предприятия будет свой адрес на собственном домене.</p>
+
+            <hr>
+            <p>
+              <a data-toggle="modal" rel="tooltip" title="Услуга работает">
+                <span class="badge badge-success">
+                  Ситуационная карта
+                </span></a>&nbsp;&nbsp;
+              <a data-toggle="modal" href="#editMap">Ссылки на карту</a>
+            </p>
           </div>
 
           <!-- Если не подключен call-центр. -->
@@ -508,6 +517,63 @@
         <a href="#" class="btn " data-dismiss="modal">Отменить</a>
       </div>
     </div>
+
+    <!-- Модальное окно для настройки ситуационной карты -->
+    <div id="editMap" class="modal hide fade">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Ситуационная карта</h3>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Ссылка</th>
+              <th>&nbsp;</th>
+              <th>Комментарий</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#" class="btn btn-link">Ссылка #2342</a></td>
+              <td>
+                <button data-clipboard-text="Кoпировать" class="btn copy-paste">
+                  &nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;
+                </button>
+                <a href="#" class="btn "><i class="icon-refresh"></i></a>
+              </td>
+              <td><input type="text"></td>
+            </tr>
+            <tr>
+              <td><a href="#" class="btn btn-link">Ссылка #4257</a></td>
+              <td>
+                <button data-clipboard-text="Кoпировать" class="btn copy-paste">
+                  &nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;
+                </button>
+                <a href="#" class="btn "><i class="icon-refresh"></i></a>
+              </td>
+              <td><input type="text"></td>
+            </tr>
+            <tr>
+              <td><a href="#" class="btn btn-link">Ссылка #9996</a></td>
+              <td>
+                <button data-clipboard-text="Кoпировать" class="btn copy-paste">
+                  &nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;
+                </button>
+                <a href="#" class="btn "><i class="icon-refresh"></i></a>
+              </td>
+              <td><input type="text"></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
+        <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+      </div>
+    </div>
+    <div>
 
     <!-- JS -->
     <script src="../js/jquery.js"></script>

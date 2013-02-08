@@ -90,4 +90,4 @@
     Например, я не хочу, чтобы «call-центр» оказался на двух строках, а &nbsp; поставить некуда.
     Можно написать так: <span class="nobr">call-центр</span>.
     */
-    .nobr { white-space: nowrap; } 
+    .nobr { white-space: nowrap; }
