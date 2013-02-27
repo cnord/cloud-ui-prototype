@@ -519,7 +519,7 @@
     </div>
 
     <!-- Модальное окно для настройки ситуационной карты -->
-    <div id="editMap" class="modal hide fade">
+    <div id="editMap" class="modal "><!-- hide fade -->
       <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
         <h3>Ситуационная карта</h3>
@@ -530,7 +530,7 @@
             <tr>
               <th>Ссылка</th>
               <th>&nbsp;</th>
-              <th>Комментарий</th>
+              <th width="225">Комментарий</th>
             </tr>
           </thead>
           <tbody>
@@ -538,39 +538,53 @@
               <td><a href="#" class="btn btn-link">Ссылка #2342</a></td>
               <td>
                 <button data-clipboard-text="Кoпировать" class="btn copy-paste">
-                  &nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </button>
                 <a href="#" class="btn "><i class="icon-refresh"></i></a>
               </td>
-              <td><input type="text"></td>
+              <td>
+                <div class="input-append input-prepend">
+                  <input type="text" class="span2">
+                  <a class="btn btn-link"><i class="icon-ok hide"></i></a>
+                </div>
+              </td>
             </tr>
             <tr>
               <td><a href="#" class="btn btn-link">Ссылка #4257</a></td>
               <td>
                 <button data-clipboard-text="Кoпировать" class="btn copy-paste">
-                  &nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </button>
                 <a href="#" class="btn "><img src="../img/ajax-loader.gif"><!-- <i class="icon-refresh"> --></i></a>
               </td>
-              <td><input type="text"></td>
+              <td>
+                <div class="input-append input-prepend">
+                  <input type="text" class="span2">
+                  <a class="btn btn-link"><i class="icon-ok hide"></i></a>
+                </div>
+              </td>
             </tr>
             <tr>
               <td><a href="#" class="btn btn-link">Ссылка #9996</a></td>
               <td>
                 <button data-clipboard-text="Кoпировать" class="btn copy-paste">
-                  &nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-download-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </button>
                 <a href="#" class="btn "><i class="icon-refresh"></i></a>
               </td>
-              <td><input type="text"></td>
+              <td>
+                <div class="input-append input-prepend">
+                  <input type="text" class="span2">
+                  <a class="btn btn-link"><i class="icon-ok hide"></i></a>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
 
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
-        <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+        <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
       </div>
     </div>
     <div>
