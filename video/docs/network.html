@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
+    <title>Настройка устройства</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Menu -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a href="settings.html" class="brand">Видеороутер</a>
+            <div class="nav-collapse">
+              <ul class="nav">
+                <li><a href="settings.html">Камеры</a></li>
+                <li class="active"><a>Настройки</a></li>
+                <li><a href="key.html">Ключ</a></li>
+              </ul>
+              <ul class="nav pull-right">
+                <li><a href="index.html">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert hide">
+        <strong>Внимание!</strong> Вы подключены через локальную сеть.<br>Для настройки камер и проверки роутера — <a href="index.html">подключитесь к облаку</a>.
+      </div>
+
+      <div class="alert alert-success hide">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        Настройки сети сохранены.
+      </div>
+
+      <script>
+        // Если не заполнено поле «UID», ставим в него фокус.
+        $(document).ready(function(){
+          if (uid.value === '') {
+            $("#uid").focus();
+          }
+        });
+        // При выборепункта «Static» расскрываем слой с остальными полями.
+        var getSelect = function() {
+          if ($('select').val() === 'dhcp') {
+            $('#static').hide();
+          } else {
+            $('#static').show();
+            
+            // Если поле «IP» не заполнено, ставим в него фокус.
+            if (ip.value === '') {
+              $('#ip').focus();
+            }
+          }
+        };
+      </script>
+
+      <form class="form-horizontal">
+        <fieldset>
+
+          <table class="table">
+            <thead><tr><th>Настройки сети для выхода видеороутера в интернет</th></tr></thead>
+            <tbody><tr><td>Не факт, что ретроконверсия национального наследия естественно восстанавливает рекламный блок, используя опыт предыдущих кампаний. VIP-мероприятие, вопреки мнению П.Друкера, многопланово стабилизирует коллективный стратегический маркетинг, размещаясь во всех медиа.</td></tr></tbody>
+          </table>
+
+          <div class="control-group">
+            <label class="control-label" for="network">Настройки сети:</label>
+            <div class="controls">
+              <select id="network" class="span4" onchange="getSelect();">
+                <option value="dhcp">DHCP (автоматически)</option>
+                <option>Вручную</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="static" class="hide">
+            <div class="control-group">
+              <label class="control-label" for="ip"><span class="text-error">*</span> IP-адрес:</label>
+              <div class="controls">
+                <input type="text" id="ip" class="input-medium" value="192.168.0.20">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="mask"><span class="text-error">*</span> Маска подсети:</label>
+              <div class="controls">
+                <input type="text" class="input-medium" id="mask" value="255.255.255.0">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="gateway"><span class="text-error">*</span> Шлюз по умолчанию:</label>
+              <div class="controls">
+                <input type="text" class="input-medium" id="gateway" value="192.168.0.1">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="dns1"><span class="text-error">*</span> DNS 1:</label>
+              <div class="controls">
+                <input type="text" class="input-medium" id="dns1" value="8.8.8.8">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="dns2">DNS 2:</label>
+              <div class="controls">
+                <input type="text" class="input-medium" id="dns2">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <a href="#reboot-modal" data-toggle="modal" class="btn btn-primary">Сохранить</a>
+          </div>
+
+        </fieldset>
+      </form>
+
+      <p class="muted" style="margin: 0 0 0 8px">
+        v. 123, uptime: 10d 03:10:22<br>
+        © <a href="http://www.cnord.ru/">Си-Норд</a>
+      </p>
+
+    </div>
+  </body>
+</html>

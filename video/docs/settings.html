@@ -27,11 +27,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a href="index.html" class="brand">Видеороутер</a>
+            <a href="settings.html" class="brand">Видеороутер</a>
             <div class="nav-collapse">
               <ul class="nav">
                 <li class="active"><a>Камеры</a></li>
-                <li><a href="account.html">Настройки</a></li>
+                <li><a href="network.html">Настройки</a></li>
+                <li><a href="key.html">Ключ</a></li>
               </ul>
               <ul class="nav pull-right">
                 <li><a href="index.html">Выйти</a></li>
@@ -41,95 +42,74 @@
         </div>
       </div>
 
+      <div class="alert hide">
+        <strong>Внимание!</strong> Вы подключены через локальную сеть.<br>Для настройки камер и проверки роутера — <a href="#">подключитесь к облаку</a>.
+      </div>
+
       <!-- Cameras -->
       <table class="table">
         <thead>
           <tr>
-            <th width="30">Статус</th>
-            <th>Видео</th>
-            <th>Картинка</th>
-            <th>Параметры камеры</th>
-            <th>Центр охраны</th>
-            <th width="30"></th>
-            <th width="30"></th>
+            <th colspan="5">Настройка камер</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="label label-success">Ok</span></td>
-            <td>
+            <td width="20"><span class="label label-success">1</span></td>
+            <td width="110">
               <a href="#">
-                <img src="../img/play.png" class="play">
-                <img src="../img/cam1.jpeg" class="img-rounded" width="100">
+                <div class="layer1"><img src="../img/play.png" class="play"></div>
+                <div class="layer2"><img src="../img/cam1.jpeg" class="img-rounded" width="100"></div>
               </a>
             </td>
-            <td><a href="../img/cam1.jpeg" target="_blank" class="btn"><i class="icon-picture"></i></a></td>
-            <td>
-              <i class="icon-facetime-video"></i> rtsp://10.7.5.70:554/play1.sdp<br>
-              <i class="icon-picture"></i> http://10.7.9.36/dms?nowprofileid=1<br>
-              <i class="icon-film"></i> H.264<br>
-              <i class="icon-ok"></i> Настроена авторизация<br>
-            </td>
-            <td>Шлейф №2<br>При входе, над дверью.</td>
-            <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
-            <td><a href="#deleteCamera" data-toggle="modal" class="btn btn-link"><i class="icon-trash"></a></td>
+            <td>Шлейф&nbsp;№2<br>При входе, над дверью.</td>
+            <td width="30"><a href="#myModal" class="btn" data-toggle="modal">Настроить</a></td>
+            <td width="30"><a href="#deleteCamera" data-toggle="modal" class="btn btn-link"><i class="icon-trash"></a></td>
           </tr>
           <tr>
-            <td><span class="label label-success">Ok</span></td>
+            <td><span class="label label-success">2</span></td>
             <td>
               <a href="#">
-                <img src="../img/play.png" class="play">
-                <img src="../img/cam2.jpeg" class="img-rounded" width="100">
+                <div class="layer1"><img src="../img/play.png" class="play"></div>
+                <div class="layer2"><img src="../img/cam2.jpeg" class="img-rounded" width="100"></div>
               </a>
             </td>
-            <td><a href="../img/cam2.jpeg" target="_blank" class="btn"><i class="icon-picture"></i></a></td>
-            <td>
-              <i class="icon-facetime-video"></i> rtsp://10.7.5.70:554/play2.sdp<br>
-              <i class="icon-picture"></i> http://10.7.9.36/dms?nowprofileid=2<br>
-              <i class="icon-film"></i> H.264<br>
-              <i class="icon-ok"></i> Настроена авторизация<br>
-            </td>
-            <td>Шлейф №8<br>Черный выход.</td>
-            <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
+            <td>Шлейф&nbsp;№8<br>Черный выход.</td>
+            <td><a href="#myModal" class="btn" data-toggle="modal">Настроить</a></td>
             <td><a href="#deleteCamera" data-toggle="modal" class="btn btn-link"><i class="icon-trash"></a></td>
           </tr>
           <tr>
-            <td><span class="label label-warning"><img src="../img/ajax-loader.gif"><!-- Ожидание --></span></td>
-            <td><img src="../img/noise.gif" class="img-rounded" width="100"></td>
-            <td></td>
-            <td>
-              <i class="icon-facetime-video"></i> rtsp://10.7.5.70:554/play3.sdp<br>
-              <i class="icon-picture"></i> http://10.7.9.36/dms?nowprofileid=3<br>
-              <i class="icon-film"></i> H.264<br>
-            </td>
-            <td>Шлейф №10<br>Коридор, сразу после входа.</td>
-            <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
+            <td><span class="label label-warning">3<!-- <img src="../img/ajax-loader.gif"> --><!-- Ожидание --></span></td>
+            <td><img src="../img/noise.gif" class="img-rounded play-image" width="100"></td>
+            <td>Шлейф&nbsp;№10<br>Коридор, сразу после входа.</td>
+            <td><a href="#myModal" class="btn" data-toggle="modal">Настроить</a></td>
             <td><a href="#deleteCamera" data-toggle="modal" class="btn btn-link"><i class="icon-trash"></a></td>
           </tr>
           <tr>
-            <td><span class="label label-success">Ok</span></td>
+            <td><span class="label label-success">4</span></td>
             <td>
               <a href="#">
-                <img src="../img/play.png" class="play">
-                <img src="../img/black.gif" class="img-rounded" width="100">
+                <div class="layer1"><img src="../img/play.png" class="play"></div>
+                <div class="layer2"><img src="../img/black.gif" class="img-rounded" width="100"></div>
               </a>
             </td>
-            <td></td>
-            <td>
-              <i class="icon-facetime-video"></i> rtsp://10.7.5.70:554/play1.sdp<br>
-              <i class="icon-film"></i> H.264<br>
-            </td>
-            <td>Шлейф №2<br>При входе, над дверью.</td>
-            <td><a href="#myModal" class="btn" data-toggle="modal"><i class="icon-pencil"></i></a></td>
+            <td>Шлейф&nbsp;№2<br>При входе, над дверью.</td>
+            <td><a href="#myModal" class="btn" data-toggle="modal">Настроить</a></td>
             <td><a href="#deleteCamera" data-toggle="modal" class="btn btn-link"><i class="icon-trash"></a></td>
-          </tr>
-          <tr>
-            <td colspan="6">
-              <br><a href="#myModal" class="btn" data-toggle="modal">Добавить камеру</a>
-            </td>
           </tr>
         </tbody>
       </table>
+
+ 
+          <div class="form-actions">
+            <a href="#myModal" class="btn" data-toggle="modal">Добавить камеру</a>
+          </div>
+
+      <p class="muted" style="margin: 0 0 0 8px">
+        v. 123, uptime: 10d 03:10:22<br>
+        © <a href="http://www.cnord.ru/">Си-Норд</a>
+      </p>
+
 
       <!-- Edit camera -->
       <div id="myModal" class="modal hide fade">
@@ -182,20 +162,6 @@
                   </div>
                 </div>
 
-                <div class="control-group"><!-- error -->
-                  <label class="control-label" for="standart">Стандарт сжатия:</label>
-                  <div class="controls">
-                    <select id="standart" class="span2">
-                      <option>—</option>
-                      <option selected>H.264</option>
-                      <option>MPEG2</option>
-                      <option>DivX</option>
-                      <option>XviD</option>
-                    </select>
-                    <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
-                  </div>
-                </div>
-
               </div>
 
               <div class="control-group"><!-- error -->
@@ -209,7 +175,7 @@
               <div class="control-group"><!-- error -->
                 <label class="control-label" for="description">Что снимает камера:</label>
                 <div class="controls">
-                  <textarea id="description" rows="3" class="span3">При входе, над дверью.</textarea>
+                  <input type="text" id="description" class="span3" value="При входе, над дверью.">
                   <p class="help-block error hide">Текст ошибки.</p><!-- hide -->
                 </div>
               </div>
