@@ -25,8 +25,15 @@
       <form class="form-signin">
         <h2 class="form-signin-heading">Си-Норд видео</h2>
         <p>Введите пароль:</p>
-        <input type="text" id="code" class="input-block-level">
-        <p class="muted">Пароль состоит из 12-ти цифр.</p>
+        
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="text" id="code" class="input-block-level">
+            <p class="muted">Пароль состоит из 12-ти цифр.</p>
+            <p class="help-block error hide">Текст ошибки.</p>
+          </div>
+        </div>
+
         <a href="settings.html" class="btn btn-large btn-primary" type="submit">Войти</a>
       </form>
     </div>
