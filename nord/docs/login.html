@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
+    <title>Nord-4TM 2.0</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+      // Установка фокуса в первое поле.
+      $(document).ready(function(){
+        $("#login").focus();
+      });
+    </script>
+  </head>
+  
+  <body>
+    
+    <div class="container">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Nord-4TM 2.0</h2>
+        
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="text" id="login" class="input-block-level" placeholder="Логин">
+            <p class="help-block error hide">Текст ошибки.</p>
+          </div>
+        </div>
+
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="text" id="password" class="input-block-level" placeholder="Пароль">
+            <p class="help-block error hide">Текст ошибки.</p>
+          </div>
+        </div>
+
+        <a href="index.html" class="btn btn-large btn-primary" type="submit">Войти</a>
+      </form>
+    </div>
+
+  </body>
+</html>

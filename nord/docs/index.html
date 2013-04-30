@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
+    <title>Nord-4TM 2.0</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Menu -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a href="index.html" class="brand">Nord-4TM 2.0</a>
+            <div class="nav-collapse">
+              <!-- 
+              <ul class="nav">
+                <li class="active"><a></a></li>
+              </ul>
+              -->
+              <ul class="nav pull-right">
+                <li><a href="login.html">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Норд на пр. Сахарова</h2>
+
+      <!-- Табы -->
+      <ul id="tab" class="nav nav-tabs">
+        <li class="active"><a href="#general" data-toggle="tab">Общие</a></li>
+        <li><a href="#area" data-toggle="tab">Области</a></li>
+        <li><a href="#section1" data-toggle="tab">Характеристики шлейфов</a></li>
+        <li><a href="#section2" data-toggle="tab">Реакции шлейфов</a></li>
+        <li><a href="#other" data-toggle="tab">Другие реакции</a></li>
+      </ul>
+
+      <div class="tab-content">
+        
+        <!-- Таб «Общие» -->
+        <div id="general" class="tab-pane fade in active">
+          <form class="form-horizontal">
+
+            <legend><span class="legend-padding">Интервалы</span></legend>
+
+            <div class="control-group">
+              <label class="control-label" for="1">Задержка на вход</label>
+              <div class="controls">
+                <input id="1" type="text" class="span2" value="60">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="2">Задержка на выход</label>
+              <div class="controls">
+                <input id="2" type="text" class="span2" value="60">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="3">Объединение шлейфов</label>
+              <div class="controls">
+                <input id="3" type="text" class="span2" value="0">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="4">Звучание сирены</label>
+              <div class="controls">
+                <input id="4" type="text" class="span2" value="255">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="5">Замыкание реле</label>
+              <div class="controls">
+                <input id="5" type="text" class="span2" value="255">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="6">Замыкание дополнительного&nbsp;выхода</label>
+              <div class="controls">
+                <input id="6" type="text" class="span2" value="255">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Передача на ЦС</span></legend>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Формат NPAF
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="7">Формат станции</label>
+              <div class="controls">
+                <input id="7" type="text" class="span2" value="0">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="8">Количество пачек в посылке</label>
+              <div class="controls">
+                <input id="8" type="text" class="span2" value="5">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="9">Количество кадров в&nbsp;пачке</label>
+              <div class="controls">
+                <input id="9" type="text" class="span2" value="15">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Режим переключения частот (передача на обоих частотах)
+                </label>
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Автоматические тесты</span></legend>
+
+            <div class="control-group">
+              <label class="control-label" for="10">Интервал, если взят</label>
+              <div class="controls">
+                <input id="10" type="text" class="span2" value="60">
+                <span class="help-inline">мин.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Передавать на второй частоте, если взят
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="11">Интервал, если снят</label>
+              <div class="controls">
+                <input id="11" type="text" class="span2" value="60">
+                <span class="help-inline">мин.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Передавать на второй частоте, если снят
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="12">Количество пачек в посылке</label>
+              <div class="controls">
+                <input id="12" type="text" class="span2" value="5">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="13">Количество кадров в&nbsp;пачке</label>
+              <div class="controls">
+                <input id="13" type="text" class="span2" value="15">
+              </div>
+            </div>
+
+
+            <legend><span class="legend-padding">Разное</span></legend>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Реле на тихую тревогу
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Дополнительный выход на тихую тревогу
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Зуммер клавиатуры при тревоге
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Режим «Pima» при тревоге
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" checked>Звуковой оповещатель типа «Горн»
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Сообщать о восстановлении шлейфа после исключения
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Индикация: охрана/снят
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Оповещение: охрана/снят
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Резервный канал
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Контроль клавиатуры
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Контроль сирены
+                </label>
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Коды</span></legend>
+
+            <div class="control-group">
+              <label class="control-label" for="15">Главный код</label>
+              <div class="controls">
+                <input id="15" type="text" class="span2" value="5555">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="16">Код техника</label>
+              <div class="controls">
+                <input id="16" type="text" class="span2" value="1234">
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Исключения</span></legend>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked>Автоматически исключать шлейф после трёх тревог
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" checked>Требовать исключение нарушенных или неисправных шлейфов при постановке
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Право на исключение при постановке
+                </label>
+              </div>
+            </div>
+
+
+
+
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+              <button type="button" class="btn">Отменить</button>
+              <button type="button" class="btn btn-link">Значения по умолчанию</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Таб «Области» -->
+        <div id="area" class="tab-pane fade in">
+          2
+        </div>
+
+        <!-- Таб «Характеристики шлейфов» -->
+        <div id="section1" class="tab-pane fade in">
+          3
+        </div>
+
+        <!-- Таб «Реакции шлейфов» -->
+        <div id="section2" class="tab-pane fade in">
+          4
+        </div>
+
+        <!-- Таб «Другие реакции» -->
+        <div id="other" class="tab-pane fade in">
+          5
+        </div>
+
+      </div>
+
+
+
+      <footer class="footer">
+        © <a href="http://www.cnord.ru/">Си-Норд</a>
+      </footer>
+
+    </div>
+  </body>
+</html>
