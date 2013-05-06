@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
+    <title>Nord-4TM 2.0</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-button.js"></script>
+    <script>
+      $('#fat-btn')
+      .click(function () {
+          var btn = $(this)
+          btn.button('loading')
+          setTimeout(function () {
+              btn.button('reset')
+          }, 3000)
+      });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Menu -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <!-- <a href="index.html" class="brand">Nord-4TM 2.0</a> -->
+            <div class="nav-collapse">
+              
+              <ul class="nav">
+                <li class="">
+                  <a href="index.html">←&nbsp;&nbsp;Назад, к списку объектов</a>
+                </li>
+              </ul>
+              
+              <ul class="nav pull-right">
+                <li><a href="login.html">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>4389, Магазин Дикси <small>пр. Сахарова, д. 23</small></h2>
+
+      <div class="alert">
+        <p>
+          <strong>Внимание!</strong><br>
+          <ol>
+            <li>Скачайте текущие настройки устройства.</li>
+            <li>Настройте панель, отредактировав отдельно каждую вкладку.</li>
+            <li>Отправьте новые настройки на панель.</li>
+            <li>Дождитесь подтверждения, что настройки вступили в силу.</li>
+          </ol>
+        </p>
+        <button class="btn">
+          <i class="icon-arrow-left"></i>&nbsp;&nbsp;Скачать настройки
+        </button>
+        &nbsp;
+        <button class="btn" disabled>
+          Отправить новые настройки&nbsp;&nbsp;<i class="icon-arrow-right"></i>
+        </button>
+        <p></p>
+      </div>
+
+      <!-- Табы -->
+      <ul id="tab" class="nav nav-tabs">
+        <li class="active"><a href="#general" data-toggle="tab">Общие</a></li>
+        <li><a href="#area" data-toggle="tab">Области</a></li>
+        <li><a href="#section1" data-toggle="tab">Характеристики шлейфов</a></li>
+        <li><a href="#section2" data-toggle="tab">Реакции шлейфов</a></li>
+        <li><a href="#other" data-toggle="tab">Другие реакции</a></li>
+      </ul>
+
+      <div class="tab-content">
+        
+        <!-- Таб «Общие» -->
+        <div id="general" class="tab-pane fade in active">
+
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Настройки успешно сохранены.
+          </div>
+
+          <form class="form-horizontal">
+
+            <legend><span class="legend-padding">Интервалы</span></legend>
+
+            <div class="control-group">
+              <label class="control-label" for="1">Задержка на вход</label>
+              <div class="controls">
+                <input id="1" type="text" class="span2" value="60">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="2">Задержка на выход</label>
+              <div class="controls">
+                <input id="2" type="text" class="span2" value="60">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="3">Объединение шлейфов</label>
+              <div class="controls">
+                <input id="3" type="text" class="span2" value="0">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="4">Звучание сирены</label>
+              <div class="controls">
+                <input id="4" type="text" class="span2" value="255">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="5">Замыкание реле</label>
+              <div class="controls">
+                <input id="5" type="text" class="span2" value="255">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="6">Замыкание дополнительного&nbsp;выхода</label>
+              <div class="controls">
+                <input id="6" type="text" class="span2" value="255">
+                <span class="help-inline">сек.</span>
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Передача на ЦС</span></legend>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox" for="npaf">
+                  <input id="npaf" type="checkbox">Формат NPAF
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="7">Формат станции</label>
+              <div class="controls">
+                <input id="7" type="text" class="span2" value="0">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="8">Количество пачек в посылке</label>
+              <div class="controls">
+                <input id="8" type="text" class="span2" value="5">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="9">Количество кадров в&nbsp;пачке</label>
+              <div class="controls">
+                <input id="9" type="text" class="span2" value="15">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Режим переключения частот (передача на обоих частотах)
+                </label>
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Автоматические тесты</span></legend>
+
+            <div class="control-group">
+              <label class="control-label" for="10">Интервал, если взят</label>
+              <div class="controls">
+                <input id="10" type="text" class="span2" value="60">
+                <span class="help-inline">мин.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Передавать на второй частоте, если взят
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="11">Интервал, если снят</label>
+              <div class="controls">
+                <input id="11" type="text" class="span2" value="60">
+                <span class="help-inline">мин.</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Передавать на второй частоте, если снят
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="12">Количество пачек в посылке</label>
+              <div class="controls">
+                <input id="12" type="text" class="span2" value="5">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="13">Количество кадров в&nbsp;пачке</label>
+              <div class="controls">
+                <input id="13" type="text" class="span2" value="15">
+              </div>
+            </div>
+
+
+            <legend><span class="legend-padding">Разное</span></legend>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox">Реле на тихую тревогу
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Дополнительный выход на тихую тревогу
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Зуммер клавиатуры при тревоге
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Режим «Pima» при тревоге
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" checked>Звуковой оповещатель типа «Горн»
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Сообщать о восстановлении шлейфа после исключения
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Индикация: охрана/снят
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Оповещение: охрана/снят
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Резервный канал
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Контроль клавиатуры
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Контроль сирены
+                </label>
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Коды</span></legend>
+
+            <div class="control-group">
+              <label class="control-label" for="15">Главный код</label>
+              <div class="controls">
+                <input id="15" type="text" class="span2" value="5555">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="16">Код техника</label>
+              <div class="controls">
+                <input id="16" type="text" class="span2" value="1234">
+              </div>
+            </div>
+
+            <legend><span class="legend-padding">Исключения</span></legend>
+
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked>Автоматически исключать шлейф после трёх тревог
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" checked>Требовать исключение нарушенных или неисправных шлейфов при постановке
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">Право на исключение при постановке
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+              <button type="button" class="btn">Отменить</button>
+              <button type="button" class="btn btn-link">Значения по умолчанию</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Таб «Области» -->
+        <div id="area" class="tab-pane fade in">
+          
+          <form>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Область 1</th>
+                    <th>Область 2</th>
+                    <th>Область 3</th>
+                    <th>Область 4</th>
+                    <th>Область 5</th>
+                    <th>Область 6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Шлейф 1</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Шлейф 2</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Шлейф 3</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Шлейф 4</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Шлейф 5</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Шлейф 6</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Номер объекта</td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+              <button type="button" class="btn">Отменить</button>
+              <button type="button" class="btn btn-link">Значения по умолчанию</button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Таб «Характеристики шлейфов» -->
+        <div id="section1" class="tab-pane fade in">
+          
+          <form>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Шлейф 1</th>
+                    <th>Шлейф 2</th>
+                    <th>Шлейф 3</th>
+                    <th>Шлейф 4</th>
+                    <th>Шлейф 5</th>
+                    <th>Шлейф 6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>С резистором</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Проходной</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Задержанный</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Дом</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>24-х часовой</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                  </tr>
+                  <tr>
+                    <td>Нормально разомкнутый</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Исключённый</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Чувствительность (х50), мс</td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Парный шлейф</td>
+                    <td><label><input type="text" class="span1" value="1"></label></td>
+                    <td><label><input type="text" class="span1" value="2"></label></td>
+                    <td><label><input type="text" class="span1" value="3"></label></td>
+                    <td><label><input type="text" class="span1" value="4"></label></td>
+                    <td><label><input type="text" class="span1" value="5"></label></td>
+                    <td><label><input type="text" class="span1" value="6"></label></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+              <button type="button" class="btn">Отменить</button>
+              <button type="button" class="btn btn-link">Значения по умолчанию</button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Таб «Реакции шлейфов» -->
+        <div id="section2" class="tab-pane fade in">
+          
+          <form>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Реакции на нарушение</th>
+                    <th>Шлейф 1</th>
+                    <th>Шлейф 2</th>
+                    <th>Шлейф 3</th>
+                    <th>Шлейф 4</th>
+                    <th>Шлейф 5</th>
+                    <th>Шлейф 6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Переустановка шлейфа</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Передача на второй частоте</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение дополнительного выхода</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Сброс пожарных датчиков</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Передача сообщений на ЦС</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение реле</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение сирены</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Реакции на неисправность</th>
+                    <th>Шлейф 1</th>
+                    <th>Шлейф 2</th>
+                    <th>Шлейф 3</th>
+                    <th>Шлейф 4</th>
+                    <th>Шлейф 5</th>
+                    <th>Шлейф 6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Передача на второй частоте</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение зуммера клавиатуры</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение дополнительного выхода</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Передача сообщений на ЦС</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение реле</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение сирены</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+              <button type="button" class="btn">Отменить</button>
+              <button type="button" class="btn btn-link">Значения по умолчанию</button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Таб «Другие реакции» -->
+        <div id="other" class="tab-pane fade in">
+          
+          <form>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Реакции<br>на неисправность</th>
+                    <th>Взят,<br>отсутствие 220 В</th>
+                    <th>Взят,<br>неисправность АКБ</th>
+                    <th>Снят,<br>отсутствие 220 В</th>
+                    <th>Снят,<br>неисправность АКБ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Передача на второй частоте</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение дополнительного выхода</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение зуммера клавиатуры</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Передача сообщений на ЦС</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение реле</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение сирены</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Интервал повторения, мин</td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td><label><input type="text" class="span1" value="10"></label></td>
+                    <td><label><input type="text" class="span1" value="0"></label></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Реакции на взятие/снятие</th>
+                    <th>Взятие</th>
+                    <th>Снятие</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Передача на второй частоте</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Передача сообщений на ЦС</td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                    <td><label class="checkbox"><input type="checkbox"></label></td>
+                  </tr>
+                  <tr>
+                    <td>Включение сирены</td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                    <td><label class="checkbox"><input type="checkbox" checked></label></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+              <button type="button" class="btn">Отменить</button>
+              <button type="button" class="btn btn-link">Значения по умолчанию</button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+      <footer class="footer">
+        © <a href="http://www.cnord.ru/">Си-Норд</a>
+      </footer>
+
+    </div>
+  </body>
+</html>
