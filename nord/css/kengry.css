@@ -20,7 +20,7 @@
            -moz-box-shadow: 0 1px 20px rgba(0,0,0,.05);
                 box-shadow: 0 1px 20px rgba(0,0,0,.05);
       }
-      .form-signin input[type="text"] {
+      .form-signin input[type="text"], .form-signin input[type="password"] {
         font-size: 16px;
         height: auto;
         margin-bottom: 8px;
