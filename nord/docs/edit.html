@@ -100,51 +100,51 @@
 
             <legend><span class="legend-padding">Интервалы</span></legend>
 
-            <div class="control-group">
-              <label class="control-label" for="1">Задержка на вход</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="1">Задержка на вход, сек.</label>
               <div class="controls">
-                <input id="1" type="text" class="span2" value="60">
-                <span class="help-inline">сек.</span>
+                <input id="1" type="text" class="input-small" value="60">
+                <span class="help-block error hide">Это число от 0 до 999.</span>
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label" for="2">Задержка на выход</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="2">Задержка на выход, сек.</label>
               <div class="controls">
-                <input id="2" type="text" class="span2" value="60">
-                <span class="help-inline">сек.</span>
+                <input id="2" type="text" class="input-small" value="60">
+                <span class="help-block error hide">Это число от 0 до 999.</span>
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label" for="3">Объединение шлейфов</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="3">Объединение шлейфов, сек.</label>
               <div class="controls">
-                <input id="3" type="text" class="span2" value="0">
-                <span class="help-inline">сек.</span>
+                <input id="3" type="text" class="input-small" value="0">
+                <span class="help-block error hide">Это число от 0 до 999.</span>
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label" for="4">Звучание сирены</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="4">Звучание сирены, сек.</label>
               <div class="controls">
                 <input id="4" type="text" class="span2" value="255">
-                <span class="help-inline">сек.</span>
+                <span class="help-block error hide">Это число от 0 до 9999.</span>
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label" for="5">Замыкание реле</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="5">Замыкание реле, сек.</label>
               <div class="controls">
                 <input id="5" type="text" class="span2" value="255">
-                <span class="help-inline">сек.</span>
+                <span class="help-block error hide">Это число от 0 до 9999.</span>
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label" for="6">Замыкание дополнительного&nbsp;выхода</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="6">Замыкание дополнительного выхода,&nbsp;сек.</label>
               <div class="controls">
                 <input id="6" type="text" class="span2" value="255">
-                <span class="help-inline">сек.</span>
+                <span class="help-block error hide">Это число от 0 до 9999.</span>
               </div>
             </div>
 
@@ -158,24 +158,27 @@
               </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="7">Формат станции</label>
               <div class="controls">
                 <input id="7" type="text" class="span2" value="0">
+                <span class="help-block error hide">Это число от 0 до 9999.</span>
               </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="8">Количество пачек в посылке</label>
               <div class="controls">
-                <input id="8" type="text" class="span2" value="5">
+                <input id="8" type="text" class="span1" value="5">
+                <span class="help-block error hide">Это число от 1 до 10.</span>
               </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="9">Количество кадров в&nbsp;пачке</label>
               <div class="controls">
-                <input id="9" type="text" class="span2" value="15">
+                <input id="9" type="text" class="span1" value="15">
+                <span class="help-block error hide">Это число от 1 до 15.</span>
               </div>
             </div>
 
@@ -189,11 +192,11 @@
 
             <legend><span class="legend-padding">Автоматические тесты</span></legend>
 
-            <div class="control-group">
-              <label class="control-label" for="10">Интервал, если взят</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="10">Интервал, если взят, мин.</label>
               <div class="controls">
                 <input id="10" type="text" class="span2" value="60">
-                <span class="help-inline">мин.</span>
+                <span class="help-block error hide">Это число от 0 до 9999.</span>
               </div>
             </div>
 
@@ -205,11 +208,11 @@
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label" for="11">Интервал, если снят</label>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="11">Интервал, если снят, мин.</label>
               <div class="controls">
                 <input id="11" type="text" class="span2" value="60">
-                <span class="help-inline">мин.</span>
+                <span class="help-block error hide">Это число от 0 до 9999.</span>
               </div>
             </div>
 
@@ -221,17 +224,19 @@
               </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="12">Количество пачек в посылке</label>
               <div class="controls">
-                <input id="12" type="text" class="span2" value="5">
+                <input id="12" type="text" class="span1" value="5">
+                <span class="help-block error hide">Это число от 1 до 10.</span>
               </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="13">Количество кадров в&nbsp;пачке</label>
               <div class="controls">
-                <input id="13" type="text" class="span2" value="15">
+                <input id="13" type="text" class="span1" value="15">
+                <span class="help-block error hide">Это число от 1 до 15.</span>
               </div>
             </div>
 
@@ -278,17 +283,19 @@
 
             <legend><span class="legend-padding">Коды</span></legend>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="15">Главный код</label>
               <div class="controls">
                 <input id="15" type="text" class="span2" value="5555">
+                <span class="help-block error hide">Только цифры, максимум 6 цифр.</span>
               </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group"><!-- error -->
               <label class="control-label" for="16">Код техника</label>
               <div class="controls">
                 <input id="16" type="text" class="span2" value="1234">
+                <span class="help-block error hide">Только цифры, максимум 6 цифр.</span>
               </div>
             </div>
 
