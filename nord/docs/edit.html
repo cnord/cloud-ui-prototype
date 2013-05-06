@@ -856,7 +856,7 @@
         <!-- Таб «Другие реакции» -->
         <div id="other" class="tab-pane fade in">
           
-          <form>
+          <form class="form-inline">
             <table class="table table-hover">
                 <thead>
                   <tr>
@@ -912,10 +912,38 @@
                   </tr>
                   <tr>
                     <td>Интервал повторения, мин</td>
-                    <td><label><input type="text" class="span1" value="10"></label></td>
-                    <td><label><input type="text" class="span1" value="0"></label></td>
-                    <td><label><input type="text" class="span1" value="10"></label></td>
-                    <td><label><input type="text" class="span1" value="0"></label></td>
+                    <td>
+                      <div class="control-group"><!-- error -->
+                        <div class="controls">
+                          <label><input type="text" class="span1" value="10"></label>
+                          <span class="help-block error hide">Число от&nbsp;0&nbsp;до&nbsp;999.</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="control-group"><!-- error -->
+                        <div class="controls">
+                          <label><input type="text" class="span1" value="0"></label>
+                          <span class="help-block error hide">Число от&nbsp;0&nbsp;до&nbsp;999.</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="control-group"><!-- error -->
+                        <div class="controls">
+                          <label><input type="text" class="span1" value="10"></label>
+                          <span class="help-block error hide">Число от&nbsp;0&nbsp;до&nbsp;999.</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="control-group"><!-- error -->
+                        <div class="controls">
+                          <label><input type="text" class="span1" value="0"></label>
+                          <span class="help-block error hide">Число от&nbsp;0&nbsp;до&nbsp;999.</span>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
