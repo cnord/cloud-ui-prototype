@@ -48,6 +48,8 @@
               </ul>
               
               <ul class="nav pull-right">
+                <li><a>kengry@gmail.com</a></li>
+                <li class="divider-vertical"></li>
                 <li><a href="login.html">Выйти</a></li>
               </ul>
             </div>
@@ -67,18 +69,23 @@
             <li>Дождитесь подтверждения, что настройки вступили в силу.</li>
           </ol>
         </p>
-        <button class="btn">
+        <button class="btn"><!-- disabled -->
           <i class="icon-arrow-down"></i>&nbsp;&nbsp;Скачать настройки
         </button>
         &nbsp;
-        <button class="btn" disabled>
+        <button class="btn" disabled><!-- disabled -->
           Отправить новые настройки&nbsp;&nbsp;<i class="icon-arrow-up"></i>
         </button>
         <p></p>
       </div>
 
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        Настройки контрольной панели успешно обновлены.
+      </div>
+
       <!-- Табы -->
-      <ul id="tab" class="nav nav-tabs">
+      <ul id="tab" class="nav nav-tabs hide">
         <li class="active"><a href="#general" data-toggle="tab">Общие</a></li>
         <li><a href="#area" data-toggle="tab">Области</a></li>
         <li><a href="#section1" data-toggle="tab">Характеристики шлейфов</a></li>
@@ -86,7 +93,7 @@
         <li><a href="#other" data-toggle="tab">Другие реакции</a></li>
       </ul>
 
-      <div class="tab-content">
+      <div class="tab-content hide">
         
         <!-- Таб «Общие» -->
         <div id="general" class="tab-pane fade in active">
