@@ -73,46 +73,67 @@
         };
       </script>
 
+      <table class="table">
+        <thead><tr><th>Диагностика</th></tr></thead>
+        <tbody>
+					<tr>
+						<td>
+							<p>
+								<button type="button" class="btn btn-default btn-warning" disabled>
+									<i class="icon-question-sign icon-white"></i> ДНС
+								</button>
+								<button type="button" class="btn btn-default btn-warning" disabled>
+									<i class="icon-question-sign icon-white"></i> Доступ к HTTPS
+								</button>
+								<button type="button" class="btn btn-default btn-success" disabled>
+									<i class="icon-ok icon-white"></i> Соединение с облаком
+								</button>
+								<a href="#" class="btn btn-link">
+									<i class="icon-refresh"></i>
+									<img src="../img/ajax-loader-min.gif" class="hide"><!-- In progress… -->
+								</a>
+								<button type="button" class="btn btn-link" disabled>12:23</button>
+							</p>
+							<a href="#" data-toggle="collapse" data-target="#logs">Отладочная информация</a>
+							<div id="logs" class="collapse">
+								<p>
+									<b>ДНС:</b> The 404 or Not Found error message is a HTTP standard response code indicating that the client was able to communicate with the server, but the server could.<br>
+									<b>Доступ к HTTPS:</b> q=404&oq=404&aqs=chrome..69i57j0l5.802j0j7&&es_sm=91&ie=UTF-8<br>
+								</p>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+      </table>
+			
       <form class="form-horizontal">
         <fieldset>
+          <table class="table" style="margin-bottom: 5px;">
+            <thead><tr><th>Настройка видеороутера</th></tr></thead>
+            <tbody><tr><td></td></tr></tbody>
+          </table>
 					
-          <table class="table">
-            <thead><tr><th>Диагностика</th></tr></thead>
-            <tbody>
-							<tr>
-								<td>
-									<p>
-										<button type="button" class="btn btn-default btn-warning" disabled>
-											<i class="icon-question-sign icon-white"></i> ДНС
-										</button>
-										<button type="button" class="btn btn-default btn-warning" disabled>
-											<i class="icon-question-sign icon-white"></i> Доступ к HTTPS
-										</button>
-										<button type="button" class="btn btn-default btn-success" disabled>
-											<i class="icon-ok icon-white"></i> Соединение с облаком
-										</button>
-										<a href="#" class="btn btn-link">
-											<i class="icon-refresh"></i>
-											<img src="../img/ajax-loader-min.gif" class="hide"><!-- In progress… -->
-										</a>
-										<button type="button" class="btn btn-link" disabled>12:23</button>
-									</p>
-									<a href="#" data-toggle="collapse" data-target="#logs">Отладочная информация</a>
-									<div id="logs" class="collapse">
-										<p>
-											<b>ДНС:</b> The 404 or Not Found error message is a HTTP standard response code indicating that the client was able to communicate with the server, but the server could.<br>
-											<b>Доступ к HTTPS:</b> q=404&oq=404&aqs=chrome..69i57j0l5.802j0j7&&es_sm=91&ie=UTF-8<br>
-										</p>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-          </table>
-
-          <table class="table">
-            <thead><tr><th>Настройки сети для выхода видеороутера в интернет</th></tr></thead>
-            <tbody><tr><td>Устройству должен быть обеспечен надежный выход в интернет (исходящие запросы на порты 1192-1194 по tcp и udp) и прямой доступ к камерам (видеороутер и камеры должны быть в одной подсети).</td></tr></tbody>
-          </table>
+          <div class="control-group">
+						<label class="control-label" for="server-pin">Я использую:</label>
+            <div class="controls">
+							<div class="btn-group" data-toggle="buttons-radio">
+								<button class="btn active" class-toggle="btn">Облако Си-Норда</button>
+								<button class="btn" class-toggle="btn">Частное облако</button>
+			      	</div>
+            </div>
+          </div>
+					
+          <div class="control-group">
+            <label class="control-label" for="server-pin">Пин-код сервера:</label>
+            <div class="controls">
+							<div class="input-append">
+							  <input class="input-small" id="appendedInputButton" type="text" value="4534">
+							  <button class="btn" type="button">Проверить</button>
+							</div>
+							<span class="help-inline"><img src="../img/ajax-loader-min.gif"></span>
+							<span class="help-inline">Сергиев Посад</span>
+            </div>
+          </div>
 
           <div class="control-group">
             <label class="control-label" for="network">Настройки сети:</label>
@@ -121,10 +142,12 @@
                 <option value="dhcp">DHCP (автоматически)</option>
                 <option>Вручную</option>
               </select>
+							<p class="help-block">
+								Устройству должен быть обеспечен надежный выход в интернет (исходящие запросы на порты 1192—1194 по tcp и udp) и прямой доступ к камерам (видеороутер и камеры должны быть в одной подсети).</p>
             </div>
           </div>
-
-          <div id="static" class="hide">
+					
+            <div id="static" class="hide">
             <div class="control-group">
               <label class="control-label" for="ip"><span class="text-error">*</span> IP-адрес:</label>
               <div class="controls">
