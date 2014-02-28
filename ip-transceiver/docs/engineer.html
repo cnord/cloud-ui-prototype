@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <title>IP Трансивер</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css">
+    <script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+			<!-- Menu -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a href="#" class="brand">IP Трансивер</a>
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li><a href="index.html">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Root -->
+      <div class="well">
+        <p>
+          <a href="#connect" class="btn btn-primary" data-toggle="modal">Подключиться к объекту №…</a>
+        </p>
+      </div>
+			
+			<!-- Table with engineers -->
+			<table class="table">
+				<thead>
+	        <tr>
+						<th width="100">№ объекта</th>
+	          <th>Время доступа</th>
+	        </tr>
+	      </thead>
+				<tbody>
+					<tr>
+						<td>1932</td>
+						<td>
+							<p>
+								31 февраля 2014, 12:09
+								&nbsp;
+								<i class="icon-arrow-right"></i>
+								&nbsp;
+								31 февраля 2014, 12:09
+							</p>
+							<p><a href="keyboard.html" class="btn">Подключиться</a></p>
+						</td>
+					</tr>
+					<tr>
+						<td>67876</td>
+						<td>
+							<p>
+								12 февраля 2014, 18:37
+								&nbsp;
+								<i class="icon-arrow-right"></i>
+								&nbsp;
+								19 февраля 2014, 18:37
+							</p>
+							<p><a href="keyboard.html" class="btn">Подключиться</a></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<hr>
+			
+			<!-- Footer -->
+      <footer class="footer">
+        <p class="muted">v. 123, © <a href="http://www.cnord.ru/" target="blank">Си-Норд</a></p>
+      </footer>
+    </div>
+    
+		<!-- Modal: Invite -->
+		<form class="form-horizontal">
+      <div id="connect" class="modal hide fade">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">×</a>
+          <h3>Подключение к объекту</h3>
+        </div>
+        <div class="modal-body">
+					
+				<div class="control-group">
+			    <label class="control-label" for="objectNumber">№ объекта</label>
+			    <div class="controls">
+			      <input type="text" id="objectNumber" class="input-small">
+						<p class="help-block error hide">Заполните поле.</p>
+						<p class="help-block error hide">Максимальная длина поля 50 символов.</p>
+			    </div>
+			  </div>
+					
+        </div>
+        <div class="modal-footer" id="inviteFormFooter">
+          <a href="#" class="btn" data-dismiss="modal">Отменить</a>
+          <a href="keyboard.html" class="btn btn-primary">Подключиться</a>
+        </div>
+      </div>
+    </form>
+
+  </body>
+</html>

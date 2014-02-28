@@ -1,0 +1,68 @@
+/*  Хак №1
+    Отступ сверху от «navbar». */
+    body { padding-top: 20px; }
+
+/*  Хак №2
+    Вывод ошибок
+    
+    В Бутстрапе подсказки для элементов формы обозначаются классами:
+    .block-help — под элементом;
+    .block-inline — справа от элемента.
+
+    При выводе ошибок используется дополнительный класс .error для слоя с классом .control-group,
+    который красит подсказки в красный цвет. Получается, что подсказка и ошибка не различаются, что не правильно.
+
+    Есть решение данной проблемы: https://github.com/twitter/bootstrap/pull/2173,
+    но его нет в оффициальном релизе. */
+
+    .control-group.error .help-block,
+    .control-group.error .help-inline {
+      /* Гасим красный цвет для подсказок при выводе ошибок. */
+      color: #444444;
+    }
+    .control-group.error .error {
+      /* Ошибки красим обратно в красный. */
+      color: #b94a48;
+    }
+
+/*  Хак №3
+    Оформление формы входа:
+    http://twitter.github.com/bootstrap/examples/signin.html */
+		
+    body {
+        /*padding-top: 40px;*/
+        padding-bottom: 40px;
+        background-color: white;
+      }
+
+    .form-signin {
+      max-width: 270px;
+      padding: 19px 29px 29px;
+      margin: 0 auto 20px;
+      background-color: #fff;
+      border: 1px solid #e5e5e5;
+      -webkit-border-radius: 10px;
+         -moz-border-radius: 10px;
+              border-radius: 10px;
+      -webkit-box-shadow: 0 1px 20px rgba(0,0,0,.05);
+         -moz-box-shadow: 0 1px 20px rgba(0,0,0,.05);
+              box-shadow: 0 1px 20px rgba(0,0,0,.05);
+    }
+		
+		.the-icons {
+		  margin-left: 0;
+		  list-style: none;
+		}
+		.the-icons li {
+		  float: left;
+		  width: 25%;
+		  line-height: 25px;}
+		.the-icons i:hover {
+		  background-color: rgba(255,0,0,.25);
+		}
+			
+			
+/*  Хак №4
+    Выравнивание кнопок на клавиатуре и надписей к ним по центру. */
+			
+		.align-center { text-align: center; }

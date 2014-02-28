@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Трансивер</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+      // Set focus in the first field.
+      $(document).ready(function(){
+        $("#email").focus();
+      });
+    </script>
+  </head>
+  
+  <body>
+    
+    <div class="container">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">IP Трансивер</h2>       
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="text" id="email" class="input-large" placeholder="Электронная почта">
+            <p class="help-block error hide">Неправильный формат адреса электронной почты.</p>
+						<p class="help-block error hide">Заполните поле.</p>
+          </div>
+        </div>
+				
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+						<input type="text" id="password" class="input-medium" placeholder="Пароль">
+            <p class="help-block error hide">Вы указали неправильный адрес электронной почты или пароль.</p>
+						<p class="help-block error hide">Заполните поле.</p>
+          </div>
+        </div>
+
+        <a href="dashboard.html" class="btn btn-primary" type="submit">Войти</a>
+				<span class="help-inline">
+					&nbsp;
+					<a href="#restorePassword" data-toggle="modal">Забыли пароль?</a>
+				</span>
+				
+				<hr>
+				
+				<p class="muted">v. 123, © <a href="http://www.cnord.ru/" target="blank">Си-Норд</a></p>
+      </form>
+    </div>
+		
+    <!-- Modal: Restore password -->
+    <div id="restorePassword" class="modal hide fade">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Восстановление пароля</h3>
+      </div>
+			
+      <div class="modal-body">
+        <div class="alert alert-success hide" id="alertPassword">
+          На <b>kengry@gmail.com</b> отправлено письмо со ссылкой для восстановления пароля.
+        </div>
+        <form id="restoreForm">
+          <fieldset>
+            <div class="control-group"><!-- error -->
+              <label class="control-label" for="restorePasswordField">
+								<p>Укажите адрес электронной почты от вашего аккаунта:</p>
+							</label>
+              <div class="controls">
+                <input type="text" class="input-xlarge" id="restorePasswordField">
+                <p class="help-block error hide">Не правильный формат адреса электронной почты.</p>
+                <p class="help-block error hide">Аккаунт с указанным адресом электронной почты не найден.</p>
+                <p class="help-block error hide">Пожалуйста, заполните поле.</p>
+              </div>
+            </div>
+            
+						<a href="#" id="" class="btn btn-primary" onClick="$('#alertPassword').show(); $('#restoreForm').hide();">Восстановить пароль</a>
+						<span class="help-inline">
+							&nbsp;
+							<a href="#" data-dismiss="modal">Закрыть окно</a>
+						</span>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
