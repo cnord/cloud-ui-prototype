@@ -93,7 +93,9 @@
                   Тревога в ГБР
                 </span></a>
               &nbsp;
-              <a data-toggle="modal" href="#editSquad">Пароли доступа к мобильному приложению</a>
+              <a data-toggle="modal" href="#editSquad">Пароли для охранников</a>
+              <span class="muted">|</span>
+              <a data-toggle="modal" href="#editReports">Специальные доклады</a>
             </p>
             <hr>
             <p>
@@ -443,6 +445,59 @@
       </div>
       <div class="modal-footer">
         <a href="#" class="btn btn-primary" data-dismiss="modal">Закрыть</a>
+      </div>
+    </div>
+    
+    <!-- Модальное окно cо специальными докладами -->
+    <div id="editReports" class="modal hide fade">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Специальные доклады</h3>
+      </div>
+      <div class="modal-body">
+        
+        <form class="form-inline">
+          <p>
+            <b>До прибытия на объект</b>
+            <span class="muted">|</span>
+            <a href="#">Добавить</a>
+          </p>
+          <p>
+            <input type="text" class="input-xlarge" value="Стою в пробке">
+            <a href="#" class="btn btn-link">Удалить</a>
+            <i class="icon-ok hide"></i>
+          </p>
+          <p>
+            <input type="text" class="input-xlarge" value="Попал в ДТП">
+            <a href="#" class="btn btn-link">Удалить</a>
+            <i class="icon-ok hide"></i>
+          </p>
+          <br>
+          <p>
+            <b>После прибытия на объект</b>
+            <span class="muted">|</span>
+            <a href="#">Добавить</a>
+          </p>
+          <p>
+            <input type="text" class="input-xlarge" value="Требуется подкрепление">
+            <a href="#" class="btn btn-link">Удалить</a>
+            <i class="icon-ok hide"></i>
+          </p>
+          <p>
+            <input type="text" class="input-xlarge" value="Осмотр без замечаний">
+            <a href="#" class="btn btn-link">Удалить</a>
+            <i class="icon-ok hide"></i>
+          </p>
+          <p>
+            <input type="text" class="input-xlarge" value="Преступник обезврежен">
+            <a href="#" class="btn btn-link">Удалить</a>
+            <i class="icon-ok hide"></i>
+          </p>
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
       </div>
     </div>
 
