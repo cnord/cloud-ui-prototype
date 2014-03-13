@@ -26,6 +26,5 @@
     }
 
 /*   */
-.align-center {
-  text-align: center;
-  }
+		.align-center { text-align: center; }
+		h3 { line-height: 24pt; }

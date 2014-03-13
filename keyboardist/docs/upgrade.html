@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка устройства</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+			
+			<!-- Menu -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a href="dashboard.html" class="brand">Панель инженера</a>
+				    <!-- 
+						<ul class="nav">
+				      <li class="active"><a href="#">Home</a></li>
+				      <li><a href="#">Link</a></li>
+				      <li><a href="#">Link</a></li>
+				    </ul>
+						-->
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li><a href="#">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+			
+			<ul class="pager">
+			  <li class="previous">
+			    <a href="dashboard.html">&larr; Назад</a>
+			  </li>
+			</ul>
+			
+			<!-- Info -->
+			<h2>Прошивка 3.2.7</h2>
+			<div class="progress">
+			  <div class="bar bar-danger" style="width: 82%;"></div>
+				<div class="bar bar-warning" style="width: 10%;"></div>
+				<div class="bar bar-success" style="width: 8%;"></div>
+			</div>
+			
+			<!-- Devices -->
+			<div class="row-fluid">
+				<div class="span3">
+					<div class="well">
+						<p>
+							Добавить в очередь на обновление объект по номеру. Это удобно для тестирования.
+						</p>
+						<p>
+							<a href="#updateByNumber" class="btn" role="button" data-toggle="modal">
+								<i class="icon-refresh"></i> № объекта
+							</a>
+						</p>
+						<hr>
+						<p>Добавить группу объектов в очередь на обновление:</p>
+						<p>
+							<a href="#updateGroup" class="btn" role="button" data-toggle="modal">
+								<i class="icon-refresh"></i> 100 объектов
+							</a>
+						</p>
+						<p>
+							<a href="#updateAll" class="btn" role="button" data-toggle="modal">
+								<i class="icon-refresh"></i> Все объекты
+							</a>
+						</p>
+					</div>
+					<br>
+				</div>
+				<div class="span3">
+					<h4 class="text-error">Устарели <sup>116</sup></h4>
+					<p>
+						Нажмите на объект, чтобы обновить прошивку:
+					</p>
+					<p>
+						<a href="#updateDirect" data-toggle="modal">№ 3876, 3.2</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 31439, 3.2.4</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6346, 3.2.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 1244, 3.2.3</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 3563, 3.2.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6842, 3.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 53245, 3.1.9</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 2345, 2.0.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 3876, 3.2</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 31439, 3.2.4</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6346, 3.2.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 1244, 3.2.3</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 3563, 3.2.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6842, 3.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 53245, 3.1.9</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 2345, 2.0.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 3876, 3.2</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 31439, 3.2.4</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6346, 3.2.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 1244, 3.2.3</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 3563, 3.2.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6842, 3.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 53245, 3.1.9</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 2345, 2.0.1</a><br>
+					</p>
+					<p><button class="btn" type="button">Показать больше</button></p>
+					<br>
+				</div>
+				<div class="span3">
+					<h4 class="text-warning">Очередь <sup>12</sup></h4>
+					<p>на обновление прошивки до версии 3.2.7</p>
+					<p>
+						№ 31438, 3.2.4<br>
+						№ 32143, 3.2<br>
+						№ 43322, 3.2<br>
+						№ 3443, 3.2<br>
+						№ 4544, 3.2.1<br>
+						№ 21434, 3.2.1<br>
+						№ 31438, 3.2.1<br>
+						№ 32143, 3.2.4<br>
+						№ 43322,3.2.4<br>
+						№ 3443, 3.2.4<br>
+						№ 4544, 3.2.4<br>
+						№ 21434, 3.2.4<br>
+					</p>
+					<button class="btn hide1" type="button">Показать больше</button>
+					<hr>
+					<p><i><a href="#updateCancel" data-toggle="modal" class="text-error">Отменить обновление</a></i></p>
+					<p>Все объекты будут перенесены в «устаревшие». Исключение — объекты, которые начали обновляться.</p>
+					<br>
+				</div>
+				<div class="span3">
+					<h4 class="text-success">Обновлено <sup>9</sup></h4>
+					<p>Устройства, успешно обновленные до версии 3.2.7:</p>
+					<p>
+						№ 21434<br>
+						№ 34675<br>
+						№ 5563<br>
+						№ 12343<br>
+						№ 21434<br>
+						№ 56332<br>
+						№ 453<br>
+						№ 46864<br>
+						№ 4556<br>
+					</p>
+					<br>
+				</div>
+			</div>
+			
+			<!-- Modals -->
+			
+			<!-- Update direct -->
+			<div id="updateDirect" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновить объект № 3876?</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>Объект № 3876 будет добавлен в очередь на обновление прошивки.</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить</a>
+			  </div>
+			</div>
+			
+			<!-- Update by number -->
+			<div id="updateByNumber" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновить объект</h3>
+			  </div>
+			  <div class="modal-body">
+			    <form class="form-horizontal">
+						<div class="control-group">
+						    <label class="control-label" for="objectNumber">Номер объекта</label>
+						    <div class="controls">
+						      <input type="text" id="objectNumber" class="span2">
+						    </div>
+						  </div>
+			    </form>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить объект</a>
+			  </div>
+			</div>
+			
+			<!-- Update group -->
+			<div id="updateGroup" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновить 100 объектов?</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>100 первых объектов из списка будут добавлены в очередь на обновление прошивки.</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить 100 объектов</a>
+			  </div>
+			</div>
+			
+			<!-- Update all -->
+			<div id="updateAll" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновить все объектов?</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>Все объекты из списка будут добавлены в очередь на обновление прошивки.</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить все объекты</a>
+			  </div>
+			</div>
+			
+			<!-- Update cancel -->
+			<div id="updateCancel" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Отменить обновление?</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>Все объекты из списка будут добавлены в очередь на обновление прошивки.</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-danger" data-dismiss="modal">Отменить обновление</a>
+			  </div>
+			</div>
+
+    </div>
+  </body>
+</html>
