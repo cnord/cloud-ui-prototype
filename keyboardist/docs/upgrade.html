@@ -62,23 +62,18 @@
 				<div class="span3">
 					<div class="well">
 						<p>
-							Добавить в очередь на обновление объект по номеру. Это удобно для тестирования.
+							Добавить в очередь на обновление прошивки по номеру объекта.
 						</p>
 						<p>
 							<a href="#updateByNumber" class="btn" role="button" data-toggle="modal">
-								<i class="icon-refresh"></i> № объекта
+								По номеру объекта
 							</a>
 						</p>
 						<hr>
-						<p>Добавить группу объектов в очередь на обновление:</p>
-						<p>
-							<a href="#updateGroup" class="btn" role="button" data-toggle="modal">
-								<i class="icon-refresh"></i> 100 объектов
-							</a>
-						</p>
+						<p>Добавить все передатчики в очередь на обновление прошивки:</p>
 						<p>
 							<a href="#updateAll" class="btn" role="button" data-toggle="modal">
-								<i class="icon-refresh"></i> Все объекты
+								Все передатчики
 							</a>
 						</p>
 					</div>
@@ -90,12 +85,17 @@
 						Нажмите на объект, чтобы обновить прошивку:
 					</p>
 					<p>
+						<!--
+							Сортировка:
+							1) По номеру прошивки, по возрастанию.
+							2) По номеру объекту, по возрастанию.  
+						 -->
 						<a href="#updateDirect" data-toggle="modal">№ 3876, 3.2</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 31439, 3.2.4</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 6346, 3.2.1</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 1244, 3.2.3</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 3563, 3.2.1</a><br>
-						<a href="#updateDirect" data-toggle="modal">№ 6842, 3.1</a><br>
+						<a href="#updateDirect" data-toggle="modal">№ 6842, № 6843, 3.1</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 53245, 3.1.9</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 2345, 2.0.1</a><br>
 						<a href="#updateDirect" data-toggle="modal">№ 3876, 3.2</a><br>
@@ -122,6 +122,12 @@
 					<h4 class="text-warning">Очередь <sup>12</sup></h4>
 					<p>на обновление прошивки до версии 3.2.7</p>
 					<p>
+						<!--
+						  Сотировка:
+							1) По дате добавления в очередь: только что добавленные — сверху.
+							2) По номеру прошивки, по возрастанию.
+						  3) По номеру объекту, по возрастанию.
+						-->
 						№ 31438, 3.2.4<br>
 						№ 32143, 3.2<br>
 						№ 43322, 3.2<br>
@@ -138,13 +144,16 @@
 					<button class="btn hide1" type="button">Показать больше</button>
 					<hr>
 					<p><i><a href="#updateCancel" data-toggle="modal" class="text-error">Отменить обновление</a></i></p>
-					<p>Все объекты будут перенесены в «устаревшие». Исключение — объекты, которые начали обновляться.</p>
+					<p>Все передатчики будут перенесены в «устаревшие». Исключение — объекты, у которых уже начался процесс обновления прошивки.</p>
 					<br>
 				</div>
 				<div class="span3">
 					<h4 class="text-success">Обновлено <sup>9</sup></h4>
-					<p>Устройства, успешно обновленные до версии 3.2.7:</p>
+					<p>Передатчики, успешно обновленные до версии 3.2.7:</p>
 					<p>
+						<!--
+						  Сортировка: по дате обновления: только что обновленные — сверху.
+						-->
 						№ 21434<br>
 						№ 34675<br>
 						№ 5563<br>
@@ -165,10 +174,11 @@
 			<div id="updateDirect" class="modal hide fade">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Обновить объект № 3876?</h3>
+			    <h3>Обновить прошивку у передатчика</h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>Объект № 3876 будет добавлен в очередь на обновление прошивки.</p>
+			    <p>Передатчик с объектами № 4324, № 4325 будет добавлен в очередь на обновление прошивки.</p>
+					<p class="hide">Передатчик с объектом № 432 будет добавлен в очередь на обновление прошивки.</p>
 			  </div>
 			  <div class="modal-footer">
 			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
@@ -180,7 +190,7 @@
 			<div id="updateByNumber" class="modal hide fade">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Обновить объект</h3>
+			    <h3>Обновить прошивку у передатчика</h3>
 			  </div>
 			  <div class="modal-body">
 			    <form class="form-horizontal">
@@ -194,22 +204,7 @@
 			  </div>
 			  <div class="modal-footer">
 			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить объект</a>
-			  </div>
-			</div>
-			
-			<!-- Update group -->
-			<div id="updateGroup" class="modal hide fade">
-			  <div class="modal-header">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Обновить 100 объектов?</h3>
-			  </div>
-			  <div class="modal-body">
-			    <p>100 первых объектов из списка будут добавлены в очередь на обновление прошивки.</p>
-			  </div>
-			  <div class="modal-footer">
-			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить 100 объектов</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить прошивку</a>
 			  </div>
 			</div>
 			
@@ -217,14 +212,14 @@
 			<div id="updateAll" class="modal hide fade">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Обновить все объектов?</h3>
+			    <h3>Обновить все передатчики?</h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>Все объекты из списка будут добавлены в очередь на обновление прошивки.</p>
+			    <p>Все передатчики из списка будут добавлены в очередь на обновление прошивки.</p>
 			  </div>
 			  <div class="modal-footer">
 			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить все объекты</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить все передатчики</a>
 			  </div>
 			</div>
 			
@@ -235,7 +230,7 @@
 			    <h3>Отменить обновление?</h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>Все объекты из списка будут добавлены в очередь на обновление прошивки.</p>
+			    <p>Все передатчики из очереди будут перенесены в «устаревшие».</p>
 			  </div>
 			  <div class="modal-footer">
 			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
