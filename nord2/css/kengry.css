@@ -1,0 +1,18 @@
+/*  Хак №1
+    Отступ сверху при переходе по якорной ссылке.
+	 Фиг знает, почему так, но работает… */
+    .anchor-hack {
+			padding-top: 1px;
+		}
+		
+/*  Хак №2
+    Отступ сверху от чёрного навбара. */
+    body {
+      padding-top: 20px;
+    }
+
+	.page-header {
+	  padding-bottom: 0px;
+	  margin: 20px 0 0 0;
+	  border-bottom: none;
+	}

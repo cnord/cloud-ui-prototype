@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Настройка контрольной панели</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/docs.css">
+		<link rel="stylesheet" href="../css/kengry.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div class="container">
+      
+			<!-- Navbar -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="objects.html">
+									<i class="icon-arrow-left icon-white"></i>&nbsp;&nbsp;Назад, к списку объектов</a>
+								</li>
+              </ul>
+              <ul class="nav pull-right">
+                <li><a href="index.html">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+				<div class="span3 bs-docs-sidebar">
+					<ul class="nav nav-list bs-docs-sidenav affix" data-spy="affix"  data-offset-top="60">
+	          <li><a href="#start"><i class="icon-chevron-right"></i> Быстрый старт</a></li>
+	          <li><a href="#sections"><i class="icon-chevron-right"></i> Области, шлейфы, коды</a></li>
+	          <li><a href="#panel"><i class="icon-chevron-right"></i> Настройки панели</a></li>
+	          <li><a href="#advanced"><i class="icon-chevron-right"></i> Дополнительные настройки</a></li>
+	          <li><a href="#record"><i class="icon-chevron-right"></i> Запись настроек в панель</a></li>
+	        </ul>
+				</div>
+				<div class="span9">
+					
+					<h1>Магазин Диски</h1>
+					<p>Объект № 6342</p>
+					<p class="muted">
+						<i class="icon-map-marker"></i> ул. Красных партизан, д. 324, корп. 3<br>
+					</p>
+					<hr>
+	        
+					<section id="start" class="anchor-hack">
+	          <div class="page-header">
+	            <h1>Быстрый старт</h1>
+	          </div>
+						<p>Если к панели подключён один шлейф, для&nbsp;запуска прибора достаточно указать №&nbsp;объекта и&nbsp;выбрать формат сообщений. Для&nbsp;безопасности смените коды доступа. Время будет синхронизировано автоматически.</p>
+						
+						<div class="form-horizontal well">
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">№ объекта:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="3423">
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Формат сообщений:</label>
+			          <div class="controls">
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn active" class-toggle="btn">NPAF</button>
+										<button class="btn" class-toggle="btn">PAF</button>
+					      	</div>
+			          </div>
+			        </div>
+
+							<hr>
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Главный код:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="5555">
+									<span class="help-inline"><a href="#"><i class="icon-refresh"></i></a></span>
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Код техника:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="1234">
+									<span class="help-inline"><a href="#"><i class="icon-refresh"></i></a></span>
+			          </div>
+			        </div>
+							<hr>
+							<p>
+								<b>Формат станции</b> указывается в настройках передатчика ТR-100 GSM-3.<br>
+								Если вам не нужно дополнительно что-то настраивать, переходите сразу к записи настроек в панель:<br>
+							</p>
+							<p>
+								<a href="objects.html" class="btn">
+									Записать настройки в паннель
+									&nbsp;
+									<i class="icon-arrow-right"></i>
+								</a>
+							</p>
+				
+						</div>
+					</section>		
+					<section id="sections" class="anchor-hack">
+	          <div class="page-header">
+	            <h1>Области, шлейфы, коды</h1>
+	          </div>
+						<p>По умолчанию, все шлейфы принадлежат одной области. Для разбиения объекта на области, добавьте новую область и перенесите в неё соответствующие шлейфы.</p>
+						<button class="btn">Добавить область</button>
+						<br><br>
+						
+						
+						<div class="well">
+							<h2 style="margin: 0 0 -10px 0;">1-я область</h2>
+							<hr>
+							<form class="form-horizontal">
+								<div class="control-group" style="margin-left: -136px;">
+									<label class="control-label" for=""><i class="icon-home"></i></label>
+									<div class="controls">
+										<input type="text" class="input-mini" value="3423">
+										<span class="help-inline">— номер объекта</span>
+				          </div>
+				        </div>
+								<hr>
+								<h4 style="margin-left: 44px;">Коды пользователей</h4>
+								<div class="control-group" style="margin-left: -136px;">
+									<label class="control-label" for=""><i class="icon-user"></i></label>
+				          <div class="controls">
+										<select class="input-mini">
+										  <option selected>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15</option>
+											<option>16</option>
+											<option>17</option>
+											<option>18</option>
+										</select>
+										&nbsp;
+										<div class="btn-group" data-toggle="buttons-radio">
+											<button class="btn active" class-toggle="btn">Код</button>
+											<button class="btn" class-toggle="btn">Таблетка</button>
+						      	</div>
+										&nbsp;
+										<input id="2" type="text" class="input-mini" value="3423">
+										<span class="help-inline"><a href="#"><i class="icon-refresh"></i></a></span>
+										&nbsp;&nbsp;&nbsp;
+										<span class="help-inline"><a href="#">Удалить</a></span>
+				          </div>
+									<p></p>
+									<label class="control-label" for=""><i class="icon-user"></i></label>
+									<div class="controls">
+										<select class="input-mini">
+										  <option>1</option>
+										  <option selected>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15</option>
+											<option>16</option>
+											<option>17</option>
+											<option>18</option>
+										</select>
+										&nbsp;
+										<div class="btn-group" data-toggle="buttons-radio">
+											<button class="btn" class-toggle="btn">Код</button>
+											<button class="btn active" class-toggle="btn">Таблетка</button>
+						      	</div>
+										&nbsp;
+										<input id="2" type="text" class="input-medium" value="" placeholder="Код таблетки">
+										<a href="#" class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Код таблетки находится на&nbsp;самой таблетке и состоит из&nbsp;цифр"><i class="icon-question-sign"></i></a>
+										&nbsp;
+										<span class="help-inline"><a href="#">Удалить</a></span>
+										<p></p>
+										<p><a href="#">Добавить пользователя</a></p>
+				          </div>
+				        </div>
+							</form>
+							
+							<hr>
+																												
+							<!-- 1 -->
+							<div class="btn-group" style="margin-left: 44px;">
+								<a class="btn btn-inverse disabled"><b>1</b> <span class="muted">— охранный шлейф</span></a>
+							  <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+							    <span class="caret"></span>
+							  </button>
+								
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">охранный шлейф</a></li>
+									<li><a href="#">пожарный шлейф</a></li>
+									<li><a href="#">тревожная кнопка</a></li>
+									<li><a href="#">ключ</a></li>
+									<li><a href="#">тампер</a></li>
+							  </ul>
+							</div>
+							
+							<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    1-я область
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">1-я область</a></li>
+									<li><a href="#">2-я область</a></li>
+							  </ul>
+							</div>
+							
+							<a href="#first" data-toggle="modal" class="btn btn-link"><i class="icon-info-sign"></i></a>
+							<p></p>
+							<div class="btn-group" data-toggle="buttons-radio" style="margin-left: 44px;">
+								<button class="btn btn-success active" class-toggle="btn">Включён</button>
+								<button class="btn" class-toggle="btn-danger">Исключён</button>
+			      	</div>
+							<a href="#first" data-toggle="modal" class="btn btn-link"><i class="icon-info-sign"></i></a>
+							<p></p>            
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Характеристики шлейфа">
+								<i class="icon-list-alt"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Резистор</button>
+			          <button class="btn active" class-toggle="btn">Разомкнутый</button>
+			          <button class="btn active" class-toggle="btn">Задержанный</button>
+			          <button class="btn" class-toggle="btn">Проходной</button>
+								<button class="btn" class-toggle="btn">24 часа</button>
+			        </div>
+							<a href="#first" data-toggle="modal" class="btn btn-link"><i class="icon-info-sign"></i></a>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на нарушение">
+								<i class="icon-bullhorn"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+								<button class="btn" class-toggle="btn">Доп. выход</button>
+			          <button class="btn" class-toggle="btn">Переустановка</button>
+								<button class="btn" class-toggle="btn">Сброс пож. дат.</button>
+			        </div>
+							<a href="#first" data-toggle="modal" class="btn btn-link"><i class="icon-info-sign"></i></a>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на неисправность">
+								<i class="icon-wrench"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+			          <button class="btn" class-toggle="btn">Доп. выход</button>
+								<button class="btn" class-toggle="btn">Зуммер клавиатуры</button>
+			        </div>
+							<a href="#first" data-toggle="modal" class="btn btn-link"><i class="icon-info-sign"></i></a>
+							<hr>
+							
+							<!-- 2 -->
+							<div class="btn-group" style="margin-left: 44px;">
+								<a class="btn btn-inverse disabled"><b>2</b> <span class="muted">— охранный шлейф</span></a>
+							  <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">охранный шлейф</a></li>
+									<li><a href="#">пожарный шлейф</a></li>
+									<li><a href="#">тревожная кнопка</a></li>
+									<li><a href="#">ключ</a></li>
+									<li><a href="#">тампер</a></li>
+							  </ul>
+							</div>
+							<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    1-я область
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">1-я область</a></li>
+									<li><a href="#">2-я область</a></li>
+							  </ul>
+							</div>
+							<p></p>
+							<div class="btn-group" data-toggle="buttons-radio" style="margin-left: 44px;">
+								<button class="btn btn-success active" class-toggle="btn">Включён</button>
+								<button class="btn" class-toggle="btn-danger">Исключён</button>
+			      	</div>
+							<p></p>            
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Характеристики шлейфа">
+								<i class="icon-list-alt"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Резистор</button>
+			          <button class="btn active" class-toggle="btn">Разомкнутый</button>
+			          <button class="btn active" class-toggle="btn">Задержанный</button>
+			          <button class="btn" class-toggle="btn">Проходной</button>
+								<button class="btn" class-toggle="btn">24 часа</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на нарушение">
+								<i class="icon-bullhorn"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+								<button class="btn" class-toggle="btn">Доп. выход</button>
+			          <button class="btn" class-toggle="btn">Переустановка</button>
+								<button class="btn" class-toggle="btn">Сброс пож. дат.</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на неисправность">
+								<i class="icon-wrench"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+			          <button class="btn" class-toggle="btn">Доп. выход</button>
+								<button class="btn" class-toggle="btn">Зуммер клавиатуры</button>
+			        </div>
+							<hr>
+							
+							<!-- 3 -->
+							<div class="btn-group" style="margin-left: 44px;">
+								<a class="btn btn-inverse disabled"><b>3</b> <span class="muted">— охранный шлейф</span></a>
+							  <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">охранный шлейф</a></li>
+									<li><a href="#">пожарный шлейф</a></li>
+									<li><a href="#">тревожная кнопка</a></li>
+									<li><a href="#">ключ</a></li>
+									<li><a href="#">тампер</a></li>
+							  </ul>
+							</div>
+							<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    1-я область
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">1-я область</a></li>
+									<li><a href="#">2-я область</a></li>
+							  </ul>
+							</div>
+							<p></p>
+							<div class="btn-group" data-toggle="buttons-radio" style="margin-left: 44px;">
+								<button class="btn btn-success active" class-toggle="btn">Включён</button>
+								<button class="btn" class-toggle="btn-danger">Исключён</button>
+			      	</div>
+							<p></p>            
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Характеристики шлейфа">
+								<i class="icon-list-alt"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Резистор</button>
+			          <button class="btn active" class-toggle="btn">Разомкнутый</button>
+			          <button class="btn active" class-toggle="btn">Задержанный</button>
+			          <button class="btn" class-toggle="btn">Проходной</button>
+								<button class="btn" class-toggle="btn">24 часа</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на нарушение">
+								<i class="icon-bullhorn"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+								<button class="btn" class-toggle="btn">Доп. выход</button>
+			          <button class="btn" class-toggle="btn">Переустановка</button>
+								<button class="btn" class-toggle="btn">Сброс пож. дат.</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на неисправность">
+								<i class="icon-wrench"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+			          <button class="btn" class-toggle="btn">Доп. выход</button>
+								<button class="btn" class-toggle="btn">Зуммер клавиатуры</button>
+			        </div>
+							<hr>
+							
+							<!-- 5 -->
+							<div class="btn-group" style="margin-left: 44px;">
+								<a class="btn btn-inverse disabled"><b>5</b> <span class="muted">— ключ</span></a>
+							  <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">охранный шлейф</a></li>
+									<li><a href="#">пожарный шлейф</a></li>
+									<li><a href="#">тревожная кнопка</a></li>
+									<li><a href="#">ключ</a></li>
+									<li><a href="#">тампер</a></li>
+							  </ul>
+							</div>
+							<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    1-я область
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">1-я область</a></li>
+									<li><a href="#">2-я область</a></li>
+							  </ul>
+							</div>
+							<p></p>
+							<div class="btn-group" data-toggle="buttons-radio" style="margin-left: 44px;">
+								<button class="btn btn-success active" class-toggle="btn">Включён</button>
+								<button class="btn" class-toggle="btn-danger">Исключён</button>
+			      	</div>
+							<!--
+							<p></p>            
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Характеристики шлейфа">
+								<i class="icon-list-alt"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn btn-success active" class-toggle="btn">Резистор</button>
+			          <button class="btn btn-success active" class-toggle="btn">Разомкнутый</button>
+			          <button class="btn btn-success active" class-toggle="btn">Задержанный</button>
+			          <button class="btn" class-toggle="btn-success">Проходной</button>
+								<button class="btn" class-toggle="btn-success">24 часа</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на нарушение">
+								<i class="icon-bullhorn"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn btn-mini1 btn-success active" class-toggle="btn">Сирена</button>
+								<button class="btn btn-mini1 btn-success active" class-toggle="btn">Реле</button>
+								<button class="btn btn-mini1" class-toggle="btn-success">Доп. выход</button>
+			          <button class="btn btn-min1i" class-toggle="btn-success">Переустановка</button>
+								<button class="btn btn-mini1" class-toggle="btn-success">Сброс пож. дат.</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на неисправность">
+								<i class="icon-wrench"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn btn-mini1 btn-success active" class-toggle="btn">Сирена</button>
+								<button class="btn btn-mini1 btn-success active" class-toggle="btn">Реле</button>
+			          <button class="btn btn-mini1" class-toggle="btn-success">Доп. выход</button>
+								<button class="btn btn-mini1" class-toggle="btn-success">Зуммер клавиатуры</button>
+			        </div>
+							-->
+							<hr>
+							
+							<!-- 6 -->
+							<div class="btn-group" style="margin-left: 44px;">
+								<a class="btn btn-inverse disabled"><b>6</b> <span class="muted">— тампер</span></a>
+							  <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">охранный шлейф</a></li>
+									<li><a href="#">пожарный шлейф</a></li>
+									<li><a href="#">тревожная кнопка</a></li>
+									<li><a href="#">ключ</a></li>
+									<li><a href="#">тампер</a></li>
+							  </ul>
+							</div>
+							<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    1-я область
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">1-я область</a></li>
+									<li><a href="#">2-я область</a></li>
+							  </ul>
+							</div>
+							<p></p>
+							<div class="btn-group" data-toggle="buttons-radio" style="margin-left: 44px;">
+								<button class="btn btn-success active" class-toggle="btn">Включён</button>
+								<button class="btn" class-toggle="btn-danger">Исключён</button>
+			      	</div>
+							<!--
+							<p></p>            
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Характеристики шлейфа">
+								<i class="icon-list-alt"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn btn-success active" class-toggle="btn">Резистор</button>
+			          <button class="btn btn-success active" class-toggle="btn">Разомкнутый</button>
+			          <button class="btn btn-success active" class-toggle="btn">Задержанный</button>
+			          <button class="btn" class-toggle="btn-success">Проходной</button>
+								<button class="btn" class-toggle="btn-success">24 часа</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на нарушение">
+								<i class="icon-bullhorn"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn btn-mini1 btn-success active" class-toggle="btn">Сирена</button>
+								<button class="btn btn-mini1 btn-success active" class-toggle="btn">Реле</button>
+								<button class="btn btn-mini1" class-toggle="btn-success">Доп. выход</button>
+			          <button class="btn btn-min1i" class-toggle="btn-success">Переустановка</button>
+								<button class="btn btn-mini1" class-toggle="btn-success">Сброс пож. дат.</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на неисправность">
+								<i class="icon-wrench"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn btn-mini1 btn-success active" class-toggle="btn">Сирена</button>
+								<button class="btn btn-mini1 btn-success active" class-toggle="btn">Реле</button>
+			          <button class="btn btn-mini1" class-toggle="btn-success">Доп. выход</button>
+								<button class="btn btn-mini1" class-toggle="btn-success">Зуммер клавиатуры</button>
+			        </div>
+							-->
+			      </div>
+						
+						<div class="well">
+							<h2 style="margin: 0 0 -10px 0;">2-я область <small>/ <a href="#">удалить</a></small></h2>
+							<hr>
+							<form class="form-horizontal">
+								<div class="control-group" style="margin-left: -136px;">
+									<label class="control-label" for=""><i class="icon-home"></i></label>
+									<div class="controls">
+										<input type="text" class="input-mini" value="3427">
+										<span class="help-inline">— номер объекта</span>
+				          </div>
+				        </div>
+								<hr>
+								<h4 style="margin-left: 44px;">Коды пользователей</h4>
+								<a href="#" style="margin-left: 44px;">Добавить пользователя</a>
+							</form>
+							<hr>
+							
+							<!-- 4 -->
+							<div class="btn-group" style="margin-left: 44px;">
+								<a class="btn btn-inverse disabled"><b>4</b> <span class="muted">— охранный шлейф</span></a>
+							  <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu">
+							    <li class="active"><a href="#">охранный шлейф</a></li>
+									<li><a href="#">пожарный шлейф</a></li>
+									<li><a href="#">тревожная кнопка</a></li>
+									<li><a href="#">ключ</a></li>
+									<li><a href="#">тампер</a></li>
+							  </ul>
+							</div>
+							<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    2-я область
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <li><a href="#">1-я область</a></li>
+									<li class="active"><a href="#">2-я область</a></li>
+							  </ul>
+							</div>
+							<p></p>
+							<div class="btn-group" data-toggle="buttons-radio" style="margin-left: 44px;">
+								<button class="btn btn-success active" class-toggle="btn">Включён</button>
+								<button class="btn" class-toggle="btn-danger">Исключён</button>
+			      	</div>
+							<p></p>            
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Характеристики шлейфа">
+								<i class="icon-list-alt"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Резистор</button>
+			          <button class="btn active" class-toggle="btn">Разомкнутый</button>
+			          <button class="btn active" class-toggle="btn">Задержанный</button>
+			          <button class="btn" class-toggle="btn">Проходной</button>
+								<button class="btn" class-toggle="btn">24 часа</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на нарушение">
+								<i class="icon-bullhorn"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+								<button class="btn" class-toggle="btn">Доп. выход</button>
+			          <button class="btn" class-toggle="btn">Переустановка</button>
+								<button class="btn" class-toggle="btn">Сброс пож. дат.</button>
+			        </div>
+							<p></p>
+							<a class="btn btn-link" data-toggle="modal" rel="tooltip" data-original-title="Реакции на неисправность">
+								<i class="icon-wrench"></i>
+							</a>
+							<div class="btn-group" data-toggle="buttons-checkbox">
+			          <button class="btn active" class-toggle="btn">Сирена</button>
+								<button class="btn active" class-toggle="btn">Реле</button>
+			          <button class="btn" class-toggle="btn">Доп. выход</button>
+								<button class="btn" class-toggle="btn">Зуммер клавиатуры</button>
+			        </div>
+						</div>
+					</section>
+					<section id="panel" class="anchor-hack">
+	          <div class="page-header" >
+	            <h1>Настройки панели</h1>
+	          </div>
+						<p>Если к панели подключён один шлейф, для&nbsp;запуска прибора достаточно указать №&nbsp;объекта и&nbsp;выбрать формат сообщений. Для&nbsp;безопасности смените коды доступа. Время будет синхронизировано автоматически.</p>
+						
+						<div class="form-horizontal well">
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Задержка на вход:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="60">
+									<span class="help-inline">сек.</span>
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Задержка на выход:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="60">
+									<span class="help-inline">сек.</span>
+			          </div>
+			        </div>
+				
+							<div class="control-group hide">
+			          <label class="control-label" for="2">Объединение шлейфов:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="0">
+									<span class="help-inline">сек.</span>
+			          </div>
+			        </div>
+				
+							<hr>
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Тип сирены:</label>
+			          <div class="controls">
+									<select class="input-large">
+									  <option selected>Без питания</option>
+									  <option>С питанием, типа «Горн»</option>
+									</select>
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+			          <label class="control-label" for="2">Звучание сирены:</label>
+			          <div class="controls">
+			            <input id="2" type="text" class="input-mini" value="255">
+									<span class="help-inline">секунд</span>
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+								<div class="controls">
+									<label class="checkbox">
+									  <input type="checkbox">Использовать сирену для подтверждения снятий и&nbsp;постановок
+									</label>
+			          </div>
+			        </div>
+				
+							<hr>
+				
+							<div class="control-group">
+								<label class="control-label">Отсутствие 220 В:</label>
+								<div class="controls">
+									<div class="btn-group" data-toggle="buttons-checkbox">
+					          <button class="btn" class-toggle="btn-success">Сирена</button>
+										<button class="btn" class-toggle="btn-success">Реле</button>
+					          <button class="btn" class-toggle="btn-success">Доп. выход</button>
+										<button class="btn" class-toggle="btn-success">Зуммер клавиатуры</button>
+									</div>
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+			          <div class="controls">
+			            <span class="help-inline">Интервал сообщений:&nbsp;</span>
+									<input id="2" type="text" class="input-mini" value="10">
+									<span class="help-inline">мин.</span>
+			          </div>
+			        </div>
+				
+							<hr>
+				
+							<div class="control-group">
+								<label class="control-label">Неисправность АКБ:</label>
+								<div class="controls">
+									<div class="btn-group" data-toggle="buttons-checkbox">
+					          <button class="btn" class-toggle="btn-success">Сирена</button>
+										<button class="btn" class-toggle="btn-success">Реле</button>
+					          <button class="btn" class-toggle="btn-success">Доп. выход</button>
+										<button class="btn" class-toggle="btn-success">Зуммер клавиатуры</button>
+									</div>
+			          </div>
+			        </div>
+				
+							<div class="control-group">
+			          <div class="controls">
+			            <span class="help-inline">Интервал сообщений:&nbsp;</span>
+									<input id="2" type="text" class="input-mini" value="1">
+									<span class="help-inline">мин.</span>
+			          </div>
+			        </div>
+				
+						</div>
+					</section>
+					<section id="advanced" class="anchor-hack">
+	          <div class="page-header" >
+	            <h1>Дополнительные настройки</h1>
+	          </div>
+						<p>Если к панели подключён один шлейф, для&nbsp;запуска прибора достаточно указать №&nbsp;объекта и&nbsp;выбрать формат сообщений. Для&nbsp;безопасности смените коды доступа. Время будет синхронизировано автоматически.</p>
+						<div class="well">
+							<form class="form-horizontal">
+								<h4 style="margin-left: 44px;">Коды групп захвата</h4>
+								<div class="control-group" style="margin-left: -136px;">
+									<label class="control-label" for=""><i class="icon-user"></i></label>
+				          <div class="controls">
+										<select class="input-mini">
+										  <option selected>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15</option>
+											<option>16</option>
+											<option>17</option>
+											<option>18</option>
+										</select>
+										&nbsp;
+										<div class="btn-group" data-toggle="buttons-radio">
+											<button class="btn" class-toggle="btn">Код</button>
+											<button class="btn active" class-toggle="btn">Таблетка</button>
+						      	</div>
+										&nbsp;
+										<input id="2" type="text" class="input-medium" value="3423">
+										&nbsp;&nbsp;&nbsp;
+										<span class="help-inline"><a href="#">Удалить</a></span>
+				          </div>
+									<p></p>
+									<label class="control-label" for=""><i class="icon-user"></i></label>
+									<div class="controls">
+										<select class="input-mini">
+										  <option>1</option>
+										  <option selected>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option>14</option>
+											<option>15</option>
+											<option>16</option>
+											<option>17</option>
+											<option>18</option>
+										</select>
+										&nbsp;
+										<div class="btn-group" data-toggle="buttons-radio">
+											<button class="btn" class-toggle="btn">Код</button>
+											<button class="btn active" class-toggle="btn">Таблетка</button>
+						      	</div>
+										&nbsp;
+										<input id="2" type="text" class="input-medium" value="8536">
+										&nbsp;&nbsp;&nbsp;
+										<span class="help-inline"><a href="#">Удалить</a></span>
+										<p></p>
+										<a href="#">Добавить группу захвата</a>
+				          </div>
+				        </div>
+							</form>
+							<hr>
+							<form class="form-horizontal">
+								<h4 style="margin-left: 44px;">Если испольуется Nord LAN</h4>
+								<div class="control-group" style="margin-left: -136px;">
+									<div class="controls">
+										<label class="checkbox">
+										  <input type="checkbox">Резервный канал
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox">Контроль клавиатуры
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox">Контроль сирены
+										</label>
+				          </div>
+				        </div>
+							</form>
+							<hr>
+							<form class="form-horizontal">
+								<h4 style="margin-left: 44px;">Исключения</h4>
+								<div class="control-group" style="margin-left: -136px;">
+									<div class="controls">
+										<label class="checkbox">
+										  <input type="checkbox">Автоматически исключать шлейф после трёх тревог
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox">Требовать исключение нарушенных или неисправных шлейфов при постановке
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox">Право на исключение при постановке
+										</label>
+				          </div>
+				        </div>
+							</form>
+							
+						</div>
+					</section>
+					<section id="record" class="anchor-hack">
+	          <div class="page-header" >
+	            <h1>Запись настроек в панель</h1>
+	          </div>
+						<p>Если к панели подключён один шлейф, для&nbsp;запуска прибора достаточно указать №&nbsp;объекта и&nbsp;выбрать формат сообщений. Для&nbsp;безопасности смените коды доступа. Время будет синхронизировано автоматически.</p>
+						<div class="well">
+							<a href="objects.html" class="btn btn-large btn-block btn-primary" type="button">
+								Записать настройки в панель
+								&nbsp;
+								<i class="icon-arrow-right icon-white"></i>
+							</a>
+						</div>
+						<br><br>
+					</section>
+				</div>
+			</div>
+			
+      <footer class="footer">
+				<hr>
+        <p>© <a href="http://www.cnord.ru/">Си-Норд</a></p>
+				<br><br>
+      </footer>
+			
+    </div>
+		
+		<div id="first" class="modal hide fade">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		    <h3>Подсказка</h3>
+		  </div>
+		  <div class="modal-body">
+		    <p>Текст…</p>
+		  </div>
+		  <div class="modal-footer">
+		    <a href="#" data-dismiss="modal" class="btn">Закрыть</a>
+		  </div>
+		</div>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/toggle.js"></script>
+		<script>
+      // Без него Tooltip не работает…
+      $(window).load(function(){
+        $(function(){
+          $('a[rel=tooltip]').tooltip();
+          });
+        });
+    </script>
+  </body>
+</html>

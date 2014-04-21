@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Кейсы:
+     1. Настроить контрольную панель на только что смонтированном объекте.
+		    a) Простой объект: один шлейф, все настройки по умолчанию.
+        б) Сложный объект: области и шлейфы, дополнительные настройки.
+     2. Добавить или удалить код пользователя.
+     3. Исключить неисправные шлейфы из охраны.  -->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
+    <title>Норд 2.0. Удалённая настройка контрольной панели</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+		<link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#login").focus(); // Установка фокуса в первое поле.
+      });
+    </script>
+  </head>
+  
+  <body>
+    <div class="container">
+			
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Норд 2.0</h2>
+				<p>Удалённая настройка</p>
+        
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="text" id="login" class="input-block-level" placeholder="Электронная почта">
+            <p class="help-block error hide">Неправильный формат адреса электронной почты.</p>
+            <p class="help-block error hide">Пожалуйста, введите логин (электронная почта).</p>
+          </div>
+        </div>
+
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="password" id="password" class="input-block-level" placeholder="Пароль">
+            <p class="help-block error hide">Вы указали неправильный адрес электронной почты или пароль.</p>
+            <p class="help-block error hide">Пожалуйста, введите пароль.</p>
+          </div>
+        </div>
+
+				<a href="objects.html" class="btn btn-large btn-primary" type="submit">Войти</a>
+      </form>
+			
+    </div>
+  </body>
+</html>
