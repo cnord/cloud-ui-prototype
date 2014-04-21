@@ -1,0 +1,63 @@
+					<div class="hide">
+						<div class="control-group" style="margin-bottom: 0px;">
+		          <label class="control-label" for="2">Нарушение:</label>			          
+							<div class="controls">
+								<label class="checkbox inline">
+								  <input type="checkbox" checked>Сирена
+								</label>
+								<label class="checkbox inline">
+								  <input type="checkbox">Переустановка шлейфа
+								</label>
+		          </div>
+		        </div>
+				
+						<div class="control-group" style="margin-bottom: 0px;">
+		          <label class="control-label" for="2">Неисправность:</label>			          
+							<div class="controls inline">
+								<label class="checkbox inline">
+								  <input type="checkbox">Сирена
+								</label>
+								<label class="checkbox inline">
+								  <input type="checkbox">Переустановка шлейфа
+								</label>
+		          </div>
+		        </div>
+				
+						<div class="control-group" style="margin-bottom: 5px;">
+		          <label class="control-label" for="2">Отсутствие 220 В:</label>			          
+							<div class="controls">
+								<label class="checkbox inline">
+								  <input type="checkbox" checked>Сирена
+								</label>
+								<label class="checkbox inline">
+								  <input type="checkbox" checked>Зуммер клавиатуры
+								</label>
+		          </div>
+		        </div>
+				
+						<div class="control-group">
+		          <div class="controls">
+		            <input id="2" type="text" class="span1" value="10">
+								<span class="help-inline">Интервал повторения, минуты</span>
+		          </div>
+		        </div>
+				
+						<div class="control-group" style="margin-bottom: 5px;">
+		          <label class="control-label" for="2">Неисправность АКБ:</label>			          
+							<div class="controls">
+								<label class="checkbox inline">
+								  <input type="checkbox">Сирена
+								</label>
+								<label class="checkbox inline">
+								  <input type="checkbox">Зуммер клавиатуры
+								</label>
+		          </div>
+		        </div>
+				
+						<div class="control-group" style="margin-bottom: 0px;">
+		          <div class="controls">
+		            <input id="2" type="text" class="span1" value="1">
+								<span class="help-inline">Интервал повторения, минуты</span>
+		          </div>
+		        </div>
+					</div>

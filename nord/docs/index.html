@@ -1,77 +1,50 @@
 <!DOCTYPE html>
+<!-- Авторизация -->
 
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- For mobile devises -->
-    <title>Nord-4TM 2.0</title>
+    <title>Норд 2.0. Удалённая настройка контрольной панели</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/bootstrap-tab.js"></script>
-
+    <script>
+      $(document).ready(function(){
+        $("#login").focus(); // Установка фокуса в первое поле.
+      });
+    </script>
   </head>
   
   <body>
     <div class="container">
-
-      <!-- Menu -->
-      <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse">
-              
-              <ul class="nav">
-                <li class="active">
-                  <a>Удалённая настройка Nord-4TM 2.0</a>
-                </li>
-              </ul>
-              
-              <ul class="nav pull-right">
-                <li><a>kengry@gmail.com</a></li>
-                <li class="divider-vertical"></li>
-                <li><a href="login.html">Выйти</a></li>
-              </ul>
-            </div>
+			
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Норд 2.0</h2>
+				<p>Удалённая настройка</p>
+        
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="text" id="login" class="input-block-level" placeholder="Электронная почта">
+            <p class="help-block error hide">Неправильный формат адреса электронной почты.</p>
+            <p class="help-block error hide">Пожалуйста, введите логин (электронная почта).</p>
           </div>
         </div>
-      </div>
 
-      <!-- Если нет доступных объектов -->
-      <div class="alert hide">
-        Нет доступных объектов. 
-      </div>
+        <div class="control-group"><!-- error -->
+          <div class="controls">
+            <input type="password" id="password" class="input-block-level" placeholder="Пароль">
+            <p class="help-block error hide">Вы указали неправильный адрес электронной почты или пароль.</p>
+            <p class="help-block error hide">Пожалуйста, введите пароль.</p>
+          </div>
+        </div>
 
-      <div class="well">
-        <p>
-          <b>4722, Магазин Дикси</b><br>
-          ул. Судостроителей, д. 5<br>
-        </p>
-        <a class="btn" href="edit.html" type="submit">Настроить</a>
-        <span class="help-inline">Доступ разрешён до 30 апреля, 23:00</span>
-      </div>
-
-      <div class="well">
-        <p>
-          <b>3265, Увелирный магазин 555</b><br>
-          ул. Железнодородная, д. 32<br>
-        </p>
-        <a class="btn" href="edit.html" type="submit">Настроить</a>
-        <span class="help-inline">Доступ разрешён до 3 мая, 18:00</span>
-      </div>
-
-      <footer class="footer">
-        © <a href="http://www.cnord.ru/">Си-Норд</a>
-      </footer>
-
+				<a href="objects.html" class="btn btn-large btn-primary" type="submit">Войти</a>
+      </form>
+			
     </div>
   </body>
 </html>

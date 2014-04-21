@@ -88,13 +88,28 @@
     Меняем внешний вид тега <legend>. */
     legend {
       font-size: 18px;
-      background-color: #ecf6fb;
+			font-weight: bold;
+      background-color: none;
     }
     .legend-padding {
       padding-left: 220px;
     }
+		
+/*  Хак №6
+    Выравниваем «крутилку» внутри кнопки. */
+		.ajax-loader {
+			margin-top: -5px;
+		}
 
-
+/*	Хак №7
+		Выравниваем форму для редактирования характеристик шлейфов. 
+		
+		.form-horizontal .controls {
+			margin-left: 257px;
+		}
+		.form-horizontal .control-label {
+			width: 237px;
+		}*/
 
 
 
