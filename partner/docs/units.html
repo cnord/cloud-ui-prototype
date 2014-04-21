@@ -9,13 +9,38 @@
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css">
     <!-- Sound Manager 2 -->
-    <link rel="stylesheet" type="text/css" href="../css/inlineplayer.css" />
-    <link rel="stylesheet" type="text/css" href="../css/flashblock.css" />
-    <script type="text/javascript" src="../js/soundmanager2.js"></script>
-    <script type="text/javascript" src="../js/inlineplayer.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/inlineplayer.css">
+    <link rel="stylesheet" type="text/css" href="../css/flashblock.css">
+		<script>
+			$(document).ready(function() {
+		    $('.modal a[rel="tooltip"]')
+		    	.tooltip({placement: 'top'})
+					.data('tooltip')
+		      .tip()
+		      .css('z-index',2080);
+		});
+		</script>
+    <script src="../js/soundmanager2.js"></script>
+    <script src="../js/inlineplayer.js"></script>
+		
   </head>
   <body>   
     <div class="container">
+			
+	    <div class="modal modal-open hide">
+	        <form class="modal-form form-horizontal">
+	            <div class="modal-header">
+	                <h3>Login</h3>
+	            </div>
+	            <div class="modal-body">
+	                <a href="#" rel="tooltip" title="This is a link.">A link</a>        <!-- check it out -->
+	            </div>
+	            <div class="modal-footer">
+	                <button type="submit" class="btn btn-primary">Login</button>
+	                <button type="reset" class="btn">Reset</button>
+	            </div>
+	        </form>
+	    </div>
       
       <!-- Menu -->
       <div class="navbar navbar-inverse">
@@ -60,6 +85,8 @@
             <p>
               <a rel="tooltip" title="Пульт на связи с облаком">
               <span class="badge badge-success">Центр охраны: 1454 объекта</span></a>
+							&nbsp;
+							<a data-toggle="modal" href="#editAlarmReport">Ссылки на отчёт по тревогам</a>
             </p>
             <p>
               «ССМ Андромеда», г. Новосибирск, Красный пр., д. 184, офис 704<br>
@@ -70,8 +97,9 @@
               <a data-toggle="modal" rel="tooltip" title="Услуга работает">
                 <span class="badge badge-success">
                   Call-центр
-                </span></a>
-                &nbsp;
+                </span>
+							</a>
+              &nbsp;
               <a data-toggle="modal" href="#editCallCenterDefault">Настроить</a>
               <span class="muted">|</span>
               <a data-toggle="modal" href="#statCallCenter">Статистика</a>
@@ -572,7 +600,83 @@
         <a href="#" class="btn " data-dismiss="modal">Отменить</a>
       </div>
     </div>
+		
+    <!-- Модальное окно для ссылок на отчёт по тревогам -->
+    <div id="editAlarmReport" class="modal hide fade">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Доступ к отчёту по тревогам</h3>
+      </div>
+      <div class="modal-body">
+				<p>Отчёт доступен по ссылкам ниже. Для работы отчёта не требуется авторизация. Отправьте ссылки тем, кому нужен отчёт: директору, управляющему т.д.
+				</p>
+				<p>Отмечайте в комментариях, кому вы отправили ссылку, чтобы не забыть, у кого есть доступ к отчёту.</p>
+				<p>Чтобы закрыть доступ к отчёту, нажмите <i class="icon-refresh"></i> — старая ссылка перестанет работать, а новую ещё никто не знает.</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Ссылка</th>
+              <th width="350">Комментарий</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+								<div class="links-up">
+									<a href="#">Ссылка #2342</a>
+									&nbsp;&nbsp;
+									<a href="#" rel="tooltip" title="Сгенерировать новую ссылку. Старая перестанет работать.">
+										<i class="icon-refresh"></i>
+									</a>
+								</div>
+							</td>
+              <td>
+                <input type="text" class="input-xlarge" placeholder="Пример: ссылка для директора">
+                <a class="btn btn-link links-down"><i class="icon-ok hide"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+								<div class="links-up">
+									<a href="#">Ссылка #5344</a>
+									&nbsp;&nbsp;
+									<img src="../img/ajax-loader.gif">
+									<!--
+									<a href="#" rel="tooltip" title="Сгенерировать новую ссылку. Старая перестанет работать.">
+										<i class="icon-refresh"></i>
+									</a>
+									-->
+								</div>
+							</td>
+              <td>
+                <input type="text" class="input-xlarge" value="">
+                <a class="btn btn-link links-down"><i class="icon-ok hide"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+								<div class="links-up">
+									<a href="#">Ссылка #8643</a>
+									&nbsp;&nbsp;
+									<a href="#" rel="tooltip" title="Сгенерировать новую ссылку. Старая перестанет работать.">
+										<i class="icon-refresh"></i>
+									</a>
+								</div>
+							</td>
+              <td>
+                <input type="text" class="input-xlarge" value="">
+                <a class="btn btn-link links-down"><i class="icon-ok hide"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
+      </div>
+    </div>
+		
     <!-- Модальное окно для настройки ситуационной карты -->
     <div id="editMap" class="modal hide fade">
       <div class="modal-header">
@@ -642,7 +746,6 @@
         <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
       </div>
     </div>
-    <div>
 
     <!-- JS -->
     <script src="../js/jquery.js"></script>
