@@ -11,15 +11,6 @@
     <!-- Sound Manager 2 -->
     <link rel="stylesheet" type="text/css" href="../css/inlineplayer.css">
     <link rel="stylesheet" type="text/css" href="../css/flashblock.css">
-		<script>
-			$(document).ready(function() {
-		    $('.modal a[rel="tooltip"]')
-		    	.tooltip({placement: 'top'})
-					.data('tooltip')
-		      .tip()
-		      .css('z-index',2080);
-		});
-		</script>
     <script src="../js/soundmanager2.js"></script>
     <script src="../js/inlineplayer.js"></script>
 		
@@ -87,6 +78,8 @@
               <span class="badge badge-success">Центр охраны: 1454 объекта</span></a>
 							&nbsp;
 							<a data-toggle="modal" href="#editAlarmReport">Ссылки на отчёт по тревогам</a>
+							<span class="muted">|</span>
+							<a data-toggle="modal" href="#permissionEdit">Настроить отчёт</a>
             </p>
             <p>
               «ССМ Андромеда», г. Новосибирск, Красный пр., д. 184, офис 704<br>
@@ -748,6 +741,84 @@
         <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
       </div>
     </div>
+		
+		<!-- Модальное окно для настройки сводного отчёта -->
+		<form class="form-horizontal">
+      <fieldset>
+        <div id="permissionEdit" class="modal hide fade"> 
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>Настройка сводного отчёта</h3>
+          </div>
+          <div class="modal-body">
+						
+						<div class="alert">
+							<strong>Внимание!</strong> Изменение этих настроек повлияет на все клиентские отчеты: как новые, так и созданные ранее.
+						</div>
+
+						<p>Укажите события, которые должны быть видны клиенту в сводном отчёте:</p>
+						<div class="control-group">
+					    <label class="control-label" for="optionsRadios1">События</label>
+					    <div class="controls">
+								<label class="checkbox">
+						      <input type="checkbox" checked> Снятия и постановки с охраны
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox" checked> Тревоги
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox" checked> Действия оператора
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox" checked> Перезакрытие объекта
+						    </label>		
+					    </div>
+					  </div>
+					
+						<div class="control-group">
+					    <label class="control-label" for="optionsRadios1">Работа ГБР</label>
+					    <div class="controls">
+								<label class="checkbox">
+						      <input type="checkbox"> Подтверждение вызова
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox"> Отказ от реагирования
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox" checked> Прибытие на объект
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox"> Все специальные доклады
+						    </label>
+							</div>
+						</div>
+					
+						<div class="control-group">
+					    <label class="control-label" for="optionsRadios1">Звонки</label>
+					    <div class="controls">
+								<label class="checkbox">
+						      <input type="checkbox" checked> Звонок клиенту
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox"> Звонок ГБР
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox"> Звонок инженеру
+						    </label>
+								<label class="checkbox">
+						      <input type="checkbox"> Вызов милиции
+						    </label>
+							</div>
+						</div>
+
+          </div>
+          <div class="modal-footer" id="inviteEditFormFooter">
+						<a href="#" class="btn" data-dismiss="modal">Отменить</a>
+            <a href="#" class="btn btn-primary" data-dismiss="modal">Сохранить</a>
+          </div>
+        </div>
+      </fieldset>
+    </form>
 
     <!-- JS -->
     <script src="../js/jquery.js"></script>
