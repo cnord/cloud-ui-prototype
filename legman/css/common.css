@@ -169,6 +169,10 @@ a {
 	color: #666;
 	line-height: 18px;
 }
+.time {
+	padding: 0 0 2px 0;
+	width: 50px
+}
 .title-timeline {
 	clear: both;
 	padding: 0 0 2px 0;
@@ -197,7 +201,8 @@ a {
 }
 .event-left:last-child {
 	background: url(../img/divider.png) no-repeat right top;
-	padding-left: 0;padding-right: 48px
+	padding-left: 0;
+	padding-right: 48px
 }
 .divider-wrapper:first-child, .event-left:first-child {
 	padding-top: 20px
@@ -206,9 +211,8 @@ a {
 	top: 30px;
 }
 .divider-wrapper:last-child .time {
-	left: -27px;
+	left: -24px;
 }
- 
 .divider-wrapper:last-child .time:after {
 	content: ""; /* Добавляемый текст */
 	height: 10px;
@@ -228,7 +232,6 @@ a {
 	line-height: 15px;
 }
 .event h2 {
-	
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 18px;
@@ -259,23 +262,25 @@ a {
 }
 .time {
 	position: absolute;
-	left: -29px;
+	left: -26px;
 	top: 10px;
-	background-image:url(../img/divider.png) repeat-y center top
+	background-image:url(../img/divider.png);
+	background-repeat: repeat-y;
+	background-position: center top;
 }
-.event-left .time,.event-left:last-child .time{
-	right: -29px;
+.event-left .time, .event-left:last-child .time {
+	right: -24px;
 	left: auto
 }
-.fotorama, .imgs {
+.fotorama, .imgs, .video {
 	margin-left: -60px;
 	margin-right: -15px
 }
-.imgs img {
+.imgs img, .video img {
 	display: block
 }
-.fotorama__img, .imgs img {
-	border-radius: 0 0 5px 5px !important
+.fotorama__img, .imgs img, .video img {
+	border-radius: 0 0 5px 5px
 }
 .client-report, .client-report .timeline {/*margin-left: -500px*/
 	margin: 0 auto;
