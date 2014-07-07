@@ -165,7 +165,7 @@ a {
 	text-align: center;
 }
 .time {
-	padding: 0 0 2px 0;
+	padding: 1px 0;
 	width: 50px;
 }
 .title-timeline {
@@ -216,24 +216,24 @@ a {
 .event-wrapper {
 	background: #F1F0F0;
 	border-radius: 5px;
-	padding: 10px 11px 0 11px;
+	padding: 11px 11px 0 11px;
 	text-align: left;
 }
 .event p {
 	color: #666;
 	line-height: 15px;
 	margin: 0;
-	padding: 0 0 10px 0;
+	padding: 0 0 8px 0;
 }
 .event h2 {
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 18px;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 1px 0;
 }
 .event {
-	background-position: left 4px;
+	background-position: left 2px;
 	background-repeat: no-repeat;
 	font-size: 13px;
 	min-height: 47px;
@@ -307,6 +307,7 @@ a {
 .icon-refresh {
 	background-position: -240px -24px;
 }
+.audio{left: -36px;position: absolute; top: 3px;vertical-align: middle; }
 .spacer {
 	clear: both;
 	height: 44px;
