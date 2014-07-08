@@ -16,7 +16,7 @@ html, body {
 }
 /* Wrapper for page content to push down footer */
 #wrap {
-	margin: 0 auto;
+	margin: 0 auto -120px auto;
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
@@ -307,16 +307,22 @@ a {
 .icon-refresh {
 	background-position: -240px -24px;
 }
-.audio{left: -36px;position: absolute; top: 3px;vertical-align: middle; }
+.audio {
+	left: -36px;
+	position: absolute;
+	top: 3px;
+	vertical-align: middle;
+}
 .spacer {
 	clear: both;
-	height: 44px;
+	height: 120px;
 }
 footer {
 	background: #EEE;
 	clear: both;
 	color: #5A5A5A;
 	height: 20px;
+	margin-top: 42px;
 	padding: 29px 0;
 	text-align: center;
 }
