@@ -1,0 +1,116 @@
+/*  Хак №1
+    Оформление формы входа:
+    http://twitter.github.com/bootstrap/examples/signin.html */
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: white;
+      }
+
+      .form-signin {
+        max-width: 600px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 10px;
+           -moz-border-radius: 10px;
+                border-radius: 10px;
+        -webkit-box-shadow: 0 1px 20px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 20px rgba(0,0,0,.05);
+                box-shadow: 0 1px 20px rgba(0,0,0,.05);
+      }
+      .form-signin input[type="text"], .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 8px;
+        padding: 7px 9px;
+      }
+      .form-signin p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+/*  Хак №2
+    Вывод ошибок
+    
+    В Бутстрапе подсказки для элементов формы обозначаются классами:
+    .block-help — под элементом;
+    .block-inline — справа от элемента.
+
+    При выводе ошибок используется дополнительный класс .error для слоя с классом .control-group,
+    который красит подсказки в красный цвет. Получается, что подсказка и ошибка не различаются, что не правильно.
+
+    Есть решение данной проблемы: https://github.com/twitter/bootstrap/pull/2173,
+    но его нет в оффициальном релизе. */
+
+    .control-group.error .help-block,
+    .control-group.error .help-inline {
+      /* Гасим красный цвет для подсказок при выводе ошибок. */
+      color: #444444;
+    }
+    .control-group.error .error {
+      /* Ошибки красим обратно в красный. */
+      color: #b94a48;
+    }
+
+/*  Хак №3
+    Красим подвал
+
+    В самом файле документации к Bootstrap подвал оформлен хорошо: с отступами и линией.
+    Но в коде фрэймворка отступы и линия отсутсвуют. */
+    
+    .footer {
+      margin-top: 30px;
+      padding: 20px 5px 36px 0;
+      border-top: 1px solid #e5e5e5;
+    }
+    .footer p {
+      margin-bottom: 0;
+      color: #777;
+    }
+
+/*  Хак №4
+    Расширяем отступ для лэйблов в формах. */
+
+    .form-horizontal .control-label {
+      width: 200px;
+    }
+    .form-horizontal .controls {
+      margin-left: 220px;
+    }
+
+    .form-horizontal .form-actions {
+      padding-left: 220px;
+    }
+
+/*  Хак №5
+    Меняем внешний вид тега <legend>. */
+    legend {
+      font-size: 18px;
+			font-weight: bold;
+      background-color: none;
+    }
+    .legend-padding {
+      padding-left: 220px;
+    }
+		
+/*  Хак №6
+    Выравниваем «крутилку» внутри кнопки. */
+		.ajax-loader {
+			margin-top: -5px;
+		}
+
+/*	Хак №7
+		Выравниваем форму для редактирования характеристик шлейфов. 
+		
+		.form-horizontal .controls {
+			margin-left: 257px;
+		}
+		.form-horizontal .control-label {
+			width: 237px;
+		}*/
+
+
+
+
