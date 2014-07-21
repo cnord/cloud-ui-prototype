@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Си-Норд">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Настройка устройства</title>
+    <title>Обновление прошивки Норда GSM</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.css">
     <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
@@ -27,13 +27,6 @@
               <span class="icon-bar"></span>
             </a>
             <a href="dashboard.html" class="brand">Панель инженера</a>
-				    <!-- 
-						<ul class="nav">
-				      <li class="active"><a href="#">Home</a></li>
-				      <li><a href="#">Link</a></li>
-				      <li><a href="#">Link</a></li>
-				    </ul>
-						-->
             <div class="nav-collapse">
               <ul class="nav pull-right">
                 <li><a href="#">Выйти</a></li>
@@ -43,47 +36,52 @@
         </div>
       </div>
 			
+			<!-- Back button -->
 			<ul class="pager">
 			  <li class="previous">
 			    <a href="dashboard.html">&larr; Назад</a>
 			  </li>
 			</ul>
 			
-			<!-- Info -->
-			<h2>Прошивка 3.2.7</h2>
+			<!-- Header, progress bar -->
+			<h2><small>Обновление до версии 3.2.7</small><br>Прошивка Норд GSM</h2>
 			<div class="progress">
-			  <div class="bar bar-danger" style="width: 82%;"></div>
-				<div class="bar bar-warning" style="width: 10%;"></div>
-				<div class="bar bar-success" style="width: 8%;"></div>
+			  <div class="bar bar-danger" style="width: 82%;">116</div>
+				<div class="bar bar-warning" style="width: 10%;">12</div>
+				<div class="bar bar-success" style="width: 8%;">9</div>
 			</div>
 			
 			<!-- Devices -->
 			<div class="row-fluid">
 				<div class="span3">
+					
+					<!-- Add to queue -->
 					<div class="well">
-						<p>
-							Добавить в очередь на обновление прошивки по номеру объекта.
-						</p>
-						<p>
+
 							<a href="#updateByNumber" class="btn" role="button" data-toggle="modal">
-								По номеру объекта
+								<!--<i class="icon-refresh"></i>-->Обновить по номеру объекта…
 							</a>
-						</p>
-						<hr>
-						<p>Добавить все передатчики в очередь на обновление прошивки:</p>
-						<p>
-							<a href="#updateAll" class="btn" role="button" data-toggle="modal">
-								Все передатчики
+							<hr>
+							<a href="#updateAll" class="text-error" role="button" data-toggle="modal">
+								<i>Обновить прошивку Нордов GSM на всех объектах…</i>
 							</a>
-						</p>
 					</div>
-					<br>
+					<div class="well alert1 alert-warning1 alert-success1">
+					  <p>
+							<i class="icon-info-sign hide"></i>
+							Актуальная версия прошивки:<code>3.2.7</code> от 20 сентября 2014<br>
+						</p>
+						<p><a href="#">Подробнее…</a></p>
+						<hr>
+						<p>Статистика обновлений объектов до версии <code>3.2.7</code> по облаку: <i>более 4000 устройств</i>.</p>
+					</div>
+					
 				</div>
 				<div class="span3">
+					
+					<!-- -->
 					<h4 class="text-error">Устарели <sup>116</sup></h4>
-					<p>
-						Нажмите на ссылку, чтобы обновить прошивку:
-					</p>
+					<p>Нажмите на ссылку, чтобы обновить прошивку:</p>
 					<p>
 						<!--
 							Сортировка:
@@ -115,8 +113,13 @@
 						№ 6842 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">3.1</a><br>
 						№ 53245 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">3.1.9</a><br>
 						№ 2345 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">2.0.1</a><br>
+						№ 53245 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">3.1.9</a><br>
+						№ 2345 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">2.0.1</a><br>
+						№ 3876 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">3.2</a><br>
+						№ 31439 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">3.2.4</a><br>
+						№ 6346 <span class="muted">/</span> <a href="#updateDirect" data-toggle="modal">3.2.1</a><br>
 					</p>
-					<p><button class="btn" type="button">Показать больше</button></p>
+					<!--<p><button class="btn" type="button">Показать больше</button></p>-->
 					<br>
 				</div>
 				<div class="span3">
@@ -146,12 +149,12 @@
 					<button class="btn hide1" type="button">Показать больше</button>
 					<hr>
 					<p><i><a href="#updateCancel" data-toggle="modal" class="text-error">Отменить обновление</a></i></p>
-					<p>Все передатчики будут перенесены в «устаревшие». Исключение — объекты, у которых уже начался процесс обновления прошивки.</p>
+					<p>Все объекты будут перенесены в «устаревшие». Исключение — объекты, у которых уже начался процесс обновления прошивки.</p>
 					<br>
 				</div>
 				<div class="span3">
 					<h4 class="text-success">Обновлено <sup>9</sup></h4>
-					<p>Передатчики, успешно обновленные до версии 3.2.7:</p>
+					<p>Объекты, успешно обновленные до версии 3.2.7:</p>
 					<p>
 						<!--
 						  Сортировка: по дате обновления: только что обновленные — сверху.
@@ -194,15 +197,17 @@
 			<div id="updateByNumber" class="modal hide fade">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Обновить прошивку у передатчика</h3>
+			    <h3>Обновление прошивки</h3>
 			  </div>
 			  <div class="modal-body">
 			    <form class="form-horizontal">
 						<div class="control-group">
-						    <label class="control-label" for="objectNumber">Номер объекта</label>
+						    <label class="control-label" for="objectNumber">№ объекта</label>
 						    <div class="controls">
 						      <input type="text" id="objectNumber" class="span2">
+									<p class="help-block">Устройство с этого объекта будет добавлено в очередь на обновление прошивки.</p>
 						    </div>
+								<!-- Вставить возможные ошибки -->
 						  </div>
 			    </form>
 			  </div>
@@ -216,14 +221,14 @@
 			<div id="updateAll" class="modal hide fade">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Обновить все передатчики?</h3>
+			    <h3>Обновить прошивку на всех объектах?</h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>Все передатчики из списка будут добавлены в очередь на обновление прошивки.</p>
+			    <p>Все Норды GSM на всех объектах будут добавлены в очередь на обновление прошивки.</p>
 			  </div>
 			  <div class="modal-footer">
 			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить все передатчики</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить все Норды GSM</a>
 			  </div>
 			</div>
 			
