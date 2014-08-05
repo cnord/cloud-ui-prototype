@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -209,4 +210,217 @@
 
     </div>
   </body>
+=======
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Си-Норд">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обновление прошивки Норда GSM</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/kengry.css"><!-- Hacks by Kengry -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+			
+			<!-- Menu -->
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a href="dashboard.html" class="brand">Панель инженера</a>
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li><a href="#">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+			
+			<!-- Back button -->
+			<ul class="pager">
+			  <li class="previous">
+			    <a href="dashboard.html">&larr; Назад</a>
+			  </li>
+			</ul>
+			
+			<!-- Header, progress bar -->
+			<h2><small>Обновление до версии 2.30</small><br>Прошивка Норд GSM</h2>
+			<div class="progress">
+			  <div class="bar bar-danger" style="width: 11%;">11</div>
+				<div class="bar bar-warning" style="width: 68%;">68</div>
+				<div class="bar bar-success" style="width: 21%;">21</div>
+			</div>
+			
+			<!-- Devices -->
+			<div class="row-fluid">
+				<div class="span3">
+					
+					<!-- Add to queue -->
+					<div class="well">
+
+							<a href="#updateByNumber" class="btn" role="button" data-toggle="modal">
+								<!--<i class="icon-refresh"></i>-->Обновить по номеру объекта…
+							</a>
+							<hr>
+							<a href="#updateAll" class="text-error" role="button" data-toggle="modal">
+								<i>Обновить прошивку Нордов GSM на всех объектах…</i>
+							</a>
+					</div>
+					<div class="well alert1 alert-warning1 alert-success1">
+					  <p>
+							<i class="icon-info-sign hide"></i>
+							Актуальная версия прошивки: <code>2.30</code> от 9 августа 2014 г.<br>
+						</p>
+						<p><a href="#">Подробнее…</a></p>
+						<hr>
+						<p>Статистика обновлений объектов до версии <code>2.30</code> по «Облаку»: <i>более 1000 устройств</i>.</p>
+					</div>
+					
+				</div>
+				<div class="span3">
+					
+					<!-- -->
+					<h4 class="text-error">Устарели</h4>
+					<p>Нажмите на ссылку, чтобы обновить прошивку:</p>
+					<!--<p>Нажмите на ссылку, чтобы обновить прошивку:</p>-->
+					<p>
+						<!--
+							Сортировка:
+							1) По номеру прошивки, по возрастанию.
+							2) По номеру объекту, по возрастанию.  
+						 -->
+						<a href="#updateDirect" data-toggle="modal">3876</a> <span class="muted">/</span> 2.21<br>
+						<a href="#updateDirect" data-toggle="modal">3143</a> <span class="muted">/</span> 2.22</a><br>
+						<a href="#updateDirect" data-toggle="modal">6346</a> <span class="muted">/</span> 2.23</a><br>
+						<a href="#updateDirect" data-toggle="modal">1244</a> <span class="muted">/</span> 2.24</a><br>
+						<a href="#updateDirect" data-toggle="modal">3563</a> <span class="muted">/</span> 2.24</a><br>
+						<a href="#updateDirect" data-toggle="modal">3877</a> <span class="muted">/</span> 2.25<br>
+						<a href="#updateDirect" data-toggle="modal">3144</a> <span class="muted">/</span> 2.25</a><br>
+						<a href="#updateDirect" data-toggle="modal">6347</a> <span class="muted">/</span> 2.27</a><br>
+						<a href="#updateDirect" data-toggle="modal">1245</a> <span class="muted">/</span> 2.27</a><br>
+						<a href="#updateDirect" data-toggle="modal">3564</a> <span class="muted">/</span> 2.29</a><br>
+						<a href="#updateDirect" data-toggle="modal">3565</a> <span class="muted">/</span> 2.29</a><br>
+					</p>
+					<!--<p><button class="btn" type="button">Показать больше</button></p>-->
+					<br>
+				</div>
+				<div class="span3">
+					<h4 class="text-warning">Очередь</h4>
+					<p>68 объектов ожидают обновления</p>
+					<hr>
+					<p><i><a href="#updateCancel" data-toggle="modal" class="text-error">Отменить обновление</a></i></p>
+					<p>Все объекты будут перенесены в «устаревшие». Исключение — объекты, у которых уже начался процесс обновления прошивки.</p>
+					<br>
+				</div>
+				<div class="span3">
+					<h4 class="text-success">Обновлено</h4>
+					<p>21 объект успешно обновлен</p>
+					<br>
+				</div>
+			</div>
+			
+			<!-- Modals -->
+			
+			<!-- Update direct -->
+			<div id="updateDirect" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновить прошивку у передатчика</h3>
+			  </div>
+			  <div class="modal-body">
+			<!--    <p class="hide">Передатчик с объектами № 4324, 4325 будет добавлен в очередь на обновление прошивки.</p>-->
+					<p class="hide1">Передатчик с объектом № 3876 будет добавлен в очередь на обновление прошивки.</p>
+			<!--		<p class="hide1">Передатчик с объектами № 1247, <span class="hide" id="1244_modal">1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253, 1247, 1249, 1250, 1251, 1252, 1253</span></a> <a href="#" onClick="$('#1244_modal').toggle();"><span class="label">…</span></a> будет добавлен в очередь на обновление прошивки.</p>-->
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить</a>
+			  </div>
+			</div>
+			
+			<!-- Update by number -->
+			<div id="updateByNumber" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновление прошивки</h3>
+			  </div>
+			  <div class="modal-body">
+			    <form class="form-horizontal">
+						<div class="control-group">
+						    <label class="control-label" for="objectNumber">№ объекта</label>
+						    <div class="controls">
+						      <input type="text" id="objectNumber" class="span2">
+									<p class="help-block">Устройство с этого объекта будет добавлено в очередь на обновление прошивки.</p>
+						    </div>
+								<!-- Вставить возможные ошибки -->
+						  </div>
+			    </form>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить прошивку</a>
+			  </div>
+			</div>
+			
+			<!-- Update all -->
+			<div id="updateAll" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Обновить прошивку на всех объектах?</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>Все Норды GSM на всех объектах будут добавлены в очередь на обновление прошивки.</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить все Норды GSM</a>
+			  </div>
+			</div>
+			
+			<!-- Update cancel -->
+			<div id="updateCancel" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Отменить обновление?</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>Все передатчики из очереди будут перенесены в «устаревшие».</p>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+			    <a href="#" class="btn btn-danger" data-dismiss="modal">Отменить обновление</a>
+			  </div>
+			</div>
+			
+			<footer class="footer">
+            <p class="pull-right">
+              <script>
+                var today = new Date();
+                document.write("© 1992—" + today.getFullYear() + ",");
+              </script>
+              <a href="http://www.cnord.ru/">Си-Норд</a>
+            </p>
+            <p>
+              Техническая поддержка:<br>
+              (812) 327-16-36, доб. 2<br>
+              <a href="mailto:support@cnord.ru">support@cnord.ru</a>
+            </p>
+          </footer>
+
+    </div>
+  </body>
+>>>>>>> FETCH_HEAD
 </html>
