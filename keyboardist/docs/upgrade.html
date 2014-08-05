@@ -57,7 +57,10 @@
 					
 					<!-- Add to queue -->
 					<div class="well">
-
+							<a href="#versionByNumber" class="btn" role="button" data-toggle="modal">
+								<!--<i class="icon-refresh"></i>-->Узнать версию по номеру объекта…
+							</a>
+							<hr>
 							<a href="#updateByNumber" class="btn" role="button" data-toggle="modal">
 								<!--<i class="icon-refresh"></i>-->Обновить по номеру объекта…
 							</a>
@@ -66,7 +69,7 @@
 								<i>Обновить программное обеспечение на всех объектах…</i>
 							</a>
 					</div>
-					<div class="well alert1 alert-warning1 alert-success1">
+					<div class="well">
 					  <p>
 							<i class="icon-info-sign hide"></i>
 							Актуальная версия программного обеспечения: <code>2.30</code> от&nbsp;9&nbsp;августа&nbsp;2014&nbsp;г.<br>
@@ -138,7 +141,34 @@
 			    <a href="#" class="btn btn-primary" data-dismiss="modal">Обновить</a>
 			  </div>
 			</div>
-			
+			<!-- Version by number -->			
+			<div id="versionByNumber" class="modal hide fade">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Версия программного обеспечения</h3>
+			  </div>
+			  <div class="modal-body">
+			    <form class="form-horizontal">
+						<div class="control-group">
+						    <label class="control-label" for="objectNumber">Номер объекта</label>
+						    <div class="controls">
+						     	<input type="text" id="objectNumber" class="span2">
+							    <button class="btn btn-primary">Узнать версию</button>	
+							    <br>		    			
+								<p class="text-info">Версия программного обеспечения на объекте:&nbsp<code>2.27</code>.</p>
+								<p class="text-info">Объект с номером 2345 находится в очереди объектов, ожидающих обновления.</p>
+								<p class="text-error">Объект с номером 2345 в «Облаке» не найден.</p>
+								<p class="text-error">На объекте 2345 установлен прибор «Сержант GSM».</p>
+								<p class="text-error">У Вас недостаточно прав для выполнения обновления программного обеспечения на объектах. После закрытия этого окна страница для управления обновлением будет перезагружена.</p>
+						    </div>
+								<!-- Вставить возможные ошибки -->
+						  </div>
+			    </form>
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
+			  </div>
+			</div>
 			<!-- Update by number -->
 			<div id="updateByNumber" class="modal hide fade">
 			  <div class="modal-header">
@@ -150,10 +180,17 @@
 						<div class="control-group">
 						    <label class="control-label" for="objectNumber">Номер объекта</label>
 						    <div class="controls">
-						      <input type="text" id="objectNumber" class="span2">
-									<p class="help-block">Программное обеспечение на этом объекте будет обновлено.</p>
+						      	<input type="text" id="objectNumber" class="span2">
+								<p class="help-block">Программное обеспечение на этом объекте будет обновлено.</p>						    	
+								<!-- Возможные ошибки -->
+								<p class="text-error">Объект с номером 2345 не найден в «Облаке».</p>
+								<p class="text-error">На объекте 2345 установлен прибор «Сержант GSM».</p>
+								<p class="text-error">Объект с номером уже 2345 находится в очереди объектов, ожидающих обновления.</p>
+								<p class="text-error">На объекте 2345 установлена актуальная версия программного обеспечения.</p>
+								<p class="text-error">Версия программного обеспечения, установленного на объекте 2345, выше, чем актуальная.</p>
+								<p class="text-error">Актуальная версия программного обеспечения изменилась. После закрытия этого окна страница для управления обновлением будет перезагружена.</p>
+								<p class="text-error">У Вас недостаточно прав для выполнения обновления программного обеспечения на объектах. После закрытия этого окна страница для управления обновлением будет перезагружена.</p>
 						    </div>
-								<!-- Вставить возможные ошибки -->
 						  </div>
 			    </form>
 			  </div>
@@ -171,6 +208,10 @@
 			  </div>
 			  <div class="modal-body">
 			    <p>Все объекты будут добавлены в очередь на обновление программного обеспечения.</p>
+				<!-- Возможные ошибки -->
+				<p class="text-error">Актуальная версия программного обеспечения изменилась. После закрытия этого окна страница для управления обновлением будет перезагружена.</p>
+				<p class="text-error">У Вас недостаточно прав для выполнения обновления программного обеспечения на объектах. После закрытия этого окна страница для управления обновлением будет перезагружена.</p>
+				
 			  </div>
 			  <div class="modal-footer">
 			    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
