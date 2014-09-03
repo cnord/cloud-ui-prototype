@@ -28,20 +28,21 @@
 			</div>
 
       <form class="form-inline">
-				<div class="control-group">
+				<div class="control-group"><!-- class="error" -->
 					<div class="controls">
 						<input type="text" id="objectNumber" class="input-small" value="3452" placeholder="№ объекта">
 						&nbsp;
 						<button class="btn">Показать тревоги</button>
 						<!-- Лоадер -->
 						<span class="hide">&nbsp;<img src="../img/ajax-loader.gif"></span>
+            <span class="help-inline error hide">Объекта с таким номером не существует.</span>
 					</div>
 				</div>
       </form>
 			
-			<h2>Тревоги по объекту №3452</h2>
+			<h2 class="hide">Тревоги по объекту №3452</h2>
 							
-      <table class="table table-hover">
+      <table class="table table-hover hide">
         <thead>
           <tr>
 						<th width="10">&nbsp;</th>
@@ -101,9 +102,7 @@
           </tr>
         </tbody>
       </table>
-			
-			<button class="btn">Загрузить ещё</button>
-			
+						
       <footer class="footer">
         <p class="pull-right">
           <script>
