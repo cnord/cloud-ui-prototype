@@ -1,0 +1,218 @@
+.marker {
+    padding: 8px;
+}
+
+.hint {
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 7px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px rgba(0,0,0,0.5);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    left: 8px;
+    padding: 4px;
+    position: relative;
+    top: 0;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.corner {
+    background-image: url('../img/balloon_corner.gif');
+    background-repeat: no-repeat;
+    height: 7px;
+    left: 8px;
+    position: relative;
+    top: 0;
+    width: 7px;
+    z-index: 3;
+}
+
+.icon {
+    background-repeat: no-repeat;
+    height: 16px;
+    left: 0;
+    position: relative;
+    top: -8px;
+    width: 16px;
+    z-index: 2;
+}
+
+.balloon {
+    background-color: #fff;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 2px 2px rgba(0,0,0,0.3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    left: 16px;
+    margin-right: 0;
+    padding: 10px 10px 25px 10px;
+    position: relative;
+    top: 26px;
+}
+
+.balloon-wrapper {
+    padding: 0 30px;
+    position: relative;
+    z-index: 5;
+}
+
+.alarmed .hint {
+    background-color: #c00;
+}
+
+.armed .hint {
+    background-color: #0062b6;
+}
+
+.disarmed .hint {
+    background-color: #16960b;
+}
+
+.idle .hint {
+    background-color: #ee6300;
+}
+
+.alarmed .corner {
+    background-position: -14px 0;
+}
+
+.armed .corner {
+    background-position: -7px 0;
+}
+
+.disarmed .corner {
+    background-position: 0 0;
+}
+
+.idle .corner {
+    background-position: -21px 0;
+}
+
+.alarmed .icon {
+    background-image: url('../img/object_alarmed.png');
+}
+
+.armed .icon {
+    background-image: url('../img/object_armed.png');
+}
+
+.disarmed .icon {
+    background-image: url('../img/object_disarmed.png');
+}
+
+.guard.idle .icon {
+    background-image: url('../img/guard.png');
+}
+
+.guard.alarmed .icon {
+    background-image: url('../img/guard_alarm.png');
+}
+
+.guard .hint .arrow {
+    background: url('../img/arrow.png') no-repeat right center;
+    padding-right: 18px;
+}
+
+.hint.inballoon {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.balloon div.close, .cluster-balloon-wrapper div.close{
+    background: url('../img/close.png') no-repeat 0 0;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 17px;
+    width: 17px;
+}
+
+.balloon p {
+    display: block;
+    margin: 2px 24px 2px 0;
+    white-space: nowrap;
+}
+
+.balloon .details {
+    border-top: 1px dotted #aaa;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.balloon img.lock {
+    display: inline;
+}
+
+.balloon .name {
+    background: no-repeat 0 0;
+    height: 16px;
+    margin-bottom: -5px;
+    padding-left: 16px;
+    padding-top: 5px;
+}
+
+.balloon .armed.name {
+    background-image: url('../img/lock_armed.png');
+}
+
+.balloon .disarmed.name {
+    background-image: url('../img/lock_disarmed.png');
+}
+
+.balloon .last_coordinates {
+    background: url('../img/last_coordinates.gif') no-repeat 0 3px;
+    padding-left: 8px;
+}
+
+.for-flag {
+    margin-top: 4px !important;
+}
+
+.cluster-balloon-wrapper {
+    background-color: #fff;
+    border-radius: 8px 8px 8px 0;
+    -moz-border-radius: 8px 8px 8px 0;
+    -webkit-border-radius: 8px 8px 8px 0;
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 2px 2px rgba(0,0,0,0.3);
+    height: 150px;
+    padding: 5px;
+    width: 250px;
+}
+
+.cluster-object-info {
+    height: 140px;
+    margin-right: 20px;
+    overflow-y: auto;
+    padding-right: 5px;
+    padding-top: 7px;
+    word-break: break-all;
+}
+
+.cluster-sidebar {
+    border-right: 1px solid #ddd;
+    float: left;
+    height: 128px;
+    margin-right: 10px;
+    overflow-y: auto;
+    padding: 10px 20px 10px 10px;
+}
+
+.sidebar-item {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.cluster-info {
+    font-size: 12px;
+    margin: 2px 5px 0 0;
+}

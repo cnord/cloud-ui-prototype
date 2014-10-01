@@ -1,0 +1,43 @@
+html {
+    height:100%
+}
+
+body {
+    color:#000;
+    font:.8em/1.2em Tahoma, Geneva, sans-serif;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+hr {
+    color:#f0f0f0
+}
+
+.notifications {
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+}
+
+.error {
+    background: #f00;
+    color: #fff;
+    padding: 0.5em 1.5em;
+}
+
+.last-alarm-date {
+    color:maroon
+}
+
+.controls {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2000;
+}
+
+.inverted {
+    color: white;
+    background-color: RGBA(127,127,127, 0.6);
+}
