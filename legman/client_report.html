@@ -448,7 +448,7 @@
                   var topMargin, rightMargin, bottomMargin, leftMargin;
                   if (objLat > gbrLat) {
                       // объект находится над ГБР, то есть над центром карты
-                      topMargin = 35;  // сверху нужен запас для размещения флажка метки, ну например 35px
+                      topMargin = 35;  // сверху нужен запас для размещения метки объекта, ну например 35px
                       bottomMargin = mapHeight / 2;  // снизу будет полкарты пустоты
                   } else {
                       // объект находится под ГБР, то есть под центром карты
@@ -458,10 +458,10 @@
                   if (objLng > gbrLng) {
                       // объект находится правее ГБР, то есть правее центра карты
                       leftMargin = mapWidth / 2;  // слева будет полкарты пустоты
-                      rightMargin = 15;  // справа нужен запас для размещения флажка метки, пусть будет 15px
+                      rightMargin = 15;  // справа нужен запас для размещения метки объекта, пусть будет 15px
                   } else {
-                      // объект находится под ГБР, то есть левее центра карты
-                      leftMargin = 15;  // слева нужен запас для размещения флажка метки, пусть будет 15px
+                      // объект находится левее ГБР, то есть левее центра карты
+                      leftMargin = 15;  // слева нужен запас для размещения метки объекта, пусть будет 15px
                       rightMargin = mapWidth / 2;  // справа будет полкарты пустоты
                   }
                   // запросим у YandexJavaScriptAPI зум, при котором в картинку вписывается всё что нужно
@@ -471,7 +471,7 @@
                           [Math.max(objLat, gbrLat), Math.max(objLng, gbrLng)],
                       ],
                       [mapWidth, mapHeight],
-                      ymaps.projection.wgs84Mercator,  // по умолчанию яндекс использует эту модель
+                      ymaps.projection.wgs84Mercator,  // по умолчанию Яндекс использует эту модель
                       {
                           inscribe: true,
                           margin: [topMargin, rightMargin, bottomMargin, leftMargin]
@@ -502,10 +502,10 @@
 
           </script>
 
-          Введите широту ГБР: <input type="text" id="example1-gbrLat" value="59.987957"/><br>
-          Введите долготу ГБР: <input type="text" id="example1-gbrLng" value="29.77398"/><br>
-          Введите широту объекта: <input type="text" id="example1-objLat" value="59.935633"/><br>
-          Введите долготу объекта: <input type="text" id="example1-objLng" value="30.325871"/><br>
+          Введите широту ГБР: <input type="text" id="example1-gbrLat" value="59.935633"/><br>
+          Введите долготу ГБР: <input type="text" id="example1-gbrLng" value="30.325871"/><br>
+          Введите широту объекта: <input type="text" id="example1-objLat" value="59.987957"/><br>
+          Введите долготу объекта: <input type="text" id="example1-objLng" value="29.77398"/><br>
           <input type="button" onclick="showExample1()" value="Нажмите для вывода/обновления миникарты"/>
         </div>
 
@@ -528,7 +528,8 @@
                   <div class="minimap-marker">
                     <!-- отрисовка маркера ГБР, взята из Радара -->
                     <div class="marker guard alarmed">
-                      <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
+                      <span class="hint">Стремительный и Беспощадный Волкодав</span>
+                      <div class="corner"></div><div class="icon"></div>
                     </div>
                   </div>
                 </div>
@@ -602,8 +603,10 @@
           </style>
 
           <script>
-              // Внимание! YandexJavaScriptAPI оперирует координатами как [широта, долгота],
-              // а YandexStaticAPI оперирует координатами в обратном порядке: "долгота,широта"
+              // Внимание!
+              // YandexJavaScriptAPI оперирует координатами как [широта, долгота],
+              // а YandexStaticAPI оперирует координатами в обратном порядке: "долгота,широта".
+              // Точка отсчета пиксельных координат находится в левом верхнем углу карты.
 
               function calculateDataForExample2(mapWidth, mapHeight, objLng, objLat, gbrLng, gbrLat) {
                   // ограничим зум значением 16 (видны ближайшие улицы)
@@ -614,9 +617,9 @@
                   // снизу и слева нужен небольшой зазор до метки (для красоты)
                   var bottomMargin = 5;
                   var leftMargin = 5;
-                  // справа нужен запас для флажка метки, даже при длинной надписи, пусть будет 60px.
-                  // TODO: анализировать ширину надписи правой метки и более точно выставлять запас
-                  var rightMargin = 60;
+                  // справа нужен запас для флажка метки, пусть будет 100px -- с запасом на длинные надписи.
+                  // TODO: анализировать длину надписи правой метки и более точно выставлять запас.
+                  var rightMargin = 100;
 
                   // запросим у YandexJavaScriptAPI центр и зум, при которых в картинку вписывается всё что нужно
                   var yaCenterAndZoom = ymaps.util.bounds.getCenterAndZoom(
@@ -625,7 +628,7 @@
                           [Math.max(objLat, gbrLat), Math.max(objLng, gbrLng)],
                       ],
                       [mapWidth, mapHeight],
-                      ymaps.projection.wgs84Mercator,  // по умолчанию яндекс использует эту модель
+                      ymaps.projection.wgs84Mercator,  // по умолчанию Яндекс использует эту модель
                       {
                           inscribe: true,
                           margin: [topMargin, rightMargin, bottomMargin, leftMargin]
@@ -633,7 +636,7 @@
                   );
                   var zoom = Math.min(yaCenterAndZoom.zoom, maxZoom);
 
-                  // расчитаем пиксельные координаты меток относительно центра картинки
+                  // рассчитаем пиксельные координаты меток относительно центра картинки
                   var centerXY = ymaps.projection.wgs84Mercator.toGlobalPixels(yaCenterAndZoom.center, zoom);
                   var objXY = ymaps.projection.wgs84Mercator.toGlobalPixels([objLat, objLng], zoom);
                   var gbrXY = ymaps.projection.wgs84Mercator.toGlobalPixels([gbrLat, gbrLng], zoom);
@@ -642,7 +645,7 @@
                   gbrXY[0] -= centerXY[0];
                   gbrXY[1] -= centerXY[1];
 
-                  // переведём пиксельные координаты меток относительно угла картинки
+                  // переведём в пиксельные координаты относительно левого верхнего угла картинки
                   objXY[0] += mapWidth / 2;
                   objXY[1] += mapHeight / 2;
                   gbrXY[0] += mapWidth / 2;
@@ -654,10 +657,12 @@
                            '&ll=' + yaCenterAndZoom.center[1] + ',' + yaCenterAndZoom.center[0] +
                            '&z=' + zoom +
                            '&size=' + mapWidth + ',' + mapHeight,
-                      // пиксельные координаты объекта относительно угла картинки
-                      objXY: objXY,
-                      // пиксельные координаты ГБР относительно угла картинки
-                      gbrXY: gbrXY
+                      // отступы острия метки объекта от левого и нижнего края картинки
+                      objLeft: objXY[0],
+                      objBottom: mapHeight - objXY[1],
+                      // отступы острия метки ГБР от левого и нижнего края картинки
+                      gbrLeft: gbrXY[0],
+                      gbrBottom: mapHeight - gbrXY[1]
                   }
               }
 
@@ -670,24 +675,24 @@
                   );
                   // загрузим картинку карты
                   $("#example2-img").attr("src", data.url);
-                  // подвинем в нужное место метку ГБР (учтя сдвиг острия маркера)
-                  var gbrLeft = data.gbrXY[0] - 16;
-                  var gbrBottom = data.gbrXY[1] - 26;
-                  $("#example2-gbr-marker").css("left",  gbrLeft + "px").css("bottom", gbrBottom + "px");
-                  // подвинем в нужное место метку объекта (учтя сдвиг острия маркера)
-                  var objLeft = data.objXY[0] - 16;
-                  var objBottom = data.objXY[1] - 26;
-                  $("#example2-obj-marker").css("left",  objLeft + "px").css("bottom", objBottom + "px");
+                  // позиционируем контейнер метки объекта (учтя сдвиг острия маркера)
+                  $("#example2-obj-marker")
+                      .css("left",  String(data.objLeft - 16) + "px")
+                      .css("bottom", String(data.objBottom - 26) + "px");
+                  // позиционируем контейнер метки ГБР (учтя сдвиг острия маркера)
+                  $("#example2-gbr-marker")
+                      .css("left",  String(data.gbrLeft - 16) + "px")
+                      .css("bottom", String(data.gbrBottom - 26) + "px");
 
                   $("#example2-minimap-container").show();
               }
 
           </script>
 
-          Введите широту ГБР: <input type="text" id="example2-gbrLat" value="59.987957"/><br>
-          Введите долготу ГБР: <input type="text" id="example2-gbrLng" value="29.77398"/><br>
-          Введите широту объекта: <input type="text" id="example2-objLat" value="59.935633"/><br>
-          Введите долготу объекта: <input type="text" id="example2-objLng" value="30.325871"/><br>
+          Введите широту ГБР: <input type="text" id="example2-gbrLat" value="59.935633"/><br>
+          Введите долготу ГБР: <input type="text" id="example2-gbrLng" value="30.325871"/><br>
+          Введите широту объекта: <input type="text" id="example2-objLat" value="59.987957"/><br>
+          Введите долготу объекта: <input type="text" id="example2-objLng" value="29.77398"/><br>
           <input type="button" onclick="showExample2()" value="Нажмите для вывода/обновления миникарты"/>
         </div>
 
@@ -710,13 +715,15 @@
                   <div class="minimap-marker" id="example2-gbr-marker">
                     <!-- отрисовка маркера ГБР, взята из Радара -->
                     <div class="marker guard alarmed">
-                      <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
+                      <span class="hint">Стремительный и Беспощадный Волкодав</span>
+                      <div class="corner"></div><div class="icon"></div>
                     </div>
                   </div>
                   <div class="minimap-marker" id="example2-obj-marker">
                     <!-- отрисовка маркера объекта, взята из Радара -->
                     <div class="marker alarmed">
-                      <span class="hint">55555, 12:45</span><div class="corner"></div><div class="icon"></div>
+                      <span class="hint">55555, 12:45</span>
+                      <div class="corner"></div><div class="icon"></div>
                     </div>
                   </div>
                 </div>
