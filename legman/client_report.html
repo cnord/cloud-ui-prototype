@@ -8,6 +8,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.2/fotorama.css" rel="stylesheet">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.2/fotorama.js"></script>
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 </head>
 <body>
 <div id="wrap">
@@ -374,36 +375,36 @@
 <!-- варианты вывода миникарт -->
 
 
-        <div class="pos-relative divider-wrapper ">
-          <h5 align="left"><pre>
+        <div class="pos-relative divider-wrapper" align="left">
+          <pre>
 -------------------------------------------------------------------------------
 Первый вариант вывода миникарт
 -------------------------------------------------------------------------------
 У YandexStaticAPI запрашиваем карту с центром по координатам ГБР, и с одной
-точкой на карте -- по координатам объекта. Чтобы Яндекс сам выбрал масштаб
-карты, задаём также "область показа" в виде протяженности по долготе/широте
-(берём разность координаты центра карты и координаты объекта, удваиваем её,
-можно даже прибавить небольшой запас чтобы объект не прижимался к краям карты).
+точкой на карте -- по координатам объекта.
+В данный момент YandexStaticAPI пытается при таких исходных данных сам
+подобрать масштаб карты, но делает это грубо и иногда точка уходит за края,
+поэтому предварительно рассчитаем требуемый зум, используя YandexJavaScriptAPI,
+при расчёте заодно сделаем запас на то чтобы флажок объекта не выходил за края.
 
-Яндекс рисует стандартную метку на месте объекта --
+Яндекс нарисует стандартную метку на месте объекта --
 пусть это будет метка в виде красной мишени, она наиболее подходит по дизайну.
-А мы поверх картинки рисуем свою метку ГБР, координаты для острия метки мы
+А мы поверх картинки отрисуем свою метку ГБР, координаты для острия метки мы
 точно знаем -- это центр картинки.
 
 Плюсы подхода:
 1) гарантия того, что метки расположены корректно, так как мы не
    пересчитываем координаты меток, карту и метки позиционирует сам Яндекс;
-2) простота реализации, выбор охватывающего масштаба делает сам Яндекс;
-3) нет проблем с "уходящими" за край карты флажками -- метка ГБР всегда
-   по центру и для её флажка всегда есть место, а метка объекта не имеет
-   флажка;
+2) невозможна ситуация когда отрисованная нами поверх картинки метка
+   выглядывает за границы картинки (так как мы рисуем только метку ГБР, а она
+   расположена всегда посередине картинки).
 
 Минусы подхода:
 1) метка объекта выглядит не так как на ситуационной карте;
-2) зум в ряде случаев будет не самый детальный, то есть вероятно что можно ещё
-   "приблизить" карту, сдвинув ГБР от центра к краю.
+2) зум в ряде случаев будет не самый детальный, то есть вероятно что можно
+   было бы ещё "приблизить" карту, если бы ГБР был не по центру карты.
 -------------------------------------------------------------------------------
-          </pre></h5>
+          </pre>
           <style>
             .minimap-container {
               /* сам контейнер среди элеменов отчёта позиционируется обычно */
@@ -424,7 +425,8 @@
                  Центр находится легко -- делим пополам размеры контейнера. Однако,
                  позаимствованный из Радара контейнер "marker" имеет сложную внутреннюю геометрию,
                  и остриё маркера имеет сдвиг относительно левого нижнего угла контейнера.
-                 Величину этого сдвига нужно уточнить, примерно её можно оценить как 16px вправо и 26px вверх.
+                 Величину этого сдвига нужно будет ещё уточнить (или переверстать контейнер),
+                 но примерно сдвиг можно оценить как 16px вправо и 26px вверх.
                  Этот сдвиг нужно учесть, чтобы позиционировать не невидимый угол контейнера маркера,
                  а именно остриё маркера.
               */
@@ -435,6 +437,76 @@
               bottom: 99px;
             }
           </style>
+
+          <script>
+              // Внимание! YandexJavaScriptAPI оперирует координатами как [широта, долгота],
+              // а YandexStaticAPI оперирует координатами в обратном порядке: "долгота,широта"
+
+              function calculateDataForExample1(mapWidth, mapHeight, objLng, objLat, gbrLng, gbrLat) {
+                  // ограничим зум значением 16 (видны ближайшие улицы)
+                  var maxZoom = 16;
+                  var topMargin, rightMargin, bottomMargin, leftMargin;
+                  if (objLat > gbrLat) {
+                      // объект находится над ГБР, то есть над центром карты
+                      topMargin = 35;  // сверху нужен запас для размещения флажка метки, ну например 35px
+                      bottomMargin = mapHeight / 2;  // снизу будет полкарты пустоты
+                  } else {
+                      // объект находится под ГБР, то есть под центром карты
+                      topMargin = mapHeight / 2;  // сверху будет полкарты пустоты
+                      bottomMargin = 0;  // снизу запас не нужен
+                  }
+                  if (objLng > gbrLng) {
+                      // объект находится правее ГБР, то есть правее центра карты
+                      leftMargin = mapWidth / 2;  // слева будет полкарты пустоты
+                      rightMargin = 15;  // справа нужен запас для размещения флажка метки, пусть будет 15px
+                  } else {
+                      // объект находится под ГБР, то есть левее центра карты
+                      leftMargin = 15;  // слева нужен запас для размещения флажка метки, пусть будет 15px
+                      rightMargin = mapWidth / 2;  // справа будет полкарты пустоты
+                  }
+                  // запросим у YandexJavaScriptAPI зум, при котором в картинку вписывается всё что нужно
+                  var yaCenterAndZoom = ymaps.util.bounds.getCenterAndZoom(
+                      [
+                          [Math.min(objLat, gbrLat), Math.min(objLng, gbrLng)],
+                          [Math.max(objLat, gbrLat), Math.max(objLng, gbrLng)],
+                      ],
+                      [mapWidth, mapHeight],
+                      ymaps.projection.wgs84Mercator,  // по умолчанию яндекс использует эту модель
+                      {
+                          inscribe: true,
+                          margin: [topMargin, rightMargin, bottomMargin, leftMargin]
+                      }
+                  );
+                  // url для запроса карты у YandexStaticAPI
+                  return 'http://static-maps.yandex.ru/1.x/?l=map' +
+                         // центр карты (координаты ГБР)
+                         '&ll=' + gbrLng + ',' + gbrLat +
+                         // зум
+                         '&z=' + Math.min(yaCenterAndZoom.zoom, maxZoom) +
+                         // размер картинки
+                         '&size=' + mapWidth + ',' + mapHeight +
+                         // метка (координаты объекта)
+                         '&pt=' + objLng + ',' + objLat + ',pm2rdm';
+              }
+
+              function showExample1() {
+                  $("#example1-minimap-container").hide();
+                  var url = calculateDataForExample1(
+                    435, 250,
+                    $("#example1-objLng").val(), $("#example1-objLat").val(),
+                    $("#example1-gbrLng").val(), $("#example1-gbrLat").val()
+                  );
+                  $("#example1-img").attr("src", url);
+                  $("#example1-minimap-container").show();
+              }
+
+          </script>
+
+          Введите широту ГБР: <input type="text" id="example1-gbrLat" value="59.987957"/><br>
+          Введите долготу ГБР: <input type="text" id="example1-gbrLng" value="29.77398"/><br>
+          Введите широту объекта: <input type="text" id="example1-objLat" value="59.935633"/><br>
+          Введите долготу объекта: <input type="text" id="example1-objLng" value="30.325871"/><br>
+          <input type="button" onclick="showExample1()" value="Нажмите для вывода/обновления миникарты"/>
         </div>
 
         <div class="pos-relative divider-wrapper ">
@@ -449,113 +521,9 @@
                 ≈ 53.1 км, 105 мин (Петровская улица, 13)
               </p>
               <div class="imgs">
-                <!--
-                координаты объекта - pt=30.325871,59.935633 (Дом Зингера)
-                координаты ГБР - ll=29.77398,59.987957 (Кронштадт)
-                область показа - spn=|(29.77398 - 30.325871) * 2|,|(59.987957 - 59.935633) * 2|
-                -->
-                <div class="minimap-container">
+                <div class="minimap-container" id="example1-minimap-container" style="display: none">
                   <div class="minimap-yandex-map">
-                    <img src="http://static-maps.yandex.ru/1.x/?l=map&ll=29.77398,59.987957&size=435,250&pt=30.325871,59.935633,pm2rdm&spn=1.103782,0.104648" width="435" height="250" alt="">
-                  </div>
-                  <div class="minimap-marker">
-                    <!-- отрисовка маркера ГБР, взята из Радара -->
-                    <div class="marker guard alarmed">
-                      <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pos-relative divider-wrapper ">
-          <div class="time">
-            00:12
-          </div>
-          <div class="event-wrapper">
-            <div class="event group-event">
-              Подтверждение вызова
-              <p>
-                Волкодав<br>
-                ≈ 8.7 км, 38 мин (Торфяная дорога, 4)
-              </p>
-              <div class="imgs">
-                <!--
-                координаты объекта - pt=30.325871,59.935633 (Дом Зингера)
-                координаты ГБР - ll=30.255254,59.989385 (метро Старая Деревня)
-                область показа - spn=|(30.255254 - 30.325871) * 2|,|(59.989385 - 59.935633) * 2|
-                -->
-                <div class="minimap-container">
-                  <div class="minimap-yandex-map">
-                    <img src="http://static-maps.yandex.ru/1.x/?l=map&ll=30.255254,59.989385&size=435,250&pt=30.325871,59.935633,pm2rdm&spn=0.141234,0.107504" width="435" height="250" alt="">
-                  </div>
-                  <div class="minimap-marker">
-                    <!-- отрисовка маркера ГБР, взята из Радара -->
-                    <div class="marker guard alarmed">
-                      <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pos-relative divider-wrapper ">
-          <div class="time">
-            00:12
-          </div>
-          <div class="event-wrapper">
-            <div class="event group-event">
-              <h2>Стою в пробке</h2>
-              <p>
-                Волкодав<br>
-                ≈ 1.6 км, 9 мин (Биржевая площадь, 4)
-              </p>
-              <div class="imgs">
-                <!--
-                координаты объекта - pt=30.325871,59.935633 (Дом Зингера)
-                координаты ГБР - ll=30.305551,59.943762 (Биржа)
-                область показа - spn=|(30.305551 - 30.325871) * 2|,|(59.943762 - 59.935633) * 2|
-                -->
-                <div class="minimap-container">
-                  <div class="minimap-yandex-map">
-                    <img src="http://static-maps.yandex.ru/1.x/?l=map&ll=30.305551,59.943762&size=435,250&pt=30.325871,59.935633,pm2rdm&spn=0.04064,0.016258" width="435" height="250" alt="">
-                  </div>
-                  <div class="minimap-marker">
-                    <!-- отрисовка маркера ГБР, взята из Радара -->
-                    <div class="marker guard alarmed">
-                      <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pos-relative divider-wrapper">
-          <div class="time">
-            00:12
-          </div>
-          <div class="event-wrapper">
-            <div class="event group-event">
-              <h2>Прибытие на объект</h2>
-              <p>
-                Волкодав<br>
-                ≈ 0.1 км, 1 мин (Невский проспект, 28)
-              </p>
-              <div class="imgs">
-                <!--
-                координаты объекта - pt=30.325871,59.935633 (Дом Зингера)
-                координаты ГБР - ll=30.326301,59.935566 (у Дома Зингера)
-                область показа - spn=|(30.326301 - 30.325871) * 2|,|(59.935566 - 59.935633) * 2|
-                -->
-                <div class="minimap-container">
-                  <div class="minimap-yandex-map">
-                    <img src="http://static-maps.yandex.ru/1.x/?l=map&ll=30.326301,59.935566&size=435,250&pt=30.325871,59.935633,pm2rdm&spn=0.00086,0.000134" width="435" height="250" alt="">
+                    <img id="example1-img" src="" width="435" height="250" alt="">
                   </div>
                   <div class="minimap-marker">
                     <!-- отрисовка маркера ГБР, взята из Радара -->
@@ -570,14 +538,13 @@
         </div>
 
 
-
-        <div class="pos-relative divider-wrapper ">
-          <h5 align="left"><pre>
+        <div class="pos-relative divider-wrapper" align="left">
+          <pre>
 -------------------------------------------------------------------------------
 Второй вариант вывода миникарт
 -------------------------------------------------------------------------------
-По координатам ГБР и объекта рассчитываем (используя Yandex JavaScript API):
-  - требуемый зум карты (из поддерживаемых Яндексом вариантов);
+По координатам ГБР и объекта рассчитываем (используя YandexJavaScriptAPI):
+  - требуемый зум карты;
   - координаты центра карты, подобранные так чтобы обе точки были видимы;
   - сдвиг (в пикселях) ГБР относительно угла карты (для выбранного зума);
   - сдвиг (в пикселях) объекта относительно угла карты (для выбранного зума);
@@ -596,13 +563,14 @@
    детального зума.
 
 Минусы подхода:
-1) сложная математика по переводу геокоординат в пиксели для разных широт и
-   разных зумов, причём "сложная" == "ненадёжная", и если что-то не учесть,
-   будет трудноотлавливаемый баг с некорректным позиционированием меток;
-2) сложная математика по учёту длины флажков - нужно добиться того чтобы флажки
-   не вылезли за край карты, но размеры флажка зависят от шрифта и от надписи.
+1) то, что мы сами позиционируем метки поверх картинки с картой, не даёт
+   полной гарантии что метки спозиционированы корректно относительно карты;
+2) возможна ситуация когда отрисованный нами поверх картинки флажок метки
+   выглядывает за границы картинки. Нужно или всегда оставлять достаточные
+   отступы от краёв, или добиваться стилями невозможности отображения
+   абсолютно-позиционируемых флажков за пределами прямоугольника карты.
 -------------------------------------------------------------------------------
-          </pre></h5>
+          </pre>
           <style>
             .minimap-container {
               /* сам контейнер среди элеменов отчёта позиционируется обычно */
@@ -622,7 +590,8 @@
                  "Остриё" маркера нужно будет спозиционировать по нужным координатам. Однако,
                  позаимствованный из Радара контейнер "marker" имеет сложную внутреннюю геометрию,
                  и остриё маркера имеет сдвиг относительно левого нижнего угла контейнера.
-                 Величину этого сдвига нужно уточнить, примерно её можно оценить как 16px вправо и 26px вверх.
+                 Величину этого сдвига нужно будет ещё уточнить (или переверстать контейнер),
+                 но примерно сдвиг можно оценить как 16px вправо и 26px вверх.
                  Этот сдвиг нужно учитывать, чтобы позиционировать не невидимый угол контейнера маркера,
                  а именно остриё маркера.
               */
@@ -631,6 +600,95 @@
               /* bottom: ???px;  -- выставляем в js после пересчёта координат в пиксели */
             }
           </style>
+
+          <script>
+              // Внимание! YandexJavaScriptAPI оперирует координатами как [широта, долгота],
+              // а YandexStaticAPI оперирует координатами в обратном порядке: "долгота,широта"
+
+              function calculateDataForExample2(mapWidth, mapHeight, objLng, objLat, gbrLng, gbrLat) {
+                  // ограничим зум значением 16 (видны ближайшие улицы)
+                  var maxZoom = 16;
+
+                  // сверху нужен запас для размещения флажка метки, ну например 35px
+                  var topMargin = 35;
+                  // снизу и слева нужен небольшой зазор до метки (для красоты)
+                  var bottomMargin = 5;
+                  var leftMargin = 5;
+                  // справа нужен запас для флажка метки, даже при длинной надписи, пусть будет 60px.
+                  // TODO: анализировать ширину надписи правой метки и более точно выставлять запас
+                  var rightMargin = 60;
+
+                  // запросим у YandexJavaScriptAPI центр и зум, при которых в картинку вписывается всё что нужно
+                  var yaCenterAndZoom = ymaps.util.bounds.getCenterAndZoom(
+                      [
+                          [Math.min(objLat, gbrLat), Math.min(objLng, gbrLng)],
+                          [Math.max(objLat, gbrLat), Math.max(objLng, gbrLng)],
+                      ],
+                      [mapWidth, mapHeight],
+                      ymaps.projection.wgs84Mercator,  // по умолчанию яндекс использует эту модель
+                      {
+                          inscribe: true,
+                          margin: [topMargin, rightMargin, bottomMargin, leftMargin]
+                      }
+                  );
+                  var zoom = Math.min(yaCenterAndZoom.zoom, maxZoom);
+
+                  // расчитаем пиксельные координаты меток относительно центра картинки
+                  var centerXY = ymaps.projection.wgs84Mercator.toGlobalPixels(yaCenterAndZoom.center, zoom);
+                  var objXY = ymaps.projection.wgs84Mercator.toGlobalPixels([objLat, objLng], zoom);
+                  var gbrXY = ymaps.projection.wgs84Mercator.toGlobalPixels([gbrLat, gbrLng], zoom);
+                  objXY[0] -= centerXY[0];
+                  objXY[1] -= centerXY[1];
+                  gbrXY[0] -= centerXY[0];
+                  gbrXY[1] -= centerXY[1];
+
+                  // переведём пиксельные координаты меток относительно угла картинки
+                  objXY[0] += mapWidth / 2;
+                  objXY[1] += mapHeight / 2;
+                  gbrXY[0] += mapWidth / 2;
+                  gbrXY[1] += mapHeight / 2;
+
+                  return {
+                      // url для запроса карты у YandexStaticAPI
+                      url: 'http://static-maps.yandex.ru/1.x/?l=map' +
+                           '&ll=' + yaCenterAndZoom.center[1] + ',' + yaCenterAndZoom.center[0] +
+                           '&z=' + zoom +
+                           '&size=' + mapWidth + ',' + mapHeight,
+                      // пиксельные координаты объекта относительно угла картинки
+                      objXY: objXY,
+                      // пиксельные координаты ГБР относительно угла картинки
+                      gbrXY: gbrXY
+                  }
+              }
+
+              function showExample2() {
+                  $("#example2-minimap-container").hide();
+                  var data = calculateDataForExample2(
+                    435, 250,
+                    $("#example2-objLng").val(), $("#example2-objLat").val(),
+                    $("#example2-gbrLng").val(), $("#example2-gbrLat").val()
+                  );
+                  // загрузим картинку карты
+                  $("#example2-img").attr("src", data.url);
+                  // подвинем в нужное место метку ГБР (учтя сдвиг острия маркера)
+                  var gbrLeft = data.gbrXY[0] - 16;
+                  var gbrBottom = data.gbrXY[1] - 26;
+                  $("#example2-gbr-marker").css("left",  gbrLeft + "px").css("bottom", gbrBottom + "px");
+                  // подвинем в нужное место метку объекта (учтя сдвиг острия маркера)
+                  var objLeft = data.objXY[0] - 16;
+                  var objBottom = data.objXY[1] - 26;
+                  $("#example2-obj-marker").css("left",  objLeft + "px").css("bottom", objBottom + "px");
+
+                  $("#example2-minimap-container").show();
+              }
+
+          </script>
+
+          Введите широту ГБР: <input type="text" id="example2-gbrLat" value="59.987957"/><br>
+          Введите долготу ГБР: <input type="text" id="example2-gbrLng" value="29.77398"/><br>
+          Введите широту объекта: <input type="text" id="example2-objLat" value="59.935633"/><br>
+          Введите долготу объекта: <input type="text" id="example2-objLng" value="30.325871"/><br>
+          <input type="button" onclick="showExample2()" value="Нажмите для вывода/обновления миникарты"/>
         </div>
 
         <div class="pos-relative divider-wrapper ">
@@ -645,40 +703,17 @@
                 ≈ 53.1 км, 105 мин (Петровская улица, 13)
               </p>
               <div class="imgs">
-                <!--
-                координаты объекта - 30.325871,59.935633 (Дом Зингера)
-                координаты ГБР - 29.77398,59.987957 (Кронштадт)
-
-                определяем минимально необходимый зум по горизонтали:
-                  разница координат: |30.325871 - 29.77398| = 0.551891
-                  плюс поправка на то чтобы флажок самой правой точки не "ушёл" за край = ??
-                  чтобы эта разница уместилась на картинке шириной 435 пикселей требуется зум = ??
-
-                определяем минимально необходимый зум по вертикали:
-                  разница координат: |59.935633 - 59.987957| = 0.052324
-                  плюс поправка на то чтобы флажок самой верхней точки не "ушёл" за край = ??
-                  чтобы эта разница уместилась на картинке высотой 250 пикселей требуется зум = ??
-                итого требуется зум z=9
-
-                рассчитываем геокоординаты центра карты,
-                делаем поправку на то чтобы уместились флажки, получаем ll=30.0499255,59.961795
-
-                после пересчёта геокоординат точек в пиксельный сдвиг
-                и корректировки на сдвиг острия маркера, получаем:
-                  для ГБР - left: 103px; bottom: 118px;
-                  для объекта - left: 303px; bottom: 82px;
-                -->
-                <div class="minimap-container">
+                <div class="minimap-container" id="example2-minimap-container" style="display: none">
                   <div class="minimap-yandex-map">
-                    <img src="http://static-maps.yandex.ru/1.x/?l=map&z=9&ll=30.0499255,59.961795&size=435,250" width="435" height="250" alt="">
+                    <img id="example2-img" src="" width="435" height="250" alt="">
                   </div>
-                  <div class="minimap-marker" style="left: 103px; bottom: 118px;">
+                  <div class="minimap-marker" id="example2-gbr-marker">
                     <!-- отрисовка маркера ГБР, взята из Радара -->
                     <div class="marker guard alarmed">
                       <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
                     </div>
                   </div>
-                  <div class="minimap-marker" style="left: 303px; bottom: 82px;">
+                  <div class="minimap-marker" id="example2-obj-marker">
                     <!-- отрисовка маркера объекта, взята из Радара -->
                     <div class="marker alarmed">
                       <span class="hint">55555, 12:45</span><div class="corner"></div><div class="icon"></div>
@@ -689,51 +724,6 @@
             </div>
           </div>
         </div>
-
-        <div class="pos-relative divider-wrapper ">
-          <div class="time">
-            00:12
-          </div>
-          <div class="event-wrapper">
-            <div class="event group-event">
-              <h2>Стою в пробке</h2>
-              <p>
-                Волкодав<br>
-                ≈ 1.6 км, 9 мин (Биржевая площадь, 4)
-              </p>
-              <div class="imgs">
-                <!--
-                координаты объекта - 30.325871,59.935633 (Дом Зингера)
-                координаты ГБР - 30.305551,59.943762 (Биржа)
-                расчётный зум z=14
-                расчётный центр карты ll=30.315711,59.9396975
-                расчётный пиксельный сдвиг:
-                  для ГБР - left: 86px; bottom: 193px;
-                  для объекта - left: 323px; bottom: 7px;
-                -->
-                <div class="minimap-container">
-                  <div class="minimap-yandex-map">
-                    <img src="http://static-maps.yandex.ru/1.x/?l=map&z=14&ll=30.315711,59.9396975&size=435,250" width="435" height="250" alt="">
-                  </div>
-                  <div class="minimap-marker" style="left: 86px; bottom: 193px;">
-                    <!-- отрисовка маркера ГБР, взята из Радара -->
-                    <div class="marker guard alarmed">
-                      <span class="hint">Волкодав</span><div class="corner"></div><div class="icon"></div>
-                    </div>
-                  </div>
-                  <div class="minimap-marker" style="left: 323px; bottom: 7px;">
-                    <!-- отрисовка маркера объекта, взята из Радара -->
-                    <div class="marker alarmed">
-                      <span class="hint">55555, 12:45</span><div class="corner"></div><div class="icon"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
 
 
       </div>
