@@ -28,17 +28,21 @@
 			</div>
 
       <form class="form-inline">
-				<div class="control-group">
+				<div class="control-group"><!-- class="error" -->
 					<div class="controls">
 						<input type="text" id="objectNumber" class="input-small" value="" placeholder="№ объекта">
 						&nbsp;
 						<button class="btn">Показать тревоги</button>
 						<!-- Лоадер -->
 						<span class="hide">&nbsp;<img src="../img/ajax-loader.gif"></span>
+            <span class="help-inline error hide">Объекта с таким номером не существует.</span>
+            <span class="help-inline error hide">У объекта нет тревог.</span>
+            <span class="help-inline error hide">Сервер временно не доступен. Попробуйте загрузить отчёт позже.</span>
 					</div>
 				</div>
       </form>
 			
+<<<<<<< HEAD
 			<!-- Если не введён номер объекта -->
 			<p class="hide">Для отображения списка всех тревог введите номер объекта.</p>
 			
@@ -46,6 +50,11 @@
 			
 			<h2 class="hide1">Тревоги по объекту №3452</h2>						
       <table class="table table-hover hide1">
+=======
+			<h2 class="hide">Тревоги по объекту №3452</h2>
+							
+      <table class="table table-hover hide">
+>>>>>>> acdb7b77179af8f6dca79f7e66a15c8e73e5ec9f
         <thead>
           <tr>
 						<th width="10">&nbsp;</th>
@@ -105,9 +114,13 @@
           </tr>
         </tbody>
       </table>
+<<<<<<< HEAD
 			
 			<button class="btn hide">Загрузить ещё</button>
 			
+=======
+						
+>>>>>>> acdb7b77179af8f6dca79f7e66a15c8e73e5ec9f
       <footer class="footer">
         <p class="pull-right">
           <script>
