@@ -298,14 +298,32 @@ a {
  background-position: 14px 14px;
  background-repeat: no-repeat;
  display: inline-block;
- height: 14px;
+ height: 16px;
  line-height: 14px;
  margin-top: 4px;
  vertical-align: text-top;
- width: 14px;
+ width: 16px;
 }
 .icon-refresh {
 	background-position: -240px -24px;
+}
+.refresh {
+	width: 16px;
+	height: 16px;
+  background-image: url("../img/ajax-loader.gif");
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 0 0 -3px 0;
+  /*
+	background-position: 14px 14px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 4px;
+  vertical-align: text-top;
+  width: 14px;
+	*/
 }
 .audio {
 	left: -36px;
@@ -350,4 +368,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, .unedita
 	line-height: 15px;
 	margin: 0;
 	padding: 10px 0 0 0;
+}
+
+.hide {
+	display: none;
 }
