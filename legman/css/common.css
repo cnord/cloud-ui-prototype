@@ -373,3 +373,5 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, .unedita
 .hide {
 	display: none;
 }
+.data-wrapper{background-image: url(../img/divider.png);background-position: center top; background-repeat: repeat-y; padding-bottom: 20px;}
+.data-wrapper .title-timeline{display: block;}
